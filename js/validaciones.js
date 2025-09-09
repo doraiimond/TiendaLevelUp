@@ -1,3 +1,10 @@
+const display = document.getElementById('display');
+const clickSound = document.getElementById('click-sound');
+
+function playSounds() {
+    clickSound.currentTime = 0;
+    clickSound.play();
+}
 //Función validar el correo
 function validarCorreo(correo) {
     const regex = /^[\w.+-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/i;
