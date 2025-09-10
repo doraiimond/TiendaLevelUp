@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-    
-    <!--BARRA DE ARRIBA-->
     <head>         
-        <link rel="stylesheet" href="../css/Tiendacss/tienda.css">
+        
         <meta charset="UTF-8">
         <link rel="icon" href="image/logo.png" type="image/x-icon">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,15 +19,20 @@
         <header>
             <nav class="Barra-Arriba">
                 <ul>
-                    <a>🎮</a>
-                        <a href="/index.html" class="marco"> Home</a>
-                    <a href="/page/nosotros.html" class="marco"> Nosotros</a>
-                    <a href="/page/contacto.html"class="marco"> Contacto</a>
-                    <a href="/page/carrito.html"class="marco"><i class="bi bi-cart3"></i> Carrito(0) </a>
+                    
+                    <a class="control" >🎮</a>   
+                    <a href="../index.html  " class="marco"> Home</a>
+                    <a href="../page/nosotros.html" class="marco"> Nosotros</a>
+                    <a href="../page/contacto.html"class="marco"> Contacto</a>
+                    <a href="../page/carrito.html"class="marco"><i class="bi bi-cart3"></i> Carrito(0) </a>
+                    <a id="perfilb"  href="../page/perfilCliente.html" class="marco" >PERFIL</a>
                 </ul>
-            </nav>            
+            </nav>
+          
         </header>
         <main>
+            <div class="container"></div>
+
           <div class="Posteraa">
             <!-- Fokin poster Ofertas -->
             <div id="Poster" class="carousel slide" data-bs-ride="carousel">
@@ -71,22 +74,97 @@
            </div>
           </div>
             <!-- Catalogo -->
-          <div class="Item1">
             <div class="container mt-4">
-              <div id="carditem" class="col-md-4">
-                  <img src="../image/silkgod.avif" class="card-img-top" alt="Juego">
-                <div class="card-body">
-                    <h5 >Silk God</h5>
-                    <p >$15000</p>
-                    <button class="btn btn-primary" >Agregar al carrito</button>
-                </div>
-              </div>
-            </div>
-          </div>
-            
-          <div class="redes">
-                <div class="card">
+                <div class="row">
+
+                    <!-- item1 -->         
+                    <div class="col-md-4">
+                        <div class="carditem">
+                            <img class="card-imagen" src="../image/silkgod.avif" class="card-img" alt="Juego">                
+                            <div class="card-body">
+                                <h5 >Silk God</h5>
+                                <p >$15000</p>
+                                <button class="shadow__btn">
+                                    AÑADIR AL CARRO
+                                </button>
+                            </div> 
+                        </div>                        
+                    </div>  
+
+                    <!-- item2 -->         
+                    <div class="col-md-4">
+                        <div class="carditem">
+                            <img class="card-imagen" src="../image/silkgod.avif" class="card-img" alt="Juego">                
+                            <div class="card-body">
+                                <h5 >Silk God</h5>
+                                <p >$15000</p>
+                                <button class="shadow__btn">
+                                    AÑADIR AL CARRO
+                                </button>
+                            </div> 
+                        </div>                        
+                    </div>
                     
+                    <!-- item3 -->         
+                    <div class="col-md-4">
+                        <div class="carditem">
+                            <img class="card-imagen" src="../image/silkgod.avif" class="card-img" alt="Juego">                
+                            <div class="card-body">
+                                <h5 >Silk God</h5>
+                                <p >$15000</p>
+                                <button class="shadow__btn">
+                                    AÑADIR AL CARRO
+                                </button>
+                            </div> 
+                        </div>                        
+                    </div>
+                    
+                    <!-- item4 -->         
+                    <div class="col-md-4">
+                        <div class="carditem">
+                            <img class="card-imagen" src="../image/silkgod.avif" class="card-img" alt="Juego">                
+                            <div class="card-body">
+                                <h5 >Silk God</h5>
+                                <p >$15000</p>
+                                <button class="shadow__btn">
+                                    AÑADIR AL CARRO
+                                </button>
+                            </div> 
+                        </div>                        
+                    </div>                        
+                    
+                    <!-- item5 -->         
+                    <div class="col-md-4">
+                        <div class="carditem">
+                            <img class="card-imagen" src="../image/silkgod.avif" class="card-img" alt="Juego">                
+                            <div class="card-body">
+                                <h5 >Silk God</h5>
+                                <p >$15000</p>
+                                <button class="shadow__btn">
+                                    AÑADIR AL CARRO
+                                </button>
+                            </div> 
+                        </div>                        
+                    </div>    
+
+                    <!-- item6 -->         
+                    <div class="col-md-4">
+                        <div class="carditem">
+                            <img class="card-imagen" src="../image/silkgod.avif" class="card-img" alt="Juego">                
+                            <div class="card-body">
+                                <h5 >Silk God</h5>
+                                <p >$15000</p>
+                                <button class="shadow__btn">
+                                    AÑADIR AL CARRO
+                                </button>
+                            </div> 
+                        </div>                        
+                    </div>    
+
+                </div>
+            </div>
+            <div class="redes">
+                <div class="card">
                     <a class="social-link" href="#">
                         <img src="../image/iconof.png" alt="Facebook" />
                     </a>
@@ -100,13 +178,11 @@
                         <img src="../image/iconoi.png" alt="Instagram" />
                     </a>                         
                 </div>     
-          </div>
-
-            
-
+            </div>
         </main>
     </body>
     
+    <link rel="stylesheet" href="../css/Tiendacss/tienda.css">
     <script src="assets/js/validaciones.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
