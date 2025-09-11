@@ -1,55 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Carrito Visual</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      padding: 2rem;
-    }
-    .card {
-      background-color: #1a1a1a;
-      color: white;
-      margin-bottom: 1rem;
-    }
-    .precio {
-      font-weight: bold;
-      color: #f0ad4e;
-    }
-    button {
-      cursor: not-allowed;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Mi Carrito</title>
+  <link rel="stylesheet" href="../css/Tiendacss/tienda.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-  <h2>🛒 Carrito de Compras (Visual)</h2>
+<body class="bg-dark text-light">
 
-  <div class="card p-3">
-    <h5>Silk God</h5>
-    <p class="precio">$15,000</p>
-    <p>Juego de aventura y acción con gráficos increíbles.</p>
-    <button class="btn btn-secondary" disabled>Eliminar</button>
-  </div>
+  <header>
+    <nav class="Barra-Arriba">
+      <ul>
+        <a href="../index.html" class="marco">Home</a>
+        <a href="../page/Tiendahtml/tienda.html" class="marco">Tienda</a>
+        <a href="../page/carrito.html" class="marco"><i class="bi bi-cart3"></i> Carrito(0)</a>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="card p-3">
-    <h5>Dragon Legacy</h5>
-    <p class="precio">$28,500</p>
-    <p>Explora un mundo fantástico y domina a los dragones.</p>
-    <button class="btn btn-secondary" disabled>Eliminar</button>
-  </div>
+  <main class="container mt-4">
+    <h2 class="text-center mb-4">🛒 Carrito de Compras</h2>
 
-  <div class="card p-3">
-    <h5>Galaxy Riders</h5>
-    <p class="precio">$19,990</p>
-    <p>Carreras espaciales en galaxias lejanas.</p>
-    <button class="btn btn-secondary" disabled>Eliminar</button>
-  </div>
+    <!-- Aquí se cargan los productos -->
+    <div id="lista-carrito" class="mb-4"></div>
 
-  <h3>Total: $63,490</h3>
+    <!-- Total -->
+    <h4 id="total">Total: $0</h4>
 
-  <button class="btn btn-success" disabled>Finalizar Compra</button>
+    <!-- Botón finalizar compra -->
+    <button id="finalizar" class="btn btn-success mt-3">Finalizar Compra</button>
+  </main>
+
+  <script src="../js/carrito.js"></script>
 </body>
 </html>

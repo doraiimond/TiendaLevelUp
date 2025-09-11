@@ -13,6 +13,10 @@
   box-shadow: 0 0 25px rgb(0,140,255);
 }
 
+.desc{
+  text-decoration: none;
+  color: white;
+}
 .shadow__btn:hover::after{
   opacity: 0.5;
   transform: translateY(-100%);

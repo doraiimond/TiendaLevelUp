@@ -1,5 +1,7 @@
 .carditem{
-    height: 400px;
+    
+    height: auto;
+    padding-bottom: 20px;
     justify-items: center;
     background-color: black;
     border-radius: 15px;
@@ -17,11 +19,8 @@
     flex-wrap: wrap;
 }
 
-.col-md-4 {
-    flex: 1 1 33.333%;
-    box-sizing: border-box;
-    padding: 10px;
-}
+
+
 
 @keyframes luz {
     0%   { box-shadow: 0 0 10px #ff0000; }
