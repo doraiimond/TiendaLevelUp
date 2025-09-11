@@ -1,1 +1,4 @@
-@import url(Barra-Superior.css);
+@import url(Barra-arriba.css);
+@import url(datos.css);
+@import url(main.css);
+@import url(CartaPerfil.css);

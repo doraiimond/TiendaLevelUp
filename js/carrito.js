@@ -1,111 +1,117 @@
-// ============================
-// CARRITO LEVEL-UP GAMER 🎮
-// ============================
+// carrito.js
 
-// Recuperar carrito del localStorage o iniciar vacío
+// Recuperar carrito del localStorage o inicializar vacío
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-// Renderizar los productos en el carrito
-function renderCarrito() {
-  const listaCarrito = document.getElementById("lista-carrito");
-  const totalElement = document.getElementById("total");
-
-  listaCarrito.innerHTML = "";
-
-  let total = 0;
-
-  if (carrito.length === 0) {
-    listaCarrito.innerHTML = "<p>No hay productos en el carrito.</p>";
-  } else {
-    carrito.forEach((item, index) => {
-      const div = document.createElement("div");
-      div.classList.add("carditem", "mb-2", "p-2");
-
-      div.innerHTML = `
-        <h5>${item.nombre}</h5>
-        <p>Precio: $${item.precio}</p>
-        <p>Cantidad: ${item.cantidad}</p>
-        <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito(${index})">Eliminar</button>
-      `;
-
-      listaCarrito.appendChild(div);
-      total += item.precio * item.cantidad;
-    });
-  }
-
-  totalElement.textContent = "Total: $" + total;
-}
-
-// Agregar producto al carrito
+// Función para agregar un producto al carrito
 function agregarAlCarrito(nombre, precio) {
-  const productoExistente = carrito.find(item => item.nombre === nombre);
+    // Convertir precio a número por si viene como string
+    precio = Number(precio);
 
-  if (productoExistente) {
-    productoExistente.cantidad++;
-  } else {
-    carrito.push({ nombre, precio, cantidad: 1 });
-  }
+    // Crear objeto del producto
+    const producto = { nombre, precio };
 
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  renderCarrito();
-  actualizarCarritoIcono();
+    // Agregar al carrito
+    carrito.push(producto);
+
+    // Guardar en localStorage
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    // Actualizar la vista del carrito si estamos en carrito.html
+    if(document.getElementById("lista-carrito")){
+        mostrarCarrito();
+    }
+
+    // Calcular y mostrar puntos LevelUp
+    const puntos = Math.floor(calcularTotal() * 0.05);
+    console.log(`Ganaste ${puntos} puntos LevelUp`);
 }
 
-// Eliminar producto del carrito
-function eliminarDelCarrito(index) {
-  carrito.splice(index, 1);
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-  renderCarrito();
-  actualizarCarritoIcono();
+// Función para calcular total
+function calcularTotal() {
+    return carrito.reduce((acc, item) => acc + item.precio, 0);
 }
 
-// Finalizar compra
-function finalizarCompra() {
-  if (carrito.length === 0) {
-    alert("Tu carrito está vacío.");
-    return;
-  }
+// Función para mostrar carrito en carrito.html
+function mostrarCarrito() {
+    const lista = document.getElementById("lista-carrito");
+    lista.innerHTML = "";
 
-  alert("🎉 ¡Gracias por tu compra! Se han sumado puntos LevelUp a tu cuenta.");
-  carrito = [];
-  localStorage.removeItem("carrito");
-  renderCarrito();
-  actualizarCarritoIcono();
-}
-
-// Actualizar contador en el icono del carrito
-function actualizarCarritoIcono() {
-  const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
-  const carritoLink = document.querySelector("a[href='../page/carrito.html']");
-  if (carritoLink) {
-    carritoLink.innerHTML = `<i class="bi bi-cart3"></i> Carrito(${totalItems})`;
-  }
-}
-
-// ============================
-// Eventos iniciales
-// ============================
-
-document.addEventListener("DOMContentLoaded", () => {
-  renderCarrito();
-  actualizarCarritoIcono();
-
-  const btnFinalizar = document.getElementById("finalizar");
-  if (btnFinalizar) {
-    btnFinalizar.addEventListener("click", finalizarCompra);
-  }
-});
-
-// Agregar productos desde tienda
-document.addEventListener("DOMContentLoaded", () => {
-  const botones = document.querySelectorAll(".shadow__btn");
-
-  botones.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const nombre = btn.dataset.product;
-      const precio = parseInt(btn.dataset.price);
-      agregarAlCarrito(nombre, precio);
-      alert(`${nombre} agregado al carrito`);
+    carrito.forEach((item, index) => {
+        const div = document.createElement("div");
+        div.className = "carrito-item mb-2 p-2 bg-secondary rounded";
+        div.innerHTML = `
+            <span>${item.nombre} - $${item.precio}</span>
+            <button class="btn btn-danger btn-sm float-end" onclick="eliminarDelCarrito(${index})">Eliminar</button>
+        `;
+        lista.appendChild(div);
     });
-  });
+
+    // Actualizar total
+    const totalElem = document.getElementById("total");
+    if(totalElem){
+        totalElem.textContent = `Total: $${calcularTotal()}`;
+    }
+}
+
+// Función para eliminar producto
+function eliminarDelCarrito(index) {
+    carrito.splice(index, 1);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    mostrarCarrito();
+}
+
+// Función para finalizar compra
+function finalizarCompra() {
+    if (carrito.length === 0) {
+        alert("El carrito está vacío");
+        return;
+    }
+    const total = calcularTotal();
+    const puntos = Math.floor(total * 0.05);
+    agregarPuntos(puntos);
+    alert(`Compra realizada con éxito!\nTotal: $${total}\nPuntos LevelUp ganados: ${puntos}`);
+    carrito = [];
+    localStorage.removeItem("carrito");
+    mostrarCarrito();
+}
+
+
+// Ejecutar mostrarCarrito al cargar carrito.html
+document.addEventListener("DOMContentLoaded", () => {
+    if(document.getElementById("lista-carrito")){
+        mostrarCarrito();
+    }
+
+    const finalizarBtn = document.getElementById("finalizar");
+    if(finalizarBtn){
+        finalizarBtn.addEventListener("click", finalizarCompra);
+    }
 });
+
+// Inicializar puntos si no existen
+if (!localStorage.getItem("puntos")) {
+    localStorage.setItem("puntos", 0);
+}
+
+// Mostrar puntos si existe el span en perfilCliente.html
+document.addEventListener("DOMContentLoaded", () => {
+    const puntosDisplay = document.getElementById("puntosDisplay");
+    if (puntosDisplay) {
+        puntosDisplay.textContent = localStorage.getItem("puntos");
+    }
+});
+
+// Función para sumar puntos
+function agregarPuntos(cantidad) {
+    let puntos = parseInt(localStorage.getItem("puntos")) || 0;
+    puntos += cantidad;
+    localStorage.setItem("puntos", puntos);
+
+    // Si estamos en perfilCliente.html, actualizar visualmente
+    const puntosDisplay = document.getElementById("puntosDisplay");
+    if (puntosDisplay) {
+        puntosDisplay.textContent = puntos;
+    }
+}
+    

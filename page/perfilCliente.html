@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>         
-        
         <meta charset="UTF-8">
         <link rel="icon" href="image/logo.png" type="image/x-icon">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,40 +12,58 @@
             }
         </style>
     </head>
-    <header>
-        <div class="nav">
-        <div class="container">
-            <a href="../page/nosotros.html" class="btn"> Nosotros</a>
-            <a href="../page/contacto.html" class="btn"> Contacto</a>
 
-            <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 400 60"
-            height="60"
-            width="400"
-            overflow="visible"
-            class="outline"
-            >
-            <rect
-                stroke-width="5"
-                fill="transparent"
-                height="60"
-                width="400"
-                y="0"
-                x="0"
-                pathLength="100"
-                class="rect"
-            ></rect>
-            </svg>
-        </div>
-        </div>
-            
-    </header>
-    <main>
+     <!--BARRA DE ARRIBA-->
+    <body>
+        <header>
+            <nav class="Barra-Arriba">
+                <ul>
+                    <a class="control" >🎮</a>   
+                    <a href="../index.html" class="marco"> Home</a>
+                    <a href="../page/nosotros.html" class="marco"> Nosotros</a>
+                    <a href="../page/contacto.html" class="marco"> Contacto</a>
+                    <a href="../page/Tiendahtml/tienda.html" class="marco"> Tienda</a>
+                </ul>
+            </nav>
+        </header>
 
-    </main>
-    <footer>
+        <main>
 
-    </footer>
 
+            <!--Carta Perfil-->
+            <div class="card">
+            <div class="card__img">
+                <img src="../image/banner.webp" alt="fondo perfil">
+            </div>
+            <div class="card__avatar">
+                <img src="../image/user.png" >
+            </div>
+            <div class="card__title">
+                <span id="nombreTitulo"></span>
+            </div>
+            <div class="card__subtitle">Cliente</div>
+            </div>
+       
+
+
+         
+            <!--Menu-->
+            <div class="Menu">
+                <a class="Menub">RUN: <span id="runDisplay"></span></a>
+                <a class="Menub">NOMBRE: <span id="nombreDisplay"></span></a>
+                <a class="Menub">CORREO ELECTRONICO: <span id="correoDisplay"></span></a>
+                <a class="Menub">CLAVE: <span id="claveDisplay"></span></a>
+                <a class="Menub">FECHA DE NACIMIENTO: <span id="fechaDisplay"></span></a>
+                <a class="Menub">PUNTOS: <span id="puntosDisplay"></span></a>
+            </div>
+
+        </main>
+    </body>
+    
     <link rel="stylesheet" href="../css/Perfilcss/Perfil.css">
+    <script src="../js/perfil.js"></script>
+    <script src="../js/puntos.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</html>

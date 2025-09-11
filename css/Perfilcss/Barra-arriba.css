@@ -1,23 +1,13 @@
+
 /*BARRA DE ARRRIBA*/
-
-.control:hover{
-    animation: spin 0.5s linear infinite;
-}
-
-#perfilb{
-    margin-left: 1250px;
-}
-
-
 .Barra-Arriba{
-    align-items: center;
     background-color: black;
     padding: 10px;
     display: flex;
     justify-content: left;
     gap: 15px;
     animation: luz 3s infinite;
-    text-decoration: none;
+    
 }
 
 .marco{
@@ -40,13 +30,3 @@
     75%  { box-shadow: 0 0 10px #ff00ff; }
     100% { box-shadow: 0 0 10px #ff0000; }
 }
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
