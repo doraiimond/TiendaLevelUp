@@ -6,4 +6,6 @@ const Home = () => {
         <UserForm />
         
     </div>
-}
+};
+
+export default Home;
