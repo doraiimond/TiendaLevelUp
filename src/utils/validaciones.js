@@ -1,17 +1,17 @@
 //Validación del correo
-function validarCorreo(correo) {
+export function validarCorreo(correo) {
     const regex = /^[\w.+-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/i;
     return regex.test(correo);
 }
 
 //Validación del run
-function validarRun(run) {
+export function validarRun(run) {
     const regex = /^[0-9]{8}[0-9K]$/;
     return regex.test(run);
 }
 
 //Validación de edad minima 18 años
-function esMayorEdad(fecha) {
+export function esMayorEdad(fecha) {
     const hoy = new Date();
     const fechaNacimiento = new Date(fecha);
     let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
