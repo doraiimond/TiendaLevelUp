@@ -1,53 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-</head>
-<body>
-    <header>
-        <h1>Bienvenido a LEVEL UP</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="assets/page/nosotros.html">Sobre Nosotros</a></li>
-            <li><a href="assets/page/contacto.html">Contacto</a></li>
-            <li><a href="assets/page/carrito.html" > <i class="bi bi-cart3"></i>Carrito()</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section>
-            <form id="formUsuario">
-                <!--RUN-->
-                <label>RUN (sin punto ni guión):</label><br> <!--label se usa para etiquetar los inputs-->
-                <input type="text" id="run" minlength="7" maxlength="9" required><br><br> <!--required es para que sea obligatorio-->
-                <!--Nombre-->
-                <label for="nombre">Nombre:</label><br>
-                <input type="text" id="nombre" name="nombre" maxlength="100" required> <br><br>
-                <!--Correo-->
-                <label for="correo">Correo:</label><br>
-                <input type="email" id="correo" name="correo" maxlength="100" required><br><br>
-                <!--Clave-->
-                <label for="clave">Clave:</label><br>
-                <input type="password" id="clave" name="clave" minlength="4" maxlength="10" required> <br><br>
-                <!--Fecha-->
-                <label for="nombre">Fecha:</label><br>
-                <input type="date" required> <br><br>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LEVEL UP</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-                <button type="submit">Enviar</button>
+        <style>
+            body{
+                background-color: black;
+            }
+        </style>    
+    </head>
+    <body>
+        <header>
+            
+            <nav class="Barra-Arriba">
+                <ul>
+                    <a>🎮</a>
+                    <a href="assets/page/tienda.html" class="marco"> Tienda</a>
+                    <a href="index.html" class="marco"> Home</a>
+                    <a href="assets/page/nosotros.html" class="marco"> Nosotros</a>
+                    <a href="assets/page/contacto.html"class="marco"> Contacto</a>
+                    <a href="assets/page/login.html"class="marco"> Login</a>
+                    <a href="assets/page/catalogo.html"class="marco"> catalogo</a>
+                    <a href="assets/page/carrito.html"class="marco"><i class="bi bi-cart3"></i> Carrito(0) </a>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <form id="formUsuario">
+                    <div class="Cuadro-Reg">
+                        <!--RUN-->
+                        <label>RUN</label><br>
+                        <input type="text" id="run" minlength="7" maxlength="9" required><br><br>
 
-                <p id="mensaje" style="color:cadetblue"></p>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Mi Página</p>
-    </footer>
-    <script src="assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+                        <!--Nombre-->
+                        <label>Nombre</label><br>
+                        <input type="text" id="nombre" maxlength="100" required><br><br>
+
+                        <!--Correo-->
+                        <label>Correo</label><br>
+                        <input type="email" id="correo" maxlength="100" required> <br> <br>
+
+                        <!--Clave-->
+                        <label>Clave</label><br>
+                        <input type="password" id="clave" minlength="4" maxlength="10" required><br><br>
+
+                        <!--Fecha Nacimiento-->
+                        <label>Fecha de Nacimiento</label><br>
+                        <input type="date" id="fecha" required><br><br>
+                        
+                        <!--Botón Enviar-->
+                        <button type="submit">Enviar</button>
+
+                        <!--Mensaje-->
+                        <p id="mensaje" style="color:crimson"></p>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <a href="https://www.instagram.com/duocuc_cl/">Instagram</a>
+            <p>&copy; 2025 Tiend Online </p>
+        </footer>
+        <script src="assets/js/validaciones.js"></script>
+        <link rel="stylesheet" href="assets/css/Indexcss/index.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
 </html>

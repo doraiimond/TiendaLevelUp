@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog de Novedades</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #111;
+            color: #eee;
+        }
+        .blog-card {
+            background: #1c1c1c;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .blog-card:hover {
+            background: #222;
+            transform: scale(1.02);
+        }
+        .blog-card h3 {
+            color: #0dcaf0;
+        }
+
+        /* ⭐ Estilos para el sistema de estrellas */
+        .stars {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .star {
+            font-size: 28px;
+            color: #555;
+            cursor: pointer;
+            transition: color 0.3s, transform 0.2s;
+            margin: 0 3px;
+        }
+        .star:hover {
+            transform: scale(1.2);
+        }
+        .star.active,
+        .star:hover,
+        .star:hover ~ .star {
+            color: #ffc107; /* amarillo neón */
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-dark p-3 text-center">
+        <h1 class="text-light">📰 Blog de Novedades</h1>
+        <a href="../../TiendaLevelUp/page/Tiendahtml/tienda.html" class="btn btn-outline-light mt-2">⬅ Volver a la Tienda</a>
+    </header>
+
+    <main class="container mt-4">
+        <div class="blog-card">
+            <h3>Hollow Knight Silksong provoca una avalancha: se caen todas las tiendas de Steam, eShop de Switch 2, Store de PS5</h3>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs3KH6j382c3KxuokaS3JLZmelvrZUmD_ogg&s" alt="Hollow Knight Silksong" class="noticia-img">
+            <p>A las 16:00 de este 4 de septiembre ocurrió lo inevitable. Hollow Knight Silksong se ha publicado finalmente, pero nadie puede comprarlo. 
+                ¿El motivo? La avalancha de gente ha provocado que Steam, la Nintendo eShop de Switch 2, la Store de PlayStation y la Microsoft Store de Xbox se caigan al mismo tiempo. 
+                Os mantendremos informados de cuando vuelvan</p>
+            <div class="stars">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <h3>“GTA VI será un juego AAAAA”: veterano cree que nada igualará el enorme impacto del título de Rockstar Games</h3>
+            <img src="https://alfabetajuega.com/hero/2025/05/gta6.1747223093.7085.jpg?width=768&aspect_ratio=16:9&format=nowebp" alt="GTA VI" class="noticia-img">
+            <p>Sí, Hollow Knight: Silksong rompió el Internet luego de su exitoso lanzamiento, pero algo mucho más grande viene en camino. Por supuesto, nos referimos a GTA VI, el nuevo juego de Rockstar Games que se ha convertido en el producto de entretenimiento más esperado de los últimos años. 
+                Tendrá tanto impacto y será tan relevante que hay quienes creen que GTA VI será un juego AAAAA.</p>
+            <div class="stars">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <h3>Luego de 3 años de su anuncio, la serie live-action de God of War pronto comenzará su filmación, según rumor</h3>
+            <img src="https://i.blogs.es/fbb969/god-of-war-ragnarok-lowest-price-1/500_333.jpeg" alt="GTA VI" class="noticia-img">
+            <p>Aunque las noticias en torno a la serie live-action de God of War no han sido tantas como a los fans les gustaría, es normal este vacío dado la etapa temprana de la producción, pero las buenas noticias son que progresa favorablemente y al parecer muy pronto comenzará a filmarse.
+                En unos cuantos meses se cumplirán 3 años desde el anuncio de la asociación de Sony Pictures Television, PlayStation Productions y SIE Santa Monica Studio para producir una serie live-action de God of War.</p>
+            <div class="stars">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center p-3 mt-5 bg-dark text-light">
+        © 2025 Tienda Gamer - Todos los derechos reservados
+    </footer>
+    <script>
+        document.querySelectorAll('.stars').forEach(starContainer => {
+            const stars = starContainer.querySelectorAll('.star');
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    stars.forEach(s => s.classList.remove('active'));
+                    for (let i = 0; i <= index; i++) {
+                        stars[i].classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

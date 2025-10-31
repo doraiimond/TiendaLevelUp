@@ -1,0 +1,7 @@
+#Poster {
+  
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+}

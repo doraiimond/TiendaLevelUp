@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+</head>
+<body>
+  <main>
+    <form id="formLogin">
+      <label>Correo:</label><br>
+      <input type="email" id="correoLogin" required><br><br>
+
+      <label>Clave:</label><br>
+      <input type="password" id="claveLogin" required><br><br>
+
+      <button type="submit">Ingresar</button>
+      <p id="mensajeLogin" style="color:brown"></p>
+    </form>
+  </main>
+
+  <!-- Firebase v8 -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+<!-- Tu login.js -->
+<script src="../../assets/js/login.js"></script>
+
+
+
+</body>
+</html>

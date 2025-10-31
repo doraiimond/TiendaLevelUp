@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>         
+        <meta charset="UTF-8">
+        <link rel="icon" href="image/logo.png" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <style>
+            body{
+                  background-color: black;
+            }
+        </style>
+    </head>
+
+     <!--BARRA DE ARRIBA-->
+    <body>
+        <header>
+            <nav class="Barra-Arriba">
+                <ul>
+                    <a class="control" >🎮</a>   
+                    <a href="../page/blogs.html" class="marco"> blogs</a>
+
+                    <a href="../page/carrito.html" class="marco"><i class="bi bi-cart3"></i> Carrito(0) </a>
+                    <a id="perfilb" href="../page/perfilCliente.html" class="marco">PERFIL</a>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+            <div class="Posteraa">
+                <h2 class="text-center text-light mb-4">✨ OFERTAS ✨</h2>
+                <!-- Poster Ofertas -->
+                <div id="Poster" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#Poster" data-bs-slide-to="0" class="active" aria-label="Item 1"></button>
+                        <button type="button" data-bs-target="#Poster" data-bs-slide-to="1" aria-label="Item 2"></button>
+                        <button type="button" data-bs-target="#Poster" data-bs-slide-to="2" aria-label="Item 3"></button>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../image/silkgod.avif" class="d-block w-100" alt="Imagen del Item 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../image/sekiro.jpg" class="d-block w-100" alt="Imagen del Item 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../image/boderland.jpg" class="d-block w-100" alt="Imagen del Item 3">
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#Poster" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Flecha Izquierda</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#Poster" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Flecha Derecha</span>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Catálogo -->
+            <div class="container mt-4">
+                <div class="row">
+                    <h2 class="text-center text-light mb-4">✨ CATALOGO ✨</h2>
+                    <!-- item1 -->         
+                     <div class="col-md-4">
+                        <div class="carditem">
+                            <img class="card-imagen" src="../image/+ 2 juegos.jpg" alt="Juego">                
+                            <div class="card-body">
+                                <h5>Sony Consola PlayStation®5 Slim Standard + 2 Juegos</h5>
+                                <p>$699.990</p>
+                            </div> 
+                        </div>                        
+                    </div>    
+
+                    <!-- item2 -->         
+                    <div class="col-md-4">
+                        <div class="carditem">
+                            <img class="card-imagen" src="../image/pc.webp" alt="Juego">                
+                            <div class="card-body">
+                                <h5>COMPUTADORA GAMER COMPLETA RYZEN 7 5700G 16 GB SSD 480 + MONITOR 22'' PHILIPS</h5>
+                                <p>$879.000</p>
+                            </div> 
+                        </div>                        
+                    </div>    
+                    
+                    <!-- item3 -->         
+                    <div class="col-md-4">
+                        <div class="carditem">
+                            <img class="card-imagen" src="../image/kit.jpg" alt="Juego">                
+                            <div class="card-body">
+                                <h5>Kit Pro Gamer Mouse Teclado Rgb Audifonos Y Mouse Pad K4125</h5>
+                                <p>$49.990</p>
+                            </div> 
+                        </div>                        
+                    </div>     
+
+                </div>
+            </div>
+            
+            <!-- BLOG ANUNCIO -->
+            <div class="container mt-5">
+                <h2 class="text-center text-light mb-4">✨ Novedades ✨</h2>
+            
+                <!-- Botón que lleva al blog -->
+                <div class="text-center mb-4">
+                    <a href="../page/blogs.html" class="marco"> blogs</a>
+                </div>
+            
+                <div class="row">
+                <!-- Novedad 1 -->
+                <div class="col-md-4">
+                    <div class="carditem">
+                            <img class="card-imagen" src="../image/Borderlands-4-gratis-NVIDIA-PC.webp" alt="Novedad 1">
+                            <div class="card-body">
+                                <h5>Gratis: NVIDIA regala copias de Borderlands 4 a los jugadores de PC que cumplan con esta condición</h5>
+                                <a href="../page/blogs.html" class="shadow__btn"> blogs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                    <!-- Novedad 2 -->
+                    <div class="col-md-4">
+                        <div class="carditem">
+                            <img class="card-imagen" src="../image/Steam-gratis.jpg" alt="Novedad 2">
+                            <div class="card-body">
+                                <h5>Gratis: las rebajas de verano de Steam llegaron con 9 fabulosos regalos para todos los jugadores de PC</h5>
+                                <a href="../page/blogs.html" class="shadow__btn"> blogs</a>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Novedad 3 -->
+                    <div class="col-md-4">
+                        <div class="carditem">
+                            <img class="card-imagen" src="../image/portada-mobile-v2.jpg" alt="Novedad 3">
+                            <div class="card-body">
+                                <h5>FESTIGAME CAJA LOS ANDES 2025 - EL FESTIVAL DE VIDEOJUEGOS MÁS GRANDE DE CHILE</h5>
+                                <a href="../page/blogs.html" class="shadow__btn"> blogs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Menu-->
+            <div class="Menu">
+                <a class="Menub" href="../page/catalogo.html">JUEGOS DE MESA</a>
+                <a class="Menub" href="../page/catalogo.html">ACCEDORIOS</a>
+                <a class="Menub" href="../page/catalogo.html">CONSOLAS</a>
+                <a class="Menub" href="../page/catalogo.html">PCs</a>
+                <a class="Menub" href="../page/catalogo.html">ROPA</a>
+                <a class="Menub"  href="../page/catalogo.html">SILLAS GAMERS</a>
+                <a class="Menub"  href="../page/catalogo.html">MOUSES GAMERS</a>
+                <a class="Menub"  href="../page/catalogo.html">MOUSEPAD GAMERS</a>
+            </div>
+
+
+
+
+            <div class="redes">
+                <div class="card">
+                    <a class="social-link" href="../page/catalogo.html">
+                        <img src="../image/iconof.png" alt="Facebook" />
+                    </a>
+                    <a class="social-link" href="../page/catalogo.html">
+                        <img src="../image/iconox.png" alt="X" />
+                    </a>
+                    <a class="social-link" href="../page/catalogo.html">
+                        <img src="../image/iconor.png" alt="Reddit" />
+                    </a>
+                    <a class="social-link" href="../page/catalogo.html">
+                        <img src="../image/iconoi.png" alt="Instagram" />
+                    </a>                         
+                </div>     
+            </div>
+        </main>
+    </body>
+    
+    <link rel="stylesheet" href="../css/Tiendacss/tienda.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</html>

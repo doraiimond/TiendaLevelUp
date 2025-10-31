@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras - Mi Tienda</title>
+  <link rel="stylesheet" href="../css/catalogo.css">
+  <link rel="stylesheet" href="../css/Carritocss/carrito.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-top">
+      <div class="search-container">
+        <input type="text" id="buscador" placeholder="Buscar productos..." class="search-input">
+        <button id="btnBuscar" class="btn-buscar">Buscar</button>
+      </div>
+      <div class="auth-buttons">
+        <button class="btn-login">Iniciar Sesión</button>
+        <button class="btn-signup">Crear Cuenta</button>
+      </div>
+    </div>
+
+    <nav class="nav-main">
+      <div class="nav-center">
+        <a href="catalogo.html" class="nav-link">Home</a>
+        <div class="dropdown">
+          <a href="#" class="nav-link">Categoría ⌄</a>
+          <div class="dropdown-content" id="dropdownCategorias"></div>
+        </div>
+        <a href="#" class="nav-link">Ofertas</a>
+        <a href="#" class="nav-link">Nosotros</a>
+        <a href="#" class="nav-link">Blog</a>
+        <a href="#" class="nav-link">Contacto</a>
+      </div>
+      
+      <div class="nav-right">
+        <button class="btn-carrito" onclick="window.location.href='carrito.html'">
+          <span class="carrito-icon">🛒</span>
+          Total: $<span class="carrito-total">0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <div class="carrito-container">
+      <!-- Lista de Productos con Ofertas -->
+      <section class="ofertas-section">
+        <h2 class="section-title">Productos en Oferta</h2>
+        <div id="productosOferta" class="productos-grid"></div>
+      </section>
+
+      <!-- Resumen del Carrito -->
+      <section class="resumen-carrito">
+        <h2 class="section-title">Resumen del Carrito</h2>
+        
+        <!-- Tabla de productos en carrito -->
+        <div class="tabla-carrito-container">
+          <table class="tabla-carrito">
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaCarritoBody">
+              <!-- Los productos del carrito se insertarán aquí -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Total y Botones -->
+        <div class="carrito-footer">
+          <div class="total-container">
+            <span class="total-text">Total: $</span>
+            <span id="totalCarrito" class="total-precio">0</span>
+          </div>
+          <div class="botones-carrito">
+            <button id="btnLimpiarCarrito" class="btn-limpiar">Limpiar Carrito</button>
+            <button id="btnComprarAhora" class="btn-comprar-ahora">Comprar Ahora</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="../js/carrito.js"></script>
+</body>
+</html>
