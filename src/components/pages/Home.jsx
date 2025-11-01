@@ -1,11 +1,11 @@
-import UserForm from "../molecules/UserForm";
+import React from "react";
 
 const Home = () => {
-    <div>
-        <h1>Bienvenido a nuestra tienda Online</h1>
-        <UserForm />
-        
-    </div>
+    return (
+        <main>          
+            {/* Enlace que usa React Router pero carga el formulario estático */}
+            <Link to="/registro"></Link>
+        </main>
+    )
 };
-
 export default Home;

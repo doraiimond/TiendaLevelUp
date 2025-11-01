@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LEVEL UP - Login</title>
-  
+
   <!-- Íconos y Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- NAVBAR -->
   <header>
     <nav class="Barra-Arriba">
       <ul>
@@ -30,21 +30,31 @@
 
   <!-- MAIN -->
   <main>
-    <section class="login-section">
-      <form id="formLogin" class="login-box">
-        <h2>Iniciar Sesión</h2>
-        <label for="correoLogin">Correo</label>
-        <input type="email" id="correoLogin" placeholder="Ingresa tu correo" required>
+    <section>
+      <form id="formLogin">
+        <div class="Cuadro-Reg">
+          <h2 style="text-align:center;">Iniciar Sesión</h2>
 
-        <label for="claveLogin">Contraseña</label>
-        <input type="password" id="claveLogin" placeholder="Ingresa tu clave" required>
+          <!-- Correo -->
+          <label for="correoLogin">Correo</label>
+          <input type="email" id="correoLogin" placeholder="Ingresa tu correo" required><br><br>
 
-        <button type="submit" class="btn-login">Ingresar</button>
-        <p id="mensajeLogin" class="mensaje-error"></p>
+          <!-- Clave -->
+          <label for="claveLogin">Clave</label>
+          <input type="password" id="claveLogin" placeholder="Ingresa tu clave" required><br><br>
 
-        <p class="link-registro">¿No tienes cuenta? 
-          <a href="../page/registro.html">Regístrate aquí</a>
-        </p>
+          <!-- Botón -->
+          <button type="submit" class="btnLogin">Ingresar</button>
+
+          <!-- Mensaje -->
+          <p id="mensajeLogin" style="color:crimson"></p>
+
+          <!-- Enlace registro -->
+          <p style="text-align:center; margin-top:10px;">
+            ¿No tienes cuenta?
+            <a href="../page/registro.html" style="color:#00ffff;">Regístrate aquí</a>
+          </p>
+        </div>
       </form>
     </section>
   </main>
@@ -63,7 +73,7 @@
   <!-- Script del login -->
   <script src="../js/login.js"></script>
 
-  <!-- Bootstrap JS -->
+  <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

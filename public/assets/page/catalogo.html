@@ -3,69 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo - Mi Tienda</title>
+  <title>Catálogo | LEVEL UP</title>
+
+  <!-- Bootstrap Icons y CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+  <!-- Estilos personalizados -->
   <link rel="stylesheet" href="../css/catalogo.css">
+
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <style>
+    body {
+      background-color: #000;
+    }
+  </style>
 </head>
+
 <body>
   <!-- HEADER -->
-  <header class="header">
-    <!-- Línea Superior -->
-    <div class="header-top">
-      <div class="search-container">
-        <input type="text" id="buscador" placeholder="Buscar productos..." class="search-input">
-        <button id="btnBuscar" class="btn-buscar">Buscar</button>
-      </div>
-      <div class="auth-buttons">
-        <button class="btn-login">Iniciar Sesión</button>
-        <button class="btn-signup">Crear Cuenta</button>
-      </div>
-    </div>
-
-    <!-- Línea Inferior - Nav -->
-    <nav class="nav-main">
-      <div class="nav-center">
-        <a href="#" class="nav-link">Home</a>
-        <a href="../page/tienda.html" class="marco"></a>
-        <div class="dropdown">
-          <a href="#" class="nav-link">Categoría ⌄</a>
-          <div class="dropdown-content" id="dropdownCategorias"></div>
-        </div>
-        <a href="#" class="nav-link">Ofertas</a>
-        <a href="#" class="nav-link">Nosotros</a>
-        <a href="../page/nosotros.html" class="marco"></a>
-        <a href="#" class="nav-link">Blog</a>
-        <a href="../page/blogs.html" class="marco"></a>
-        <a href="#" class="nav-link">Contacto</a>
-        <a href="../page/contacto.html" class="marco"></a>
-      </div>
-      
-      <div class="nav-right">
-        <button class="btn-carrito">
-          <span class="carrito-icon">🛒</span>
-          Total: $<span class="carrito-total">0</span>
-        </button>
-      </div>
+  <header>
+    <nav class="Barra-Arriba">
+      <ul>
+        <a>🎮</a>
+        <a href="../../index.html" class="marco"> Home</a>
+        <a href="../page/tienda.html" class="marco"> Tienda</a>
+        <a href="../page/nosotros.html" class="marco"> Nosotros</a>
+        <a href="../page/contacto.html" class="marco"> Contacto</a>
+        <a href="../page/login.html" class="marco"> Login</a>
+        <a href="../page/catalogo.html" class="marco"> Catálogo</a>
+        <a href="../page/carrito.html" class="marco"><i class="bi bi-cart3"></i> Carrito(0)</a>
+      </ul>
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <main class="main">
-    <!-- CARDS DE CATEGORÍAS -->
+    <!-- Buscador -->
+    <section class="buscador-section">
+      <div class="search-container">
+        <input type="text" id="buscador" placeholder="Buscar productos..." class="search-input">
+        <button id="btnBuscar" class="btn-buscar"><i class="bi bi-search"></i> Buscar</button>
+      </div>
+    </section>
+
+    <!-- Categorías -->
     <section class="categorias-section">
       <h2 class="section-title">Categorías</h2>
-       <button id="btnVerTodos" class="btn-ver-todos">Todos los productos</button>
+      <button id="btnVerTodos" class="btn-ver-todos"><i class="bi bi-grid-3x3-gap"></i> Ver todos</button>
       <div id="cardsCategorias" class="categorias-grid"></div>
     </section>
 
-    <!-- PRODUCTOS -->
+    <!-- Productos -->
     <section class="productos-section">
       <h2 id="tituloProductos" class="section-title">Todos los Productos</h2>
       <div id="productosGrid" class="productos-grid"></div>
     </section>
   </main>
 
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 LEVEL UP | Todos los derechos reservados 🎮</p>
+      <a href="https://www.instagram.com/duocuc_cl/" target="_blank" class="footer-link">
+        <i class="bi bi-instagram"></i> Instagram
+      </a>
+    </div>
+  </footer>
+
+  <!-- Script JS -->
   <script src="../js/catalogo.js"></script>
 </body>
 </html>

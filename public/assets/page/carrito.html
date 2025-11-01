@@ -1,70 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrito de Compras - Mi Tienda</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito | LEVEL UP</title>
+
+  <!-- ICONOS Y ESTILOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/catalogo.css">
   <link rel="stylesheet" href="../css/Carritocss/carrito.css">
+
+  <!-- FIREBASE -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
 <body>
   <!-- HEADER -->
-  <header class="header">
-    <div class="header-top">
-      <div class="search-container">
-        <input type="text" id="buscador" placeholder="Buscar productos..." class="search-input">
-        <button id="btnBuscar" class="btn-buscar">Buscar</button>
-      </div>
-      <div class="auth-buttons">
-        <button class="btn-login">Iniciar Sesión</button>
-        <button class="btn-signup">Crear Cuenta</button>
-      </div>
-    </div>
-
-    <nav class="nav-main">
-      <div class="nav-center">
-        <a href="catalogo.html" class="nav-link">Home</a>
-        <div class="dropdown">
-          <a href="#" class="nav-link">Categoría ⌄</a>
-          <div class="dropdown-content" id="dropdownCategorias"></div>
-        </div>
-        <a href="#" class="nav-link">Ofertas</a>
-        <a href="#" class="nav-link">Nosotros</a>
-        <a href="#" class="nav-link">Blog</a>
-        <a href="#" class="nav-link">Contacto</a>
-      </div>
-      
-      <div class="nav-right">
-        <button class="btn-carrito" onclick="window.location.href='carrito.html'">
-          <span class="carrito-icon">🛒</span>
-          Total: $<span class="carrito-total">0</span>
-        </button>
-      </div>
+  <header>
+    <nav class="Barra-Arriba">
+      <ul>
+        <a>🎮</a>
+        <a href="../../index.html" class="marco"> Home</a>
+        <a href="../page/catalogo.html" class="marco"> Catálogo</a>
+        <a href="../page/tienda.html" class="marco"> Tienda</a>
+        <a href="../page/nosotros.html" class="marco"> Nosotros</a>
+        <a href="../page/contacto.html" class="marco"> Contacto</a>
+        <a href="../page/login.html" class="marco"> Login</a>
+        <a href="../page/carrito.html" class="marco activo"><i class="bi bi-cart3"></i> Carrito</a>
+      </ul>
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <main class="main">
     <div class="carrito-container">
-      <!-- Lista de Productos con Ofertas -->
+      <!-- SECCIÓN DE PRODUCTOS EN OFERTA -->
       <section class="ofertas-section">
-        <h2 class="section-title">Productos en Oferta</h2>
+        <h2 class="section-title">🔥 Productos en Oferta 🔥</h2>
         <div id="productosOferta" class="productos-grid"></div>
       </section>
 
-      <!-- Resumen del Carrito -->
+      <!-- SECCIÓN DE CARRITO -->
       <section class="resumen-carrito">
-        <h2 class="section-title">Resumen del Carrito</h2>
+        <h2 class="section-title">🛒 Tu Carrito</h2>
         
-        <!-- Tabla de productos en carrito -->
         <div class="tabla-carrito-container">
           <table class="tabla-carrito">
             <thead>
               <tr>
                 <th>Imagen</th>
-                <th>Nombre</th>
+                <th>Producto</th>
                 <th>Precio</th>
                 <th>Cantidad</th>
                 <th>Subtotal</th>
@@ -72,26 +58,37 @@
               </tr>
             </thead>
             <tbody id="tablaCarritoBody">
-              <!-- Los productos del carrito se insertarán aquí -->
+              <!-- Productos cargados dinámicamente -->
             </tbody>
           </table>
         </div>
 
-        <!-- Total y Botones -->
         <div class="carrito-footer">
           <div class="total-container">
             <span class="total-text">Total: $</span>
             <span id="totalCarrito" class="total-precio">0</span>
           </div>
+
           <div class="botones-carrito">
-            <button id="btnLimpiarCarrito" class="btn-limpiar">Limpiar Carrito</button>
-            <button id="btnComprarAhora" class="btn-comprar-ahora">Comprar Ahora</button>
+            <button id="btnLimpiarCarrito" class="btn-limpiar"><i class="bi bi-trash"></i> Limpiar</button>
+            <button id="btnComprarAhora" class="btn-comprar-ahora"><i class="bi bi-bag-check"></i> Comprar Ahora</button>
           </div>
         </div>
       </section>
     </div>
   </main>
 
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 LEVEL UP | Todos los derechos reservados 🎮</p>
+      <a href="https://www.instagram.com/duocuc_cl/" target="_blank" class="footer-link">
+        <i class="bi bi-instagram"></i> Instagram
+      </a>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
   <script src="../js/carrito.js"></script>
 </body>
 </html>
