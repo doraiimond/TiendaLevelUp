@@ -271,4 +271,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.getCarrito = () => carrito;
   
     console.log("Catálogo inicializado correctamente");
+  
   });

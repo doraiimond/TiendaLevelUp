@@ -1,0 +1,103 @@
+/* Fondo general */
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.Barra-Arriba {
+  background-color: #111;
+  padding: 15px;
+  text-align: center;
+}
+
+.Barra-Arriba ul a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.Barra-Arriba ul a:hover {
+  color: #00ffff;
+}
+
+/* CUADRO DE LOGIN */
+.Cuadro-Reg {
+  background-color: black;
+  padding: 20px 30px;
+  border-radius: 15px;
+  color: white;
+  max-width: 400px;
+  margin: 100px auto;
+  animation: luz 3s infinite;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+/* Etiquetas */
+.Cuadro-Reg label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Inputs */
+.Cuadro-Reg input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #222;
+  color: white;
+}
+
+.Cuadro-Reg input:focus {
+  outline: 1px solid #00ffff;
+}
+
+/* Botón de login */
+.btnLogin {
+  width: 100%;
+  background-color: #00ffff;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.btnLogin:hover {
+  background-color: #00cccc;
+}
+
+/* Animación de luces */
+@keyframes luz {
+  0%   { box-shadow: 0 0 15px #ff0000; }
+  25%  { box-shadow: 0 0 15px #00ff00; }
+  50%  { box-shadow: 0 0 15px #0000ff; }
+  75%  { box-shadow: 0 0 15px #ff00ff; }
+  100% { box-shadow: 0 0 15px #ff0000; }
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

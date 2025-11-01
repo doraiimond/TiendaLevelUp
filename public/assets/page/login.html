@@ -1,33 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEVEL UP - Login</title>
+  
+  <!-- Íconos y Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
+  <!-- HEADER -->
+  <header>
+    <nav class="Barra-Arriba">
+      <ul>
+        <a>🎮</a>
+        <a href="../../index.html" class="marco">Home</a>
+        <a href="../page/tienda.html" class="marco">Tienda</a>
+        <a href="../page/nosotros.html" class="marco">Nosotros</a>
+        <a href="../page/contacto.html" class="marco">Contacto</a>
+        <a href="../page/catalogo.html" class="marco">Catálogo</a>
+        <a href="../page/carrito.html" class="marco"><i class="bi bi-cart3"></i> Carrito (0)</a>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
   <main>
-    <form id="formLogin">
-      <label>Correo:</label><br>
-      <input type="email" id="correoLogin" required><br><br>
+    <section class="login-section">
+      <form id="formLogin" class="login-box">
+        <h2>Iniciar Sesión</h2>
+        <label for="correoLogin">Correo</label>
+        <input type="email" id="correoLogin" placeholder="Ingresa tu correo" required>
 
-      <label>Clave:</label><br>
-      <input type="password" id="claveLogin" required><br><br>
+        <label for="claveLogin">Contraseña</label>
+        <input type="password" id="claveLogin" placeholder="Ingresa tu clave" required>
 
-      <button type="submit">Ingresar</button>
-      <p id="mensajeLogin" style="color:brown"></p>
-    </form>
+        <button type="submit" class="btn-login">Ingresar</button>
+        <p id="mensajeLogin" class="mensaje-error"></p>
+
+        <p class="link-registro">¿No tienes cuenta? 
+          <a href="../page/registro.html">Regístrate aquí</a>
+        </p>
+      </form>
+    </section>
   </main>
 
-  <!-- Firebase v8 -->
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <!-- FOOTER -->
+  <footer>
+    <a href="https://www.instagram.com/duocuc_cl/">Instagram</a>
+    <p>&copy; 2025 LEVEL UP</p>
+  </footer>
 
-<!-- Tu login.js -->
-<script src="../../assets/js/login.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
+  <!-- Script del login -->
+  <script src="../js/login.js"></script>
 
-
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
