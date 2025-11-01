@@ -1,2 +1,65 @@
-<h1 id="bienvenido"></h1>
-    <script src="../js/saludo.js"></script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil del Administrador - LEVEL UP</title>
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.min.css">
+</head>
+<body class="admin-body">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2 class="logo">LEVEL <span>UP</span></h2>
+    <nav>
+      <a href="index.html"><i class="bi bi-speedometer2"></i> Dashboard</a>
+      <a href="productos.html"><i class="bi bi-box-seam"></i> Productos</a>
+      <a href="usuarios.html"><i class="bi bi-people"></i> Usuarios</a>
+      <a href="reportes.html"><i class="bi bi-bar-chart"></i> Reportes</a>
+      <a href="perfilAdmin.html" class="active"><i class="bi bi-person-circle"></i> Perfil</a>
+    </nav>
+    <button class="btn-salir"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</button>
+  </aside>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content">
+    <header class="admin-header">
+      <h1>Perfil del Administrador</h1>
+      <p>Gestiona tu cuenta y la información del sistema LEVEL UP</p>
+    </header>
+
+    <section class="perfil-container">
+      <div class="perfil-card">
+        <img src="../img/admin-profile.png" alt="Foto de perfil del admin" class="perfil-img">
+
+        <h2 class="perfil-nombre">Robinson Contreras</h2>
+        <p class="perfil-rol">Administrador General</p>
+
+        <div class="perfil-info">
+          <p><i class="bi bi-envelope"></i> admin@levelup.com</p>
+          <p><i class="bi bi-telephone"></i> +56 9 9999 9999</p>
+          <p><i class="bi bi-geo-alt"></i> Santiago, Chile</p>
+        </div>
+
+        <button class="btn-editar"><i class="bi bi-pencil"></i> Editar Perfil</button>
+      </div>
+
+      <div class="estadisticas-card">
+        <h3>Actividad Reciente</h3>
+        <ul>
+          <li><i class="bi bi-check-circle-fill"></i> Se agregaron 10 nuevos productos</li>
+          <li><i class="bi bi-person-plus-fill"></i> 3 nuevos usuarios registrados</li>
+          <li><i class="bi bi-bag-fill"></i> 15 compras completadas</li>
+        </ul>
+
+        <h3>Configuraciones</h3>
+        <div class="config-opciones">
+          <button class="btn-config"><i class="bi bi-shield-lock"></i> Cambiar Contraseña</button>
+          <button class="btn-config"><i class="bi bi-bell"></i> Notificaciones</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,119 +1,215 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Blog de Novedades</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #111;
-            color: #eee;
-        }
-        .blog-card {
-            background: #1c1c1c;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: 0.3s;
-        }
-        .blog-card:hover {
-            background: #222;
-            transform: scale(1.02);
-        }
-        .blog-card h3 {
-            color: #0dcaf0;
-        }
+  <meta charset="UTF-8">
+  <title>Blog de Novedades | LEVEL UP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
 
-        /* ⭐ Estilos para el sistema de estrellas */
-        .stars {
-            display: flex;
-            justify-content: center;
-            margin-top: 15px;
-        }
-        .star {
-            font-size: 28px;
-            color: #555;
-            cursor: pointer;
-            transition: color 0.3s, transform 0.2s;
-            margin: 0 3px;
-        }
-        .star:hover {
-            transform: scale(1.2);
-        }
-        .star.active,
-        .star:hover,
-        .star:hover ~ .star {
-            color: #ffc107; /* amarillo neón */
-        }
-    </style>
+    body {
+      background-color: #0a0a0a;
+      color: #f2f2f2;
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 🔹 ENCABEZADO NEÓN */
+    header {
+      background: linear-gradient(90deg, #ff0000, #6f00ff, #00ffff);
+      background-size: 400% 400%;
+      animation: neonMove 6s ease infinite;
+      text-align: center;
+      padding: 40px 20px;
+      color: white;
+      box-shadow: 0 0 25px #ff004c;
+    }
+
+    @keyframes neonMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px #00ffff;
+    }
+
+    header .btn-volver {
+      background-color: transparent;
+      border: 2px solid #00ffff;
+      color: #00ffff;
+      padding: 8px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    header .btn-volver:hover {
+      background-color: #00ffff;
+      color: #000;
+      box-shadow: 0 0 15px #00ffff;
+    }
+
+    /* 🔸 CONTENEDOR */
+    main.container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 50px auto;
+    }
+
+    /* 🔹 TARJETAS DE BLOG */
+    .blog-card {
+      background: #111;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 35px;
+      box-shadow: 0 0 15px #ff004c33;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px #ff004c;
+    }
+
+    .blog-card h3 {
+      color: #ff004c;
+      text-shadow: 0 0 10px #ff004c;
+      font-size: 1.5em;
+    }
+
+    .blog-card p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .blog-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 15px 0;
+      box-shadow: 0 0 10px #6f00ff77;
+    }
+
+    /* ⭐ SISTEMA DE ESTRELLAS */
+    .stars {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    .star {
+      font-size: 28px;
+      color: #333;
+      cursor: pointer;
+      margin: 0 3px;
+      transition: 0.3s;
+      text-shadow: 0 0 5px #000;
+    }
+
+    .star:hover {
+      transform: scale(1.2);
+      color: #ffea00;
+      text-shadow: 0 0 10px #ffea00;
+    }
+
+    .star.active {
+      color: #ffea00;
+      text-shadow: 0 0 15px #ffea00;
+    }
+
+    /* 🔻 FOOTER */
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #333;
+      color: #888;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+    }
+
+    footer span {
+      color: #ff004c;
+    }
+
+  </style>
 </head>
 <body>
-    <header class="bg-dark p-3 text-center">
-        <h1 class="text-light">📰 Blog de Novedades</h1>
-        <a href="../../TiendaLevelUp/page/Tiendahtml/tienda.html" class="btn btn-outline-light mt-2">⬅ Volver a la Tienda</a>
-    </header>
 
-    <main class="container mt-4">
-        <div class="blog-card">
-            <h3>Hollow Knight Silksong provoca una avalancha: se caen todas las tiendas de Steam, eShop de Switch 2, Store de PS5</h3>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs3KH6j382c3KxuokaS3JLZmelvrZUmD_ogg&s" alt="Hollow Knight Silksong" class="noticia-img">
-            <p>A las 16:00 de este 4 de septiembre ocurrió lo inevitable. Hollow Knight Silksong se ha publicado finalmente, pero nadie puede comprarlo. 
-                ¿El motivo? La avalancha de gente ha provocado que Steam, la Nintendo eShop de Switch 2, la Store de PlayStation y la Microsoft Store de Xbox se caigan al mismo tiempo. 
-                Os mantendremos informados de cuando vuelvan</p>
-            <div class="stars">
-                <span class="star" data-value="1">★</span>
-                <span class="star" data-value="2">★</span>
-                <span class="star" data-value="3">★</span>
-                <span class="star" data-value="4">★</span>
-                <span class="star" data-value="5">★</span>
-            </div>
-        </div>
+  <header>
+    <h1>📰 BLOG LEVEL UP</h1>
+    <a href="../../TiendaLevelUp/page/Tiendahtml/tienda.html" class="btn-volver">⬅ Volver a la Tienda</a>
+  </header>
 
-        <div class="blog-card">
-            <h3>“GTA VI será un juego AAAAA”: veterano cree que nada igualará el enorme impacto del título de Rockstar Games</h3>
-            <img src="https://alfabetajuega.com/hero/2025/05/gta6.1747223093.7085.jpg?width=768&aspect_ratio=16:9&format=nowebp" alt="GTA VI" class="noticia-img">
-            <p>Sí, Hollow Knight: Silksong rompió el Internet luego de su exitoso lanzamiento, pero algo mucho más grande viene en camino. Por supuesto, nos referimos a GTA VI, el nuevo juego de Rockstar Games que se ha convertido en el producto de entretenimiento más esperado de los últimos años. 
-                Tendrá tanto impacto y será tan relevante que hay quienes creen que GTA VI será un juego AAAAA.</p>
-            <div class="stars">
-                <span class="star" data-value="1">★</span>
-                <span class="star" data-value="2">★</span>
-                <span class="star" data-value="3">★</span>
-                <span class="star" data-value="4">★</span>
-                <span class="star" data-value="5">★</span>
-            </div>
-        </div>
+  <main class="container">
+    <div class="blog-card">
+      <h3>⚔️ Hollow Knight Silksong provoca una avalancha global</h3>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs3KH6j382c3KxuokaS3JLZmelvrZUmD_ogg&s" alt="Hollow Knight Silksong">
+      <p>A las 16:00 de este 4 de septiembre ocurrió lo inevitable. Hollow Knight Silksong se ha publicado finalmente, pero nadie puede comprarlo. 
+      La avalancha de jugadores provocó la caída simultánea de Steam, eShop, PlayStation Store y Xbox Live. 🌀</p>
+      <div class="stars">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+    </div>
 
-        <div class="blog-card">
-            <h3>Luego de 3 años de su anuncio, la serie live-action de God of War pronto comenzará su filmación, según rumor</h3>
-            <img src="https://i.blogs.es/fbb969/god-of-war-ragnarok-lowest-price-1/500_333.jpeg" alt="GTA VI" class="noticia-img">
-            <p>Aunque las noticias en torno a la serie live-action de God of War no han sido tantas como a los fans les gustaría, es normal este vacío dado la etapa temprana de la producción, pero las buenas noticias son que progresa favorablemente y al parecer muy pronto comenzará a filmarse.
-                En unos cuantos meses se cumplirán 3 años desde el anuncio de la asociación de Sony Pictures Television, PlayStation Productions y SIE Santa Monica Studio para producir una serie live-action de God of War.</p>
-            <div class="stars">
-                <span class="star" data-value="1">★</span>
-                <span class="star" data-value="2">★</span>
-                <span class="star" data-value="3">★</span>
-                <span class="star" data-value="4">★</span>
-                <span class="star" data-value="5">★</span>
-            </div>
-        </div>
-    </main>
+    <div class="blog-card">
+      <h3>🚗 GTA VI redefine el concepto de videojuego AAAAA</h3>
+      <img src="https://alfabetajuega.com/hero/2025/05/gta6.1747223093.7085.jpg?width=768&aspect_ratio=16:9&format=nowebp" alt="GTA VI">
+      <p>Rockstar Games promete que GTA VI será el título más ambicioso de la historia. 
+      Con una inversión récord y un mapa vivo, el juego aspira a cambiar la industria para siempre. 
+      Muchos ya lo llaman el primer juego “AAAAA” de la historia. 💥</p>
+      <div class="stars">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+    </div>
 
-    <footer class="text-center p-3 mt-5 bg-dark text-light">
-        © 2025 Tienda Gamer - Todos los derechos reservados
-    </footer>
-    <script>
-        document.querySelectorAll('.stars').forEach(starContainer => {
-            const stars = starContainer.querySelectorAll('.star');
-            stars.forEach((star, index) => {
-                star.addEventListener('click', () => {
-                    stars.forEach(s => s.classList.remove('active'));
-                    for (let i = 0; i <= index; i++) {
-                        stars[i].classList.add('active');
-                    }
-                });
-            });
+    <div class="blog-card">
+      <h3>🔥 God of War live-action: la filmación está por comenzar</h3>
+      <img src="https://i.blogs.es/fbb969/god-of-war-ragnarok-lowest-price-1/500_333.jpeg" alt="God of War Serie">
+      <p>Tras años de desarrollo, la adaptación de God of War por Amazon Prime iniciará su rodaje este invierno. 
+      Cory Barlog supervisará la producción, prometiendo una experiencia épica que honrará la mitología del juego. ⚡</p>
+      <div class="stars">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 <span>LEVEL UP</span> | Tu mundo gamer en evolución constante 🎮
+  </footer>
+
+  <script>
+    // Sistema de valoración con estrellas
+    document.querySelectorAll('.stars').forEach(starContainer => {
+      const stars = starContainer.querySelectorAll('.star');
+      stars.forEach((star, index) => {
+        star.addEventListener('click', () => {
+          stars.forEach(s => s.classList.remove('active'));
+          for (let i = 0; i <= index; i++) {
+            stars[i].classList.add('active');
+          }
         });
-    </script>
+      });
+    });
+  </script>
 </body>
 </html>

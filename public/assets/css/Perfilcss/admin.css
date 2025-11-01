@@ -1,0 +1,143 @@
+body.admin-body {
+  margin: 0;
+  background-color: #0f0f0f;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #111;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.sidebar .logo {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar .logo span {
+  color: #f39c12;
+}
+
+.sidebar nav a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background 0.3s;
+}
+
+.sidebar nav a:hover, .sidebar nav a.active {
+  background-color: #f39c12;
+  color: #000;
+}
+
+.btn-salir {
+  margin-top: auto;
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 30px;
+}
+
+.admin-header h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: #f39c12;
+}
+
+/* Perfil */
+.perfil-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.perfil-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 15px;
+  flex: 1;
+  text-align: center;
+  box-shadow: 0 0 10px #f39c12;
+}
+
+.perfil-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #f39c12;
+  margin-bottom: 15px;
+}
+
+.perfil-nombre {
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.perfil-info p {
+  margin: 8px 0;
+  color: #bbb;
+}
+
+.btn-editar {
+  margin-top: 15px;
+  background-color: #f39c12;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.estadisticas-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 15px;
+  flex: 1;
+  box-shadow: 0 0 10px #3498db;
+}
+
+.estadisticas-card h3 {
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.estadisticas-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.estadisticas-card ul li {
+  margin: 8px 0;
+}
+
+.btn-config {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+}
