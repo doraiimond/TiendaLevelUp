@@ -1,94 +1,107 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const registerForm = document.getElementById('registerForm');
-    
-    if (registerForm) {
-        registerForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
-            
-            // Obtener valores del formulario
-            const nombre = document.getElementById('nombre').value.trim();
-            const correo = document.getElementById('correo').value.trim();
-            const confirmarCorreo = document.getElementById('confirmar-correo').value.trim();
-            const contrasena = document.getElementById('contrasena').value;
-            const confirmarContrasena = document.getElementById('confirmar-contrasena').value;
-            const telefono = document.getElementById('telefono').value.trim();
-            
-            // Validaciones adicionales del lado del cliente
-            let isValid = true;
-            document.querySelectorAll('.error-message').forEach(el => {
-                el.textContent = '';
-                el.style.display = 'none';
-            });
-            
-            if (correo !== confirmarCorreo) {
-                const errorEl = document.getElementById('confirm-email-error');
-                errorEl.textContent = 'Los correos no coinciden.';
-                errorEl.style.display = 'block';
-                isValid = false;
-            }
-            if (contrasena !== confirmarContrasena) {
-                const errorEl = document.getElementById('confirm-password-error');
-                errorEl.textContent = 'Las contraseñas no coinciden.';
-                errorEl.style.display = 'block';
-                isValid = false;
-            }
-            if (!nombre || !correo) {
-                alert('Por favor, completa todos los campos obligatorios (Nombre y Correo).');
-                isValid = false;
-            }
-            if (contrasena.length < 6) {
-                const errorEl = document.getElementById('password-error');
-                errorEl.textContent = 'La contraseña debe tener al menos 6 caracteres.';
-                errorEl.style.display = 'block';
-                isValid = false;
-            }
-            
-            if (!isValid) {
-                return;
-            }
-            
-            try {
-                // Crear usuario con Firebase v8
-                const userCredential = await auth.createUserWithEmailAndPassword(correo, contrasena);
-                const user = userCredential.user;
-                console.log('Usuario registrado con Auth:', user.uid);
-                
-                // Guardar perfil adicional en Firestore
-                const userProfile = {
-                    nombre: nombre,
-                    correo: correo,
-                    telefono: telefono || null,
-                    uid: user.uid,
-                    fechaRegistro: firebase.firestore.FieldValue.serverTimestamp()
-                };
-                
-                await db.collection("usuarios").doc(user.uid).set(userProfile);
-                console.log('Perfil de usuario guardado en Firestore.');
-                
-                alert('Usuario registrado exitosamente. ¡Bienvenido/a!');
-                window.location.href = 'index.html';
-                
-            } catch (error) {
-                console.error('Error al registrar usuario:', error);
-                let errorMessage = 'Error al registrar usuario.';
-                if (error.code === 'auth/email-already-in-use') {
-                    errorMessage = 'El correo electrónico ya está registrado.';
-                    const errorEl = document.getElementById('email-error');
-                    errorEl.textContent = 'El correo ya está en uso.';
-                    errorEl.style.display = 'block';
-                } else if (error.code === 'auth/weak-password') {
-                    errorMessage = 'La contraseña es muy débil.';
-                    const errorEl = document.getElementById('password-error');
-                    errorEl.textContent = 'Contraseña débil.';
-                    errorEl.style.display = 'block';
-                } else if (error.code === 'auth/invalid-email') {
-                    errorMessage = 'El correo electrónico no es válido.';
-                    const errorEl = document.getElementById('email-error');
-                    errorEl.textContent = 'Correo inválido.';
-                    errorEl.style.display = 'block';
-                }
-                alert(errorMessage);
-            }
-        });
+// -------- SONIDOS --------
+const clickSound = document.getElementById("click-sound");
+function playSounds() {
+    if (clickSound) {
+        clickSound.currentTime = 0;
+        clickSound.play();
     }
+}
+
+// -------- VALIDACIONES --------
+
+// Correo permitido
+function validarCorreo(correo) {
+    const regex = /^[\w.+-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/i;
+    return regex.test(correo);
+}
+
+// RUN: 8 dígitos + verificador (número o K)
+function validarRun(run) {
+    const regex = /^[0-9]{8}[0-9K]$/i;
+    return regex.test(run);
+}
+
+// Mayor de 18 años
+function validarMayoriaEdad(fecha) {
+    const hoy = new Date();
+    const fechaNacimiento = new Date(fecha);
+    let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+    const mes = hoy.getMonth() - fechaNacimiento.getMonth();
+
+    if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+        edad--;
+    }
+    return edad >= 18;
+}
+
+// -------- MAIN --------
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("formUsuario");
+    const runInput = document.getElementById("run");
+    const nombreInput = document.getElementById("nombre");
+    const correoInput = document.getElementById("correo");
+    const claveInput = document.getElementById("clave");
+    const fechaInput = document.getElementById("fecha");
+    const mensaje = document.getElementById("mensaje");
+
+    // Limpiar mensajes al escribir
+    [runInput, nombreInput, correoInput, claveInput, fechaInput].forEach(input => {
+        input.addEventListener("input", () => {
+            input.setCustomValidity("");
+            mensaje.innerText = "";
+        });
+    });
+
+    // Validación y envío
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        mensaje.innerText = "";
+
+        const run = runInput.value.trim().toUpperCase();
+        const nombre = nombreInput.value.trim();
+        const correo = correoInput.value.trim();
+        const clave = claveInput.value.trim();
+        const fecha = fechaInput.value;
+
+        // Validaciones
+        if (!validarRun(run)) {
+            runInput.setCustomValidity("El RUN es incorrecto. Ejemplo: 12345678K");
+            runInput.reportValidity();
+            return;
+        }
+        if (nombre === "") {
+            nombreInput.setCustomValidity("El nombre no debe quedar vacío");
+            nombreInput.reportValidity();
+            return;
+        }
+        if (!validarCorreo(correo)) {
+            correoInput.setCustomValidity("El correo debe ser @duoc.cl, @profesor.duoc.cl o @gmail.com");
+            correoInput.reportValidity();
+            return;
+        }
+        if (!validarMayoriaEdad(fecha)) {
+            fechaInput.setCustomValidity("Debe ser mayor de 18 años");
+            fechaInput.reportValidity();
+            return;
+        }
+
+        // Guardar en localStorage (para perfil)
+        localStorage.setItem("run", run);
+        localStorage.setItem("nombre", nombre);
+        localStorage.setItem("correo", correo);
+        localStorage.setItem("clave", clave);
+        localStorage.setItem("fecha", fecha);
+        localStorage.setItem("puntos", 0); // siempre inicia en 0
+
+        mensaje.innerText = "Formulario enviado correctamente ✅";
+
+        // Redirección (Admin o Cliente)
+        const destino = correo.toLowerCase() === "admin@duoc.cl"
+            ? "page/perfilAdmin.html"
+            : "page/perfilCliente.html";
+
+        setTimeout(() => {
+            window.location.href = destino;
+        }, 1000);
+    });
 });

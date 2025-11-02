@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         measurementId: "G-87KTP9XR6E"
       };
 
-      if (!firebase.apps?.length) {
+    if (!firebase.apps?.length) {
         firebase.initializeApp(firebaseConfig);
     }
 
