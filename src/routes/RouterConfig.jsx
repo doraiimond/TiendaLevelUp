@@ -19,11 +19,13 @@ const RouterConfig = () => (
                     window.location.href = '/assets/page/registro.html';
                     return null;
                 }} />
-
+            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/nosotros" element={<Nosotros />} /> 
+            <Route path="/login" element={<Login />} />
+            <Route path="/blog" element={<Blog />} /> 
+            <Route path="/tienda" element={<Tienda />} />
             <Route path="/perfil-admin" component={PerfilAdmin} />
             <Route path="/perfil-cliente" component={PerfilCliente} />
-
-            {/* Nuevas rutas del sistema de carrito */}
             <Route path="/catalogo" component={Catalogo} />
             <Route path="/carrito" component={Carrito} />
             <Route path="/checkout" component={Checkout} />

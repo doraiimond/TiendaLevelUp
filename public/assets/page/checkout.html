@@ -3,12 +3,196 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout - Mi Tienda</title>
+  <title>Checkout - LevelUP Gamer</title>
+
+  <!-- Tipografías LEVEL UP -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS principal -->
   <link rel="stylesheet" href="../css/catalogo.css">
   <link rel="stylesheet" href="../css/carrito.css">
+
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <style>
+    /* ======== ESTILO LEVELUP GENERAL ======== */
+    body {
+      background-color: #0d0d0f;
+      color: #f0f0f0;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00aaff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    header {
+      background-color: #141418;
+      border-bottom: 2px solid #00aaff;
+      box-shadow: 0 0 10px #00aaff55;
+    }
+
+    .nav-link {
+      color: #fff;
+      transition: 0.3s;
+    }
+    .nav-link:hover {
+      color: #00aaff;
+    }
+
+    /* ======== CHECKOUT CONTAINER ======== */
+    .checkout-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #1a1a1d;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00aaff33;
+    }
+
+    .checkout-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #00aaff55;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+
+    .checkout-titulo {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .checkout-subtitulo {
+      color: #b3b3b3;
+      margin-top: 5px;
+    }
+
+    .btn-total-pagar {
+      background-color: #00aaff;
+      border: none;
+      padding: 10px 20px;
+      color: #fff;
+      font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-total-pagar:hover {
+      background-color: #0088cc;
+      box-shadow: 0 0 10px #00aaff;
+    }
+
+    /* ======== TABLA DE PRODUCTOS ======== */
+    .tabla-checkout {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    .tabla-checkout th, .tabla-checkout td {
+      border-bottom: 1px solid #00aaff33;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .tabla-checkout th {
+      background-color: #121215;
+      color: #00aaff;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .tabla-checkout td img {
+      width: 70px;
+      border-radius: 8px;
+    }
+
+    /* ======== FORMULARIOS ======== */
+    form {
+      margin-top: 10px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #00aaff;
+    }
+
+    input, select, textarea {
+      background-color: #0e0e11;
+      color: #f5f5f5;
+      border: 1px solid #00aaff55;
+      border-radius: 6px;
+      padding: 10px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #00aaff;
+      box-shadow: 0 0 5px #00aaff;
+    }
+
+    .section-title {
+      border-left: 4px solid #00aaff;
+      padding-left: 10px;
+      margin-bottom: 5px;
+    }
+
+    .section-subtitle {
+      color: #b3b3b3;
+      margin-bottom: 15px;
+    }
+
+    /* ======== BOTÓN FINAL ======== */
+    .checkout-footer {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .btn-pagar-ahora {
+      background: linear-gradient(90deg, #00aaff, #0066ff);
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      font-family: 'Orbitron', sans-serif;
+      padding: 12px 40px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-pagar-ahora:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00aaffaa;
+    }
+  </style>
 </head>
+
 <body>
   <!-- HEADER -->
   <header class="header">
@@ -27,7 +211,7 @@
       <div class="nav-center">
         <a href="catalogo.html" class="nav-link">Home</a>
         <div class="dropdown">
-          <a href="#" class="nav-link">Categoría ⌄</a>
+          <a href="#" class="nav-link">Categorías ⌄</a>
           <div class="dropdown-content" id="dropdownCategorias"></div>
         </div>
         <a href="#" class="nav-link">Ofertas</a>
@@ -35,7 +219,6 @@
         <a href="#" class="nav-link">Blog</a>
         <a href="#" class="nav-link">Contacto</a>
       </div>
-      
       <div class="nav-right">
         <button class="btn-carrito" onclick="window.location.href='carrito.html'">
           <span class="carrito-icon">🛒</span>
@@ -48,7 +231,6 @@
   <!-- MAIN CONTENT -->
   <main class="main">
     <div class="checkout-container">
-      <!-- Encabezado del Checkout -->
       <div class="checkout-header">
         <div class="checkout-titulos">
           <h1 class="checkout-titulo">Carrito de Compra</h1>
@@ -59,7 +241,6 @@
         </button>
       </div>
 
-      <!-- Tabla de Productos -->
       <div class="tabla-checkout-container">
         <table class="tabla-checkout">
           <thead>
@@ -72,16 +253,16 @@
             </tr>
           </thead>
           <tbody id="tablaCheckoutBody">
-            <!-- Productos del checkout se insertarán aquí -->
+            <!-- Productos se insertan aquí -->
           </tbody>
         </table>
       </div>
 
-      <!-- Información del Cliente -->
+      <!-- INFORMACIÓN DEL CLIENTE -->
       <section class="info-cliente">
         <h2 class="section-title">Información del Cliente</h2>
-        <p class="section-subtitle">Completa la siguiente información</p>
-        
+        <p class="section-subtitle">Completa tus datos personales</p>
+
         <form id="formCliente" class="form-cliente">
           <div class="form-row">
             <div class="form-group">
@@ -100,11 +281,11 @@
         </form>
       </section>
 
-      <!-- Dirección de Entrega -->
+      <!-- DIRECCIÓN DE ENTREGA -->
       <section class="direccion-entrega">
-        <h2 class="section-title">Dirección de entrega de los productos</h2>
-        <p class="section-subtitle">Ingrese dirección de forma detallada</p>
-        
+        <h2 class="section-title">Dirección de entrega</h2>
+        <p class="section-subtitle">Ingresa tu dirección completa</p>
+
         <form id="formDireccion" class="form-direccion">
           <div class="form-row">
             <div class="form-group">
@@ -116,30 +297,29 @@
               <input type="text" id="departamento" name="departamento">
             </div>
           </div>
+
           <div class="form-row">
             <div class="form-group">
               <label for="region">Región *</label>
               <select id="region" name="region" required>
                 <option value="">Selecciona una región</option>
-                <!-- Las regiones se cargarán con JavaScript -->
               </select>
             </div>
             <div class="form-group">
               <label for="comuna">Comuna *</label>
               <select id="comuna" name="comuna" required disabled>
                 <option value="">Primero selecciona una región</option>
-                <!-- Las comunas se cargarán dinámicamente -->
               </select>
             </div>
           </div>
+
           <div class="form-group full-width">
-            <label for="indicaciones">Indicaciones para la entrega (Opcional)</label>
+            <label for="indicaciones">Indicaciones (Opcional)</label>
             <textarea id="indicaciones" name="indicaciones" rows="3" placeholder="Ej: Timbre azul, dejar con conserje..."></textarea>
           </div>
         </form>
       </section>
 
-      <!-- Botón Final -->
       <div class="checkout-footer">
         <button id="btnPagarAhora" class="btn-pagar-ahora">
           Pagar Ahora: $<span id="montoPagar">0</span>

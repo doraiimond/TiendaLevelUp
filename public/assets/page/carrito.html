@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrito de Compras - Mi Tienda</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito de Compras - LevelUP Gamer</title>
+
+  <!-- Tipografías LEVEL UP -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS principal -->
   <link rel="stylesheet" href="../css/catalogo.css">
   <link rel="stylesheet" href="../css/Carritocss/carrito.css">
+  <link rel="stylesheet" href="../css/Carritocss/estiloLevelUP.css">
+
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
+
 <body>
   <!-- HEADER -->
   <header class="header">
@@ -18,22 +27,20 @@
         <button id="btnBuscar" class="btn-buscar">Buscar</button>
       </div>
       <div class="auth-buttons">
-        <button class="btn-login">Iniciar Sesión</button>
-        <button class="btn-signup">Crear Cuenta</button>
+        <a href="login.html" class="btn-login">Iniciar Sesión</a>
+        <a href="../../index.html" class="btn-signup">Crear Cuenta</a>
       </div>
     </div>
 
     <nav class="nav-main">
       <div class="nav-center">
-        <a href="catalogo.html" class="nav-link">Home</a>
+        <a href="tienda.html" class="nav-link">Inicio</a>
         <div class="dropdown">
-          <a href="#" class="nav-link">Categoría ⌄</a>
-          <div class="dropdown-content" id="dropdownCategorias"></div>
+          <a href="ofertas.html" class="nav-link">Oferta</a>
         </div>
-        <a href="#" class="nav-link">Ofertas</a>
-        <a href="#" class="nav-link">Nosotros</a>
-        <a href="#" class="nav-link">Blog</a>
-        <a href="#" class="nav-link">Contacto</a>
+        <div class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></div>
+        <div class="nav-item"><a href="nosotros.html" class="nav-link">Nosotros</a></div>
+        <div class="nav-item"><a href="blogs.html" class="nav-link">Blog</a></div>
       </div>
       
       <div class="nav-right">
@@ -48,17 +55,19 @@
   <!-- MAIN CONTENT -->
   <main class="main">
     <div class="carrito-container">
-      <!-- Lista de Productos con Ofertas -->
+      
+      <!-- SECCIÓN DE OFERTAS -->
       <section class="ofertas-section">
-        <h2 class="section-title">Productos en Oferta</h2>
-        <div id="productosOferta" class="productos-grid"></div>
+        <h2 class="section-title">🔥 Productos en Oferta 🔥</h2>
+        <div id="productosOferta" class="productos-grid">
+          <!-- Productos dinámicos -->
+        </div>
       </section>
 
-      <!-- Resumen del Carrito -->
+      <!-- SECCIÓN DEL CARRITO -->
       <section class="resumen-carrito">
-        <h2 class="section-title">Resumen del Carrito</h2>
-        
-        <!-- Tabla de productos en carrito -->
+        <h2 class="section-title">🛒 Resumen del Carrito</h2>
+
         <div class="tabla-carrito-container">
           <table class="tabla-carrito">
             <thead>
@@ -72,16 +81,14 @@
               </tr>
             </thead>
             <tbody id="tablaCarritoBody">
-              <!-- Los productos del carrito se insertarán aquí -->
+              <!-- Productos del carrito aquí -->
             </tbody>
           </table>
         </div>
 
-        <!-- Total y Botones -->
         <div class="carrito-footer">
           <div class="total-container">
-            <span class="total-text">Total: $</span>
-            <span id="totalCarrito" class="total-precio">0</span>
+            Total: $<span id="totalCarrito" class="total-precio">0</span>
           </div>
           <div class="botones-carrito">
             <button id="btnLimpiarCarrito" class="btn-limpiar">Limpiar Carrito</button>
