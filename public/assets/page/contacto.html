@@ -1,65 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contacto - LEVEL UP</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <style>
-            body{
-                background-color: black;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            
-            <nav class="Barra-Arriba">
-                <ul>
-                    <a>🎮</a>
-                    <a href="tienda.html" class="marco"> Tienda</a>
-                    <a href="nosotros.html class=" class="marco"> Nosotros</a>
-                </ul>
-            </nav>
-        </header>
-        <main style="color: white;">
-            <div style="text-align: center;">
-                <h1>Contacto</h1>
-                <p>¿Tienes alguna duda? ¡Preguntanos!</p>
-            </div>
-            <form id="formContacto">
-                <div class="Cuadro-Reg">
-                    <div>
-                        <label for="nombres">Nombres*</label><br />
-                        <input type="text" id="nombres" required />
-                    </div>
-                    <div>
-                        <label for="correo">Correo Electronico*</label><br />
-                        <input type="email" id="correo" required />
-                    </div>
-                    <div>
-                        <label for="sujeto">Sujeto*</label><br />
-                        <input type="text" id="sujeto" spellcheck="true" required />
-                    </div>
-                    <div>
-                        <label for="mensaje">Mensaje*</label><br />
-                        <textarea id="mensaje" rows="5" cols="30"></textarea>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="es-humano" required />
-                        <label for="es-humano">juro que soy humano y no un robot por favor*</label>
-                    </div>
-                    <button type="submit">Enviar</button>
-                </div>
-            </form>
-        </main>
-        <footer>
-            <a href="https://www.instagram.com/duocuc_cl/">Instagram</a>
-            <p>&copy; 2025 Tiend Online </p>
-        </footer>
-        <link rel="stylesheet" href="..//css//Indexcss/index.css">
-        <script src="/assets/js/validaciones.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - LEVEL UP</title>
+
+  <!-- Iconos y Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fuente y CSS externo -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/contacto.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="Barra-Arriba">
+      <ul>
+        <a class="control">🎮 LEVEL UP</a>
+        <a href="tienda.html" class="marco">Tienda</a>
+        <a href="nosotros.html" class="marco">Nosotros</a>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="contacto-main">
+    <div class="titulo-contacto">
+      <h1>Contacto</h1>
+      <p>¿Tienes alguna duda o sugerencia? ¡Queremos escucharte!</p>
+    </div>
+
+    <form id="formContacto" class="form-contacto">
+      <div class="campo">
+        <label for="nombres">Nombres*</label>
+        <input type="text" id="nombres" placeholder="Tu nombre completo" required>
+      </div>
+
+      <div class="campo">
+        <label for="correo">Correo Electrónico*</label>
+        <input type="email" id="correo" placeholder="tunombre@email.com" required>
+      </div>
+
+      <div class="campo">
+        <label for="sujeto">Asunto*</label>
+        <input type="text" id="sujeto" placeholder="Motivo del mensaje" required>
+      </div>
+
+      <div class="campo">
+        <label for="mensaje">Mensaje*</label>
+        <textarea id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      </div>
+
+      <div class="campo-check">
+        <input type="checkbox" id="es-humano" required>
+        <label for="es-humano">Juro que soy humano y no un robot 🤖*</label>
+      </div>
+
+      <button type="submit" class="btn-enviar">Enviar</button>
+    </form>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-redes">
+      <a href="https://www.instagram.com/duocuc_cl/" target="_blank">
+        <i class="bi bi-instagram"></i> Instagram
+      </a>
+    </div>
+    <p>&copy; 2025 Level Up - Tienda Online</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/assets/js/validaciones.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

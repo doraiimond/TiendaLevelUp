@@ -1,0 +1,90 @@
+/* ===== GENERAL ===== */
+body {
+    background-color: #000;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== NAVBAR ===== */
+.Barra-Arriba {
+    background: linear-gradient(90deg, #0d0d0d, #202020);
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px #ff0044;
+}
+
+.Barra-Arriba ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Barra-Arriba a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.Barra-Arriba a:hover {
+    color: #ff0044;
+}
+
+.logo {
+    font-size: 1.5em;
+    color: #ff0044;
+}
+
+/* ===== SECCIÓN NOSOTROS ===== */
+.nosotros {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.nosotros h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5em;
+    color: #ff0044;
+    margin-bottom: 20px;
+}
+
+.subtitulo {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.contenido {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.resaltado {
+    color: #ff0044;
+    font-weight: bold;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #ff0044;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

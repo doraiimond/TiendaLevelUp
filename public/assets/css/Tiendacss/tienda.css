@@ -1,7 +1,139 @@
-@import url(Barra-Arriba.css);
-@import url(main.css);
-@import url(Poster.css);
-@import url(Social.css);
-@import url(Item.css);
-@import url(Boton.css);
-@import url(Menu.css);
+/* =====================
+   🎮 ESTILO LEVEL UP
+   ===================== */
+
+body {
+  background-color: #000;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* BARRA SUPERIOR */
+.Barra-Arriba {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(90deg, #141414, #1a1a1a);
+  padding: 10px;
+  border-bottom: 2px solid #0ff;
+  box-shadow: 0 0 10px #00ffff70;
+}
+
+.Barra-Arriba .marco, 
+.Barra-Arriba .control {
+  color: #0ff;
+  font-family: 'Orbitron', sans-serif;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.Barra-Arriba .marco:hover {
+  text-shadow: 0 0 10px #0ff, 0 0 20px #00f;
+  color: #fff;
+}
+
+/* TITULOS */
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  margin-top: 40px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #0099ff;
+}
+
+/* CARTAS DE PRODUCTO */
+.carditem {
+  background: #111;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00ffff30;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.carditem:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #00ffff70;
+}
+
+.card-imagen {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 2px solid #0ff;
+}
+
+.card-body h5 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  color: #0ff;
+}
+
+.card-body p {
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+/* BOTONES NEÓN */
+.shadow__btn {
+  background: linear-gradient(90deg, #0ff, #0077ff);
+  color: #000;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-family: 'Orbitron', sans-serif;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.shadow__btn:hover {
+  box-shadow: 0 0 15px #00ffff, 0 0 30px #0077ff;
+  color: #fff;
+}
+
+/* MENÚ INFERIOR */
+.Menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #111;
+  padding: 15px 0;
+  border-top: 2px solid #00ffff70;
+  box-shadow: 0 -5px 10px #00ffff40;
+}
+
+.Menub {
+  color: #0ff;
+  text-decoration: none;
+  margin: 8px 12px;
+  font-family: 'Orbitron', sans-serif;
+  transition: 0.3s;
+}
+
+.Menub:hover {
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0077ff;
+  color: #fff;
+}
+
+/* REDES SOCIALES */
+.redes {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+}
+
+.social-link img {
+  width: 40px;
+  margin: 0 10px;
+  filter: drop-shadow(0 0 8px #0ff);
+  transition: transform 0.3s;
+}
+
+.social-link img:hover {
+  transform: scale(1.2);
+}
