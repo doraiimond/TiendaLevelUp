@@ -1,0 +1,134 @@
+/* === CONFIGURACIÓN GENERAL === */
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* === HEADER === */
+header {
+  background: linear-gradient(90deg, #1E90FF, #39FF14);
+  text-align: center;
+  padding: 40px 20px;
+  color: white;
+  box-shadow: 0 0 25px #1E90FF;
+  animation: glowShift 6s ease infinite;
+}
+
+@keyframes glowShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5em;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px #39FF14;
+}
+
+header .btn-volver {
+  background-color: transparent;
+  border: 2px solid #39FF14;
+  color: #39FF14;
+  padding: 8px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+header .btn-volver:hover {
+  background-color: #39FF14;
+  color: #000;
+  box-shadow: 0 0 15px #39FF14;
+}
+
+/* === CONTENIDO PRINCIPAL === */
+main.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 50px auto;
+}
+
+/* === TARJETAS DE BLOG === */
+.blog-card {
+  background: #111111;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 35px;
+  border: 2px solid #1E90FF;
+  box-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #39FF14;
+}
+
+.blog-card h3 {
+  color: #39FF14;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5em;
+  text-shadow: 0 0 10px #39FF14;
+}
+
+.blog-card p {
+  color: #D3D3D3;
+  line-height: 1.6;
+}
+
+.blog-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-shadow: 0 0 10px #1E90FF77;
+}
+
+/* === SISTEMA DE ESTRELLAS === */
+.stars {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.star {
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+  margin: 0 3px;
+  transition: 0.3s;
+  text-shadow: 0 0 5px #000;
+}
+
+.star:hover {
+  transform: scale(1.2);
+  color: #39FF14;
+  text-shadow: 0 0 10px #39FF14;
+}
+
+.star.active {
+  color: #39FF14;
+  text-shadow: 0 0 15px #39FF14;
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #111111;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #1E90FF;
+  color: #D3D3D3;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
+
+footer span {
+  color: #39FF14;
+  font-weight: bold;
+}
