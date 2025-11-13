@@ -1,5 +1,5 @@
 import { addUser } from './services/firestoreService';
-import { validarCorreo, validarRun, esMayorEdad } from './utils/script';
+import { validarCorreo, validarRun, esMayorEdad } from './utils/validaciones';
 
 // Espera que el DOM esté listo
 document.addEventListener("DOMContentLoaded", () => {
