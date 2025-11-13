@@ -1,68 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LEVEL UP</title>
+<head>         
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEVEL UP - Catálogo</title>
 
-    <!-- Iconos y Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Ícono -->
+  <link rel="icon" href="../image/logo.png" type="image/x-icon">
 
-    <!-- Fuentes Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Orbitron:wght@600;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap y Fuentes -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="assets/css/Indexcss/index.css" />
+  <!-- Estilo externo -->
+  <link rel="stylesheet" href="../css/Tiendacss/tienda.css">
 </head>
 
 <body>
-    <header>
-        <nav class="barra-arriba">
-            <ul>
-                <li><span class="logo">🎮 LEVEL UP</span></li>
-                <li><a href="assets/page/tienda.html" class="marco">Tienda</a></li>
-                <li><a href="assets/page/nosotros.html" class="marco">Nosotros</a></li>
-                <li><a href="assets/page/contacto.html" class="marco">Contacto</a></li>
-                <li><a href="assets/page/login.html" class="marco">Login</a></li>
-                <li><a href="assets/page/catalogo.html" class="marco">Catálogo</a></li>
-                <li><a href="assets/page/carrito.html" class="marco"><i class="bi bi-cart3"></i> Carrito</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- BARRA DE ARRIBA -->
+  <header>
+    <nav class="Barra-Arriba">
+      <ul>
+        <a class="control">🎮 LEVEL UP</a>   
+        <a href="assets/page/blogs.html" class="marco">Blogs</a>
+        <a href="assets/page/carrito.html" class="marco"><i class="bi bi-cart3"></i> Carrito</a>
+        <a id="perfilb" href="assets/page/perfilCliente.html" class="marco">Perfil</a>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section class="form-section">
-            <form id="formUsuario" class="formulario">
-                <h2>Registro de Usuario</h2>
+  <!-- POSTER DE OFERTAS -->
+  <main>
+    <div class="Posteraa">
+      <h2>✨ OFERTAS ✨</h2>
+      <div id="Poster" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#Poster" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#Poster" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#Poster" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../image/silkgod.avif" class="d-block w-100" alt="Silk God">
+          </div>
+          <div class="carousel-item">
+            <img src="../image/sekiro.jpg" class="d-block w-100" alt="Sekiro">
+          </div>
+          <div class="carousel-item">
+            <img src="../image/boderland.jpg" class="d-block w-100" alt="Borderland">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#Poster" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#Poster" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
 
-                <label for="run">RUN</label>
-                <input type="text" id="run" minlength="7" maxlength="9" required />
+    <!-- CATÁLOGO -->
+    <div class="container mt-5">
+      <h2 class="titulo-seccion">🕹 CATÁLOGO 🕹</h2>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="carditem">
+            <img class="card-imagen" src="../image/+ 2 juegos.jpg" alt="PS5">
+            <div class="card-body">
+              <h5>PlayStation 5 Slim + 2 Juegos</h5>
+              <p>$699.990</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="carditem">
+            <img class="card-imagen" src="../image/pc.webp" alt="PC Gamer">
+            <div class="card-body">
+              <h5>PC Gamer Ryzen 7 + Monitor Philips</h5>
+              <p>$879.000</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="carditem">
+            <img class="card-imagen" src="../image/kit.jpg" alt="Kit Gamer">
+            <div class="card-body">
+              <h5>Kit Pro Gamer RGB Completo</h5>
+              <p>$49.990</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" maxlength="100" required />
+    <!-- MENÚ -->
+    <div class="Menu">
+      <a class="Menub" href="#">JUEGOS DE MESA</a>
+      <a class="Menub" href="#">ACCESORIOS</a>
+      <a class="Menub" href="#">CONSOLAS</a>
+      <a class="Menub" href="#">PCS</a>
+      <a class="Menub" href="#">ROPA</a>
+      <a class="Menub" href="#">SILLAS GAMERS</a>
+      <a class="Menub" href="#">MOUSES</a>
+      <a class="Menub" href="#">MOUSEPAD</a>
+    </div>
 
-                <label for="correo">Correo</label>
-                <input type="email" id="correo" maxlength="100" required />
+    <!-- REDES -->
+    <div class="redes">
+      <div class="card">
+        <a class="social-link" href="#"><img src="../image/iconof.png" alt="Facebook" /></a>
+        <a class="social-link" href="#"><img src="../image/iconox.png" alt="X" /></a>
+        <a class="social-link" href="#"><img src="../image/iconor.png" alt="Reddit" /></a>
+        <a class="social-link" href="#"><img src="../image/iconoi.png" alt="Instagram" /></a>
+      </div>     
+    </div>
+  </main>
 
-                <label for="clave">Clave</label>
-                <input type="password" id="clave" minlength="4" maxlength="10" required />
-
-                <label for="fecha">Fecha de Nacimiento</label>
-                <input type="date" id="fecha" required />
-
-                <button type="submit" class="btn-enviar">Enviar</button>
-                <p id="mensaje"></p>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <a href="https://www.instagram.com/duocuc_cl/" target="_blank">Instagram</a>
-        <p>&copy; 2025 LEVEL UP | Tienda Online</p>
-    </footer>
-
-    <script src="assets/js/validaciones.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

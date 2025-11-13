@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog de Novedades | LEVEL UP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
+
+    body {
+      background-color: #0a0a0a;
+      color: #f2f2f2;
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff0000, #6f00ff, #00ffff);
+      background-size: 400% 400%;
+      animation: neonMove 6s ease infinite;
+      text-align: center;
+      padding: 40px 20px;
+      color: white;
+      box-shadow: 0 0 25px #ff004c;
+    }
+
+    @keyframes neonMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px #00ffff;
+    }
+
+    header .btn-volver {
+      background-color: transparent;
+      border: 2px solid #00ffff;
+      color: #00ffff;
+      padding: 8px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    header .btn-volver:hover {
+      background-color: #00ffff;
+      color: #000;
+      box-shadow: 0 0 15px #00ffff;
+    }
+
+    main.container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 50px auto;
+    }
+
+    .blog-card {
+      background: #111;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 35px;
+      box-shadow: 0 0 15px #ff004c33;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px #ff004c;
+    }
+
+    .blog-card h3 {
+      color: #ff004c;
+      text-shadow: 0 0 10px #ff004c;
+      font-size: 1.5em;
+    }
+
+    .blog-card p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .blog-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 15px 0;
+      box-shadow: 0 0 10px #6f00ff77;
+    }
+
+    /* ⭐ SISTEMA DE ESTRELLAS */
+    .stars {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    .star {
+      font-size: 28px;
+      color: #333;
+      cursor: pointer;
+      margin: 0 3px;
+      transition: 0.3s;
+      text-shadow: 0 0 5px #000;
+    }
+
+    .star:hover {
+      transform: scale(1.2);
+      color: #ffea00;
+      text-shadow: 0 0 10px #ffea00;
+    }
+
+    .star.active {
+      color: #ffea00;
+      text-shadow: 0 0 15px #ffea00;
+    }
+
+    /* 🔻 FOOTER */
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #333;
+      color: #888;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+    }
+
+    footer span {
+      color: #ff004c;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📰 BLOG LEVEL UP</h1>
+    <a href="../../index.html" class="btn-volver">⬅ Volver a la Tienda</a>
+  </header>
+
+  <main class="container">
+    <div class="blog-card">
+      <h3>⚔️ Hollow Knight Silksong provoca una avalancha global</h3>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs3KH6j382c3KxuokaS3JLZmelvrZUmD_ogg&s" alt="Hollow Knight Silksong">
+      <p>A las 16:00 de este 4 de septiembre ocurrió lo inevitable. Hollow Knight Silksong se ha publicado finalmente, pero nadie puede comprarlo. 
+      La avalancha de jugadores provocó la caída simultánea de Steam, eShop, PlayStation Store y Xbox Live. 🌀</p>
+      <div class="stars">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <h3>🚗 GTA VI redefine el concepto de videojuego AAAAA</h3>
+      <img src="https://alfabetajuega.com/hero/2025/05/gta6.1747223093.7085.jpg?width=768&aspect_ratio=16:9&format=nowebp" alt="GTA VI">
+      <p>Rockstar Games promete que GTA VI será el título más ambicioso de la historia. 
+      Con una inversión récord y un mapa vivo, el juego aspira a cambiar la industria para siempre. 
+      Muchos ya lo llaman el primer juego “AAAAA” de la historia. 💥</p>
+      <div class="stars">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <h3>🔥 God of War live-action: la filmación está por comenzar</h3>
+      <img src="https://i.blogs.es/fbb969/god-of-war-ragnarok-lowest-price-1/500_333.jpeg" alt="God of War Serie">
+      <p>Tras años de desarrollo, la adaptación de God of War por Amazon Prime iniciará su rodaje este invierno. 
+      Cory Barlog supervisará la producción, prometiendo una experiencia épica que honrará la mitología del juego. ⚡</p>
+      <div class="stars">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 <span>LEVEL UP</span> | Tu mundo gamer en evolución constante 🎮
+  </footer>
+
+  <script>
+    // Sistema de valoración con estrellas
+    document.querySelectorAll('.stars').forEach(starContainer => {
+      const stars = starContainer.querySelectorAll('.star');
+      stars.forEach((star, index) => {
+        star.addEventListener('click', () => {
+          stars.forEach(s => s.classList.remove('active'));
+          for (let i = 0; i <= index; i++) {
+            stars[i].classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

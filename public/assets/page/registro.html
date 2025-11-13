@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEVEL UP</title>
+
+    <!-- Iconos y Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Fuentes Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Orbitron:wght@600;700&display=swap" rel="stylesheet" />
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="assets/css/Indexcss/index.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="barra-arriba">
+            <ul>
+                <li><span class="logo">🎮 LEVEL UP</span></li>
+                <li><a href="../../index.html" class="marco">Tienda</a></li>
+                <li><a href="nosotros.html" class="marco">Nosotros</a></li>
+                <li><a href="contacto.html" class="marco">Contacto</a></li>
+                <li><a href="login.html" class="marco">Login</a></li>
+                <li><a href="catalogo.html" class="marco">Catálogo</a></li>
+                <li><a href="carrito.html" class="marco"><i class="bi bi-cart3"></i> Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <form id="formUsuario" class="formulario">
+                <h2>Registro de Usuario</h2>
+
+                <label for="run">RUN</label>
+                <input type="text" id="run" minlength="7" maxlength="9" required />
+
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" maxlength="100" required />
+
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" maxlength="100" required />
+
+                <label for="clave">Clave</label>
+                <input type="password" id="clave" minlength="4" maxlength="10" required />
+
+                <label for="fecha">Fecha de Nacimiento</label>
+                <input type="date" id="fecha" required />
+
+                <button type="submit" class="btn-enviar">Enviar</button>
+                <p id="mensaje"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <a href="https://www.instagram.com/duocuc_cl/" target="_blank">Instagram</a>
+        <p>&copy; 2025 LEVEL UP | Tienda Online</p>
+    </footer>
+
+    <script src="assets/js/validaciones.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
