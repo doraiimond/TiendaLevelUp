@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Orbitron:wght@600;700&display=swap" rel="stylesheet" />
 
     <!-- Estilos personalizados -->
+    <!-- CORRECTO: estás en assets/page → css está a ../css -->
     <link rel="stylesheet" href="../css/Indexcss/index.css" />
 </head>
 
@@ -21,7 +22,11 @@
         <nav class="barra-arriba">
             <ul>
                 <li><span class="logo">🎮 LEVEL UP</span></li>
+
+                <!-- CORRECTO: index está 2 niveles arriba -->
                 <li><a href="../../index.html" class="marco">Tienda</a></li>
+
+                <!-- ❗ Estos archivos están EN LA MISMA CARPETA (assets/page) -->
                 <li><a href="nosotros.html" class="marco">Nosotros</a></li>
                 <li><a href="contacto.html" class="marco">Contacto</a></li>
                 <li><a href="login.html" class="marco">Login</a></li>
@@ -62,6 +67,7 @@
         <p>&copy; 2025 LEVEL UP | Tienda Online</p>
     </footer>
 
+    <!-- JS CORRECTO: estás en assets/page → js está a ../js -->
     <script src="../js/validaciones.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
