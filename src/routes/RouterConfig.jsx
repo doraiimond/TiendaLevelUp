@@ -1,39 +1,30 @@
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../components/pages/Home";
 import PerfilAdmin from "../components/pages/PerfilAdmin";
 import PerfilCliente from "../components/pages/PerfilCliente";
-import Header from "../components/organisms/Header";
+import Header from "../components/organisms/Header";   
+import Footer from "../components/organisms/Footer";
 
 import Catalogo from "../components/pages/Catalogo";
 import Carrito from "../components/pages/Carrito";
 import Checkout from "../components/pages/Checkout";
-import Exito from "../components/pages/Exito";
+import CompraExitosa from "../components/pages/CompraExitosa";
 import ErrorPago from "../components/pages/ErrorPago";
 
-const RouterConfig = () => (
+const RouterConfg = () => (
     <>  
         <Header />
         <Switch>
-            <Route exact path="/" component={() => <StaticPage src="/index.html" />} />
-            <Route path="/registro" component={() => {
-                    window.location.href = '/assets/page/registro.html';
-                    return null;
-                }} />
-            <Route path="/contacto" element={<Contacto />} />
-            <Route path="/nosotros" element={<Nosotros />} /> 
-            <Route path="/login" element={<Login />} />
-            <Route path="/blog" element={<Blog />} /> 
-            <Route path="/tienda" element={<Tienda />} />
+            <Route exact path="/" component={Home} />
             <Route path="/perfil-admin" component={PerfilAdmin} />
             <Route path="/perfil-cliente" component={PerfilCliente} />
             <Route path="/catalogo" component={Catalogo} />
             <Route path="/carrito" component={Carrito} />
             <Route path="/checkout" component={Checkout} />
-            <Route path="/exito" component={Exito} />
+            <Route path="/exito" component={CompraExitosa} />
             <Route path="/error" component={ErrorPago} />
         </Switch>
-        <footer />
+        <Footer />
     </>
 );
-
-export default RouterConfig;
+export default RouterConfg;
