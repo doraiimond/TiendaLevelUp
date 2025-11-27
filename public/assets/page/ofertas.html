@@ -7,10 +7,8 @@
 
   <!-- Tipografías -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-  <!-- CSS principal (usa los mismos del catálogo) -->
-  <link rel="stylesheet" href="../css/catalogo.css">
-  <link rel="stylesheet" href="../css/catalogoLevelUP.css">
+  <!-- CSS exclusivo de ofertas -->
+  <link rel="stylesheet" href="../css/ofertas.css">
 
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -20,6 +18,8 @@
 <body>
   <!-- HEADER -->
   <header class="header">
+
+    <!-- Línea Superior: Buscador + Login -->
     <div class="header-top">
       <div class="search-container">
         <input type="text" id="buscador" placeholder="Buscar ofertas..." class="search-input" />
@@ -32,7 +32,10 @@
       </div>
     </div>
 
+    <!-- Línea Inferior: Navegación -->
     <nav class="nav-main">
+
+      <!-- Navegación izquierda -->
       <div class="nav-center">
         <a href="../../index.html" class="nav-link">Inicio</a>
 
@@ -41,33 +44,39 @@
           <div class="dropdown-content" id="dropdownCategorias"></div>
         </div>
 
+        <a href="catalogo.html" class="nav-link">Tienda</a>
         <a href="ofertas.html" class="nav-link active">Ofertas</a>
         <a href="nosotros.html" class="nav-link">Nosotros</a>
         <a href="blogs.html" class="nav-link">Blog</a>
         <a href="contacto.html" class="nav-link">Contacto</a>
       </div>
 
+      <!-- Carrito -->
       <div class="nav-right">
         <button class="btn-carrito" onclick="window.location.href='carrito.html'">
           <span class="carrito-icon">🛒</span>
           Total: $<span class="carrito-total">0</span>
         </button>
       </div>
+
     </nav>
+
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- CONTENIDO PRINCIPAL -->
   <main class="main">
-    <!-- TÍTULO -->
-    <section class="productos-section">
-      <h2 id="tituloProductos" class="section-title">🔥 Ofertas Disponibles</h2>
 
-      <!-- Aquí van las ofertas -->
+    <section class="productos-section">
+      <h2 class="section-title">🔥 Ofertas Disponibles</h2>
+
+      <!-- GRID DE OFERTAS -->
       <div id="ofertasGrid" class="productos-grid"></div>
     </section>
+
   </main>
 
-  <!-- JS -->
+  <!-- JS principal de ofertas -->
   <script src="../js/ofertas.js"></script>
+
 </body>
 </html>

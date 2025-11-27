@@ -1,0 +1,174 @@
+/* =========================
+   GLOBAL LEVELUP
+========================= */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000000; /* Negro gamer */
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  /* =========================
+     TÍTULO PRINCIPAL
+  ========================= */
+  .section-title, h1, h2 {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: #39FF14; /* Verde neón */
+    margin: 30px 0;
+    font-size: 2rem;
+  }
+  
+  
+  /* =========================
+     GRID DE PRODUCTOS
+  ========================= */
+  .productos-grid, #ofertasGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    padding: 20px;
+  }
+  
+  /* CARD DEL PRODUCTO */
+  .producto-card {
+    background-color: #111111;               /* Negro profundo */
+    border: 2px solid #1E90FF;               /* Azul eléctrico */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+  }
+  
+  .producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(30, 144, 255, 0.6);
+    border-color: #39FF14; /* Verde neón al hover */
+  }
+  
+  .producto-imagen {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  /* =========================
+     INFO DEL PRODUCTO
+  ========================= */
+  .producto-info {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* Nombre */
+  .producto-nombre {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    color: #1E90FF;
+    margin-bottom: 8px;
+  }
+  
+  /* Precio normal tachado */
+  .producto-precio-original {
+    color: #FF3B3B;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+  }
+  
+  /* Precio oferta */
+  .producto-precio-oferta {
+    color: #39FF14; /* Verde neón */
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  
+  /* =========================
+     BOTÓN BUSCAR
+  ========================= */
+  .search-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .search-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #1E90FF;
+    background-color: #111;
+    color: white;
+    width: 250px;
+    outline: none;
+  }
+  
+  .btn-buscar {
+    margin-left: 10px;
+    padding: 10px 15px;
+    background-color: #39FF14;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .btn-buscar:hover {
+    background-color: #1E90FF;
+    color: #FFFFFF;
+  }
+  
+  /* BOTÓN AGREGAR AL CARRITO */
+.btn-agregar {
+    background-color: #39FF14; /* Verde neón gamer */
+    color: #000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: all .3s;
+  }
+  
+  .btn-agregar:hover {
+    background-color: #1E90FF;
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+  
+  
+  /* =========================
+     MENSAJE SIN PRODUCTOS
+  ========================= */
+  .no-ofertas {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    color: #D3D3D3;
+  }
+
+  
+  /* =========================
+     RESPONSIVE
+  ========================= */
+  @media (max-width: 768px) {
+    .producto-imagen {
+      height: 200px;
+    }
+  
+    .section-title {
+      font-size: 1.6rem;
+    }
+  }
+  
+  
