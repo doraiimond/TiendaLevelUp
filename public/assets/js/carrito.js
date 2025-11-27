@@ -367,6 +367,34 @@ function configurarEventos() {
     document.getElementById('btnComprarAhora').addEventListener('click', irAlCheckout);
 }
 
+/**
+ * Agrega todos los productos en oferta al carrito automáticamente
+ */
+function agregarProductosOfertaAlCarrito() {
+    if (!productosOferta || productosOferta.length === 0) return;
+
+    const productosEnOferta = productosOferta.filter(p => p.newprecio && p.newprecio < p.precio);
+
+    productosEnOferta.forEach(producto => {
+        // Verificar si ya existe en el carrito
+        const productoExistente = carrito.find(item => item.id === producto.id);
+        if (productoExistente) {
+            productoExistente.cantidad = (productoExistente.cantidad || 1) + 1;
+        } else {
+            carrito.push({
+                ...producto,
+                precio: producto.newprecio, // Usar precio de oferta
+                cantidad: 1
+            });
+        }
+    });
+
+    guardarCarrito();
+    renderizarCarrito();
+    calcularTotal();
+}
+
+
 // Hacer funciones disponibles globalmente
 window.aumentarCantidad = aumentarCantidad;
 window.disminuirCantidad = disminuirCantidad;

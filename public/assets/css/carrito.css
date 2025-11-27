@@ -187,3 +187,38 @@
     width: 100%;
   }
 }
+
+/* =========================
+   IMÁGENES DEL CARRITO
+========================= */
+.tabla-carrito img {
+  width: 100%;         /* Ocupa todo el ancho de su celda */
+  max-width: 100px;    /* Limite de ancho en desktop */
+  height: auto;        /* Mantener proporción */
+  object-fit: contain; /* Ajuste sin deformar */
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* =========================
+   RESPONSIVE TABLET / MOBILE
+========================= */
+@media (max-width: 768px) {
+  .tabla-carrito img {
+    max-width: 70px;   /* Reducir tamaño en móvil */
+  }
+
+  .tabla-carrito th,
+  .tabla-carrito td {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .tabla-carrito {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+

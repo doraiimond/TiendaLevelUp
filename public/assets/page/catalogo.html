@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ofertas - LevelUP Gamer</title>
+  <title>Catálogo - LevelUP Gamer</title>
 
-  <!-- Tipografías -->
+  <!-- Tipografías LevelUP -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <!-- CSS principal (usa los mismos del catálogo) -->
+  <!-- CSS principal -->
   <link rel="stylesheet" href="../css/catalogo.css">
-  <link rel="stylesheet" href="../css/catalogoLevelUP.css">
-
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
@@ -20,28 +18,27 @@
 <body>
   <!-- HEADER -->
   <header class="header">
+    <!-- Línea Superior -->
     <div class="header-top">
       <div class="search-container">
-        <input type="text" id="buscador" placeholder="Buscar ofertas..." class="search-input" />
+        <input type="text" id="buscador" placeholder="Buscar productos..." class="search-input" />
         <button id="btnBuscar" class="btn-buscar">Buscar</button>
       </div>
-
       <div class="auth-buttons">
         <a href="login.html" class="btn-login">Iniciar Sesión</a>
         <a href="registro.html" class="btn-signup">Crear Cuenta</a>
       </div>
     </div>
 
+    <!-- Línea Inferior - Nav -->
     <nav class="nav-main">
       <div class="nav-center">
         <a href="../../index.html" class="nav-link">Inicio</a>
-
         <div class="dropdown">
           <a href="#" class="nav-link">Categorías ⌄</a>
           <div class="dropdown-content" id="dropdownCategorias"></div>
         </div>
-
-        <a href="ofertas.html" class="nav-link active">Ofertas</a>
+        <a href="ofertas.html" class="nav-link">Ofertas</a>
         <a href="nosotros.html" class="nav-link">Nosotros</a>
         <a href="blogs.html" class="nav-link">Blog</a>
         <a href="contacto.html" class="nav-link">Contacto</a>
@@ -58,16 +55,20 @@
 
   <!-- MAIN CONTENT -->
   <main class="main">
-    <!-- TÍTULO -->
-    <section class="productos-section">
-      <h2 id="tituloProductos" class="section-title">🔥 Ofertas Disponibles</h2>
+    <!-- CATEGORÍAS -->
+    <section class="categorias-section">
+      <h2 class="section-title">⚡ Categorías ⚡</h2>
+      <button id="btnVerTodos" class="btn-ver-todos">Ver Todos los Productos</button>
+      <div id="cardsCategorias" class="categorias-grid"></div>
+    </section>
 
-      <!-- Aquí van las ofertas -->
-      <div id="ofertasGrid" class="productos-grid"></div>
+    <!-- PRODUCTOS -->
+    <section class="productos-section">
+      <h2 id="tituloProductos" class="section-title">🕹️ Todos los Productos</h2>
+      <div id="productosGrid" class="productos-grid"></div>
     </section>
   </main>
 
-  <!-- JS -->
-  <script src="../js/ofertas.js"></script>
+  <script src="../js/catalogo.js"></script>
 </body>
 </html>
