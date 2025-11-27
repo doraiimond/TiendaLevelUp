@@ -1,79 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>         
-    <meta charset="UTF-8">
-    <link rel="icon" href="../image/logo.png" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- ICONOS BOOTSTRAP -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
-    <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- TU CSS -->
-    <link rel="stylesheet" href="../css/Perfil.css">
-
-    <style>
-        body {
-            background-color: black;
-        }
-    </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil del Cliente - LEVEL UP</title>
+  <link rel="stylesheet" href="perfil.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Roboto&display=swap">
 </head>
 
 <body>
 
-    <!-- BARRA SUPERIOR -->
-    <header>
-        <nav class="Barra-Arriba">
-            <ul>
-                <li><a class="control">🎮</a></li>
-                <li><a href="../../index.html" class="marco">Home</a></li>
-                <li><a href="nosotros.html" class="marco">Nosotros</a></li>
-                <li><a href="contacto.html" class="marco">Contacto</a></li>
-                <li><a href="registro.html" class="marco">Registro</a></li>
-                <li><a href="perfilAdmin.html" class="marco">Admin</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- BARRA SUPERIOR -->
+  <div class="Barra-Arriba">
+      <a class="marco" href="index.html">Inicio</a>
+      <a class="marco" href="perfil.html">Perfil</a>
+      <a class="marco" href="contacto.html">Contacto</a>
+  </div>
 
-    <main>
+  <!-- TITULO -->
+  <div class="titulo-perfil">
+      <h1>Perfil del Cliente</h1>
+  </div>
 
-        <!-- Carta Perfil -->
-        <div class="card">
-            <div class="card__img">
-                <img src="../image/banner.webp" alt="fondo perfil">
-            </div>
+  <!-- CONTENEDOR PERFIL -->
+  <div class="perfil-box">
 
-            <div class="card__avatar">
-                <img src="../image/user.png" alt="avatar">
-            </div>
+      <div class="foto-section">
+          <img id="fotoPerfil" src="default.png" alt="Foto" class="foto-cliente">
+      </div>
 
-            <div class="card__title">
-                <span id="nombreTitulo"></span>
-            </div>
+      <div class="info-perfil">
+          <p><strong>Nombre:</strong> <span id="nombreUsuario"></span></p>
+          <p><strong>Correo:</strong> <span id="correoUsuario"></span></p>
+          <p><strong>Teléfono:</strong> <span id="telefonoUsuario"></span></p>
+          <p><strong>Dirección:</strong> <span id="direccionUsuario"></span></p>
+          <p><strong>ID Usuario:</strong> <span id="uidUsuario"></span></p>
+      </div>
 
-            <div class="card__subtitle">Cliente</div>
-        </div>
+      <button id="btnCerrarSesion" class="btn-logout">Cerrar Sesión</button>
+  </div>
 
-        <!-- Menu de datos -->
-        <div class="Menu">
-            <a class="Menub">RUN: <span id="runDisplay"></span></a>
-            <a class="Menub">NOMBRE: <span id="nombreDisplay"></span></a>
-            <a class="Menub">CORREO ELECTRONICO: <span id="correoDisplay"></span></a>
-            <a class="Menub">CLAVE: <span id="claveDisplay"></span></a>
-            <a class="Menub">FECHA DE NACIMIENTO: <span id="fechaDisplay"></span></a>
-            <a class="Menub">PUNTOS: <span id="puntosDisplay"></span></a>
-        </div>
-
-    </main>
-
-    <!-- SCRIPTS -->
-    <script src="../js/perfil.js"></script>
-    <script src="../js/puntos.js"></script>
-    <script src="../js/carrito.js"></script>
-    <script src="../js/saludo.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script type="module" src="../js/perfil.js"></script>
 </body>
 </html>

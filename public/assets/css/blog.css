@@ -1,23 +1,25 @@
 /* === CONFIGURACIÓN GENERAL === */
 body {
-  background-color: #000000;
+  background: radial-gradient(circle at top, #0a0a0a, #000000 60%);
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /* === HEADER === */
 header {
-  background: linear-gradient(90deg, #1E90FF, #39FF14);
+  background: linear-gradient(120deg, #0b1c36, #091f14, #0b1c36);
+  background-size: 300% 300%;
+  padding: 50px 20px;
   text-align: center;
-  padding: 40px 20px;
   color: white;
   box-shadow: 0 0 25px #1E90FF;
-  animation: glowShift 6s ease infinite;
+  animation: neonWave 8s ease infinite;
 }
 
-@keyframes glowShift {
+@keyframes neonWave {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
@@ -25,110 +27,118 @@ header {
 
 header h1 {
   font-family: 'Orbitron', sans-serif;
-  font-size: 2.5em;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-  text-shadow: 0 0 15px #39FF14;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px #39FF14, 0 0 40px #1E90FF;
 }
 
+/* Botón Volver */
 header .btn-volver {
   background-color: transparent;
   border: 2px solid #39FF14;
   color: #39FF14;
-  padding: 8px 18px;
-  border-radius: 10px;
-  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 12px;
   font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 1px;
   transition: 0.3s;
 }
 
 header .btn-volver:hover {
   background-color: #39FF14;
   color: #000;
-  box-shadow: 0 0 15px #39FF14;
+  box-shadow: 0 0 20px #39FF14, 0 0 30px #1E90FF;
+  transform: translateY(-2px);
 }
 
 /* === CONTENIDO PRINCIPAL === */
 main.container {
   width: 90%;
   max-width: 1100px;
-  margin: 50px auto;
+  margin: 60px auto;
 }
 
 /* === TARJETAS DE BLOG === */
 .blog-card {
-  background: #111111;
-  border-radius: 15px;
-  padding: 25px;
-  margin-bottom: 35px;
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(4px);
+  border-radius: 18px;
+  padding: 28px;
+  margin-bottom: 45px;
   border: 2px solid #1E90FF;
-  box-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 18px rgba(30, 144, 255, 0.4);
+  transition: 0.35s ease;
 }
 
 .blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px #39FF14;
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 0 28px #39FF14, 0 0 40px #1E90FF;
 }
 
 .blog-card h3 {
   color: #39FF14;
   font-family: 'Orbitron', sans-serif;
-  font-size: 1.5em;
-  text-shadow: 0 0 10px #39FF14;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px #39FF14;
 }
 
 .blog-card p {
-  color: #D3D3D3;
-  line-height: 1.6;
+  color: #D6D6D6;
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
 .blog-card img {
   width: 100%;
-  border-radius: 10px;
-  margin: 15px 0;
-  box-shadow: 0 0 10px #1E90FF77;
+  border-radius: 14px;
+  margin: 18px 0;
+  box-shadow: 0 0 18px #1E90FF99;
 }
 
 /* === SISTEMA DE ESTRELLAS === */
 .stars {
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 18px;
 }
 
 .star {
-  font-size: 28px;
-  color: #333;
+  font-size: 30px;
+  color: #2a2a2a;
   cursor: pointer;
-  margin: 0 3px;
+  margin: 0 4px;
   transition: 0.3s;
-  text-shadow: 0 0 5px #000;
+  text-shadow: 0 0 8px #000;
 }
 
 .star:hover {
-  transform: scale(1.2);
+  transform: scale(1.25);
   color: #39FF14;
-  text-shadow: 0 0 10px #39FF14;
+  text-shadow: 0 0 20px #39FF14, 0 0 30px #1E90FF;
 }
 
 .star.active {
   color: #39FF14;
-  text-shadow: 0 0 15px #39FF14;
+  text-shadow: 0 0 25px #39FF14;
 }
 
 /* === FOOTER === */
 footer {
-  background-color: #111111;
+  background-color: #0a0a0a;
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   border-top: 2px solid #1E90FF;
-  color: #D3D3D3;
-  font-size: 0.9em;
+  color: #CFCFCF;
+  font-size: 0.95rem;
   letter-spacing: 1px;
+  margin-top: 60px;
 }
 
 footer span {
   color: #39FF14;
   font-weight: bold;
+  text-shadow: 0 0 8px #39FF14;
 }
