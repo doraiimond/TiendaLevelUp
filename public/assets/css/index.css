@@ -1,139 +1,199 @@
-
-/* === FUENTES === */
+/* =========================
+   GLOBAL
+========================= */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000000; /* Fondo negro */
+  color: #FFFFFF; /* Texto principal blanco */
   margin: 0;
   padding: 0;
 }
 
-/* === NAVBAR === */
-.barra-arriba {
-  background-color: #111111;
-  padding: 15px 0;
-  border-bottom: 2px solid #1E90FF;
-  text-align: center;
-}
-
-.barra-arriba ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.barra-arriba li {
-  display: inline-block;
-  margin: 0 15px;
-}
-
-.barra-arriba .logo {
-  font-family: 'Orbitron', sans-serif;
-  color: #39FF14;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.barra-arriba a {
+a {
   text-decoration: none;
-  color: #1E90FF;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  color: inherit;
 }
 
-.barra-arriba a:hover {
-  color: #39FF14;
-  text-shadow: 0 0 8px #39FF14;
+/* =========================
+ NAVBAR
+========================= */
+.navbar {
+  background-color: #000000;
 }
 
-/* === FORMULARIO === */
-.form-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0;
-}
-
-.formulario {
-  background-color: #111111;
-  border: 2px solid #1E90FF;
-  border-radius: 15px;
-  padding: 30px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 0 15px rgba(30, 144, 255, 0.3);
-}
-
-.formulario h2 {
+.navbar-brand {
   font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  color: #1E90FF; /* Azul eléctrico */
+}
+
+.navbar-brand img {
+  border-radius: 50%;
+}
+
+.navbar-nav .nav-link {
+  color: #D3D3D3; /* Gris claro para enlaces */
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #1E90FF; /* Azul eléctrico al pasar el cursor */
+}
+
+/* Botones login / registro */
+.btn-outline-light {
+  border-color: #1E90FF;
+  color: #1E90FF;
+  transition: all 0.3s;
+}
+
+.btn-outline-light:hover {
+  background-color: #1E90FF;
+  color: #000000;
+}
+
+.btn-warning {
+  background-color: #39FF14;
+  border-color: #39FF14;
+  color: #000000;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-warning:hover {
+  background-color: #1E90FF;
+  color: #FFFFFF;
+}
+
+/* =========================
+ CARRUSEL
+========================= */
+.Posteraa {
+  max-width: 1200px;
+  margin: 40px auto;
   text-align: center;
-  color: #39FF14;
+}
+
+.Posteraa h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  color: #1E90FF;
   margin-bottom: 20px;
 }
 
-.formulario label {
-  display: block;
-  margin-bottom: 5px;
-  color: #D3D3D3;
-  font-size: 0.9rem;
-}
-
-.formulario input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #1E90FF;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  background-color: #000;
-  color: #fff;
-  outline: none;
-}
-
-.formulario input:focus {
-  border-color: #39FF14;
-  box-shadow: 0 0 8px #39FF14;
-}
-
-.btn-enviar {
-  width: 100%;
-  background-color: #1E90FF;
-  color: #fff;
-  padding: 10px;
-  border: none;
+.carousel-inner img {
   border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  max-height: 450px;
+  object-fit: cover;
 }
 
-.btn-enviar:hover {
-  background-color: #39FF14;
-  color: #000;
-  box-shadow: 0 0 10px #39FF14;
-}
-
-#mensaje {
+/* =========================
+ CATÁLOGO
+========================= */
+.titulo-seccion {
+  font-family: 'Orbitron', sans-serif;
   text-align: center;
-  color: crimson;
-  font-size: 0.9rem;
-  margin-top: 10px;
-}
-
-/* === FOOTER === */
-footer {
-  background-color: #111111;
-  color: #D3D3D3;
-  text-align: center;
-  padding: 15px;
-  border-top: 2px solid #1E90FF;
-}
-
-footer a {
-  color: #1E90FF;
-  text-decoration: none;
-  margin-right: 10px;
-}
-
-footer a:hover {
   color: #39FF14;
+  margin-bottom: 30px;
+}
+
+.carditem {
+  background-color: #111111;
+  border: 2px solid #1E90FF;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.carditem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(30, 144, 255, 0.6);
+  border-color: #39FF14;
+}
+
+.carditem img.card-imagen {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-body h5 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #1E90FF;
+}
+
+.card-body p {
+  color: #39FF14;
+  font-weight: 500;
+}
+
+/* =========================
+ MENÚ CATEGORÍAS
+========================= */
+.Menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px 0 30px 0;
+  gap: 10px;
+}
+
+.Menub {
+  background-color: #111111;
+  color: #1E90FF;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.Menub:hover {
+  background-color: #39FF14;
+  color: #000000;
+}
+
+/* =========================
+ REDES
+========================= */
+.redes {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.redes .card {
+  display: inline-flex;
+  gap: 20px;
+  background-color: transparent;
+  border: none;
+}
+
+.social-link img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.social-link img:hover {
+  transform: scale(1.2);
+}
+
+/* =========================
+ RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .carditem img.card-imagen {
+      height: 200px;
+  }
+  .Posteraa h2 {
+      font-size: 1.5rem;
+  }
 }

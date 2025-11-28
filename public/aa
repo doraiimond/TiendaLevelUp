@@ -15,11 +15,10 @@
 
   <!-- Estilo externo -->
   <link rel="stylesheet" href="assets/css/index.css">
-  <link rel="stylesheet" href="assets/css/catalogo.css">
 </head>
 
 <body>
-  <!-- BARRA DE ARRIBA -->
+  <!-- HEADER -->
   <header class="header">
     <!-- Línea Superior -->
     <div class="header-top">
@@ -28,8 +27,8 @@
         <button id="btnBuscar" class="btn-buscar">Buscar</button>
       </div>
       <div class="auth-buttons">
-        <a href="assets/page/login.html" class="btn-login">Iniciar Sesión</a>
-        <a href="assets/page/registro.html" class="btn-signup">Crear Cuenta</a>
+        <a href="login.html" class="btn-login">Iniciar Sesión</a>
+        <a href="registro.html" class="btn-signup">Crear Cuenta</a>
       </div>
     </div>
 
@@ -40,14 +39,17 @@
         LEVEL UP
       </a>
       <div class="nav-center">
-        <a href="assets/page/blogs.html" class="nav-link">Blog</a>
-        <a href="assets/page/catalogo.html" class="nav-link">catalogo</a>
-        <a href="assets/page/nosotros.html" class="nav-link">Nosotros</a>
-        <a href="assets/page/contacto.html" class="nav-link">Contacto</a>
+        <a href="/public/assets/page/blogs.html" class="nav-link">Blog</a>
+        <a href="/public/assets/page/catalogo.html" class="nav-link">catalogo</a>
+        <a href="nosotros.html" class="nav-link">Nosotros</a>
+        <a href="contacto.html" class="nav-link">Contacto</a>
       </div>
 
       <div class="nav-right">
-
+        <button class="btn-carrito" onclick="window.location.href='carrito.html'">
+          <span class="carrito-icon">🛒</span>
+          Total: $<span class="carrito-total">0</span>
+        </button>
       </div>
     </nav>
   </header>

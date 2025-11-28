@@ -228,37 +228,59 @@ p {
 /* ======== GRID DE PRODUCTOS ======== */
 .productos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
   padding: 20px 40px;
 }
 
-.productos-grid .card {
-  background-color: #111111;
+.producto-card {
+  background: #111;
   border: 2px solid #39FF14;
   border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.productos-grid .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px #39FF14;
-}
-
-.productos-grid img {
+.producto-imagen {
   width: 100%;
-  border-radius: 8px;
+  height: 220px;
+  object-fit: cover;
+  background: #000;
+}
+
+.producto-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.producto-nombre {
+  color: #fff;
   margin-bottom: 10px;
+  font-size: 18px;
 }
 
-.productos-grid h5 {
-  font-family: 'Orbitron', sans-serif;
-  color: #1E90FF;
-  margin-bottom: 5px;
+.producto-precio {
+  color: #39FF14;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
-.productos-grid p {
-  color: #D3D3D3;
+.btn-agregar {
+  margin-top: auto;
+  background: #39FF14;
+  color: #000;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-agregar:hover {
+  background: #2ecc10;
 }
