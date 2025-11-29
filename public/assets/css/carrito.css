@@ -1,23 +1,30 @@
-/* ==== ESTILO PRINCIPAL DEL CARRITO (LEVEL UP) ==== */
+/* ============================================================
+   🔥 ESTILO PRINCIPAL DEL CARRITO - LEVEL UP GAMER EDITION 🔥
+=============================================================== */
 .carrito-container {
   max-width: 1200px;
   margin: 50px auto;
   padding: 30px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(15, 15, 20, 0.85);
   border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  border: 1px solid rgba(0, 255, 200, 0.3);
+  box-shadow: 0 0 35px rgba(0, 255, 255, 0.25);
+  backdrop-filter: blur(5px);
 }
 
-/* TITULOS DE SECCIONES */
+/* TITULOS CON EFECTO NEÓN */
 .section-title {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #00ffff;
-  text-shadow: 0 0 15px #00ffff;
+  font-size: 2.3rem;
+  margin-bottom: 35px;
+  color: #00eaff;
+  font-family: "Orbitron", sans-serif;
+  text-shadow: 0 0 12px #00eaff, 0 0 25px rgba(0, 255, 255, 0.5);
 }
 
-/* TABLA DEL CARRITO */
+/* ============================================================
+   TABLA DEL CARRITO
+=============================================================== */
 .tabla-carrito-container {
   overflow-x: auto;
   margin-bottom: 40px;
@@ -27,60 +34,72 @@
   width: 100%;
   border-collapse: collapse;
   color: #fff;
-  background-color: #111;
+  background: #0d0d0f;
   border-radius: 15px;
   overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
 }
 
 .tabla-carrito thead {
   background: linear-gradient(90deg, #00bfff, #00ff88);
   color: #000;
+  font-weight: bold;
+  font-family: "Orbitron", sans-serif;
 }
 
 .tabla-carrito th,
 .tabla-carrito td {
   padding: 15px;
   text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* IMÁGENES DE LA TABLA */
 .tabla-carrito img {
-  width: 70px;
-  height: 70px;
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  object-fit: contain;
   border-radius: 10px;
-  object-fit: cover;
   background: #000;
+  padding: 6px;
+  border: 1px solid rgba(0, 255, 255, 0.3);
 }
 
-/* BOTONES DE ACCIÓN EN CADA FILA */
+/* BOTONES DE ACCIÓN */
 .btn-accion {
   border: none;
   background: none;
-  color: #00ffff;
-  font-size: 1.3rem;
+  color: #00eaff;
+  font-size: 1.4rem;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .btn-accion:hover {
   color: #00ff88;
-  text-shadow: 0 0 8px #00ff88;
+  text-shadow: 0 0 8px #00ff88, 0 0 12px #00ff88;
 }
 
-/* FOOTER DEL CARRITO */
+/* ============================================================
+   FOOTER DEL CARRITO
+=============================================================== */
 .carrito-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 .total-container {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #00ff88;
-  text-shadow: 0 0 10px #00ff88;
+  font-weight: bold;
+  font-family: "Orbitron", sans-serif;
+  text-shadow: 0 0 15px #00ff88;
 }
 
+/* BOTONES PRINCIPALES */
 .botones-carrito {
   display: flex;
   gap: 20px;
@@ -88,32 +107,38 @@
 
 .btn-limpiar,
 .btn-comprar-ahora {
-  padding: 12px 25px;
+  padding: 14px 28px;
   border: none;
-  border-radius: 25px;
+  border-radius: 30px;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+  font-family: "Roboto", sans-serif;
 }
 
 .btn-limpiar {
-  background: linear-gradient(90deg, #ff0040, #ff6a00);
+  background: linear-gradient(90deg, #ff003c, #ff8a00);
   color: #fff;
+  box-shadow: 0 0 10px rgba(255, 50, 50, 0.5);
 }
 
 .btn-comprar-ahora {
-  background: linear-gradient(90deg, #00ff88, #00bfff);
+  background: linear-gradient(90deg, #00ff88, #00d0ff);
   color: #000;
+  box-shadow: 0 0 10px rgba(0, 255, 150, 0.4);
 }
 
 .btn-limpiar:hover,
 .btn-comprar-ahora:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 15px #00ffff;
+  box-shadow: 0 0 18px #00ffff;
 }
 
-/* PRODUCTOS EN OFERTA */
+/* ============================================================
+   SECCIÓN DE PRODUCTOS EN OFERTA
+=============================================================== */
 .ofertas-section {
   margin-bottom: 60px;
 }
@@ -121,30 +146,35 @@
 .productos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  gap: 28px;
 }
 
+/* TARJETAS */
 .producto-card {
-  background: #141414;
+  background: #121216;
   border-radius: 15px;
   text-align: center;
   overflow: hidden;
   transition: 0.3s ease;
-  box-shadow: 0 0 10px rgba(0,255,255,0.1);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
 }
 
 .producto-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px #00ff88;
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px #00ff88;
 }
 
+/* IMAGEN DEL PRODUCTO */
 .producto-imagen {
   width: 100%;
   height: 200px;
   object-fit: contain;
   background: #000;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
 }
 
+/* INFO */
 .producto-info {
   padding: 15px;
 }
@@ -152,30 +182,43 @@
 .producto-nombre {
   font-weight: bold;
   color: #fff;
+  font-size: 1.1rem;
 }
 
+/* PRECIOS */
 .producto-precio {
   color: #00ff88;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
+.precio-original {
+  color: #ff0040;
+  text-decoration: line-through;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* BOTÓN AGREGAR */
 .btn-agregar {
   background: linear-gradient(90deg, #00bfff, #00ff88);
   color: #000;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 10px 20px;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 12px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .btn-agregar:hover {
-  box-shadow: 0 0 10px #00ff88;
+  box-shadow: 0 0 12px #00ff88;
 }
 
-/* RESPONSIVE */
+/* ============================================================
+   RESPONSIVE
+=============================================================== */
 @media (max-width: 768px) {
   .botones-carrito {
     flex-direction: column;
@@ -186,27 +229,9 @@
   .btn-comprar-ahora {
     width: 100%;
   }
-}
 
-/* =========================
-   IMÁGENES DEL CARRITO
-========================= */
-.tabla-carrito img {
-  width: 100%;         /* Ocupa todo el ancho de su celda */
-  max-width: 100px;    /* Limite de ancho en desktop */
-  height: auto;        /* Mantener proporción */
-  object-fit: contain; /* Ajuste sin deformar */
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto;
-}
-
-/* =========================
-   RESPONSIVE TABLET / MOBILE
-========================= */
-@media (max-width: 768px) {
   .tabla-carrito img {
-    max-width: 70px;   /* Reducir tamaño en móvil */
+    max-width: 70px;
   }
 
   .tabla-carrito th,
@@ -221,4 +246,3 @@
     white-space: nowrap;
   }
 }
-

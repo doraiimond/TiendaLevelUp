@@ -1,0 +1,251 @@
+/* ===========================
+   LEVEL UP — ESTILO GLOBAL
+   =========================== */
+
+body {
+  background-color: #0a0b0d;
+  color: #e6e6e6;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+  color: #00aaff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===========================
+   HEADER
+   =========================== */
+
+header {
+  background: #141418;
+  border-bottom: 2px solid #00aaff;
+  box-shadow: 0 0 20px #00aaff55;
+  padding-bottom: 10px;
+}
+
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.nav-link {
+  color: #f5f5f5;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #00aaff;
+  text-shadow: 0 0 8px #00aaff;
+}
+
+/* ===========================
+   BUSCADOR
+   =========================== */
+
+.search-container {
+  display: flex;
+  width: 300px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 8px 12px;
+  background: #0d0e10;
+  border: 1px solid #00aaff55;
+  color: #fff;
+  border-radius: 6px 0 0 6px;
+}
+
+.btn-buscar {
+  padding: 8px 14px;
+  background: #00aaff;
+  color: white;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-buscar:hover {
+  background: #0088cc;
+  box-shadow: 0 0 10px #00aaff;
+}
+
+/* ===========================
+   BOTONES AUTH
+   =========================== */
+
+.auth-buttons button {
+  background: #00aaff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.auth-buttons button:hover {
+  background: #0088cc;
+  box-shadow: 0 0 10px #00aaff;
+}
+
+/* ===========================
+   TARJETAS DE PRODUCTO
+   =========================== */
+
+.product-card {
+  background: #151518;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #00aaff22;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px #00aaff88;
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Precio normal */
+.precio {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+/* Precio original tachado (oferta) */
+.precio-original {
+  font-size: 1rem;
+  color: #ff2e2e;
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+
+/* NEW precio destacado */
+.precio-oferta {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #00ffea;
+  text-shadow: 0 0 10px #00ffea;
+}
+
+/* Botón agregar */
+.btn-agregar {
+  margin-top: 10px;
+  background: #00aaff;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.btn-agregar:hover {
+  background: #0088cc;
+  box-shadow: 0 0 15px #00aaff;
+}
+
+/* ===========================
+   CARRITO
+   =========================== */
+
+.btn-carrito {
+  background: #00aaff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  transition: 0.3s;
+}
+
+.btn-carrito:hover {
+  background: #0088cc;
+  box-shadow: 0 0 15px #00aaff;
+}
+
+/* ===========================
+   CHECKOUT / FORMULARIOS
+   =========================== */
+
+input, select, textarea {
+  background: #0d0e10;
+  border: 1px solid #00aaff55;
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #00aaff;
+  box-shadow: 0 0 10px #00aaff;
+  outline: none;
+}
+
+/* Botón pagar */
+.btn-pagar-ahora {
+  background: linear-gradient(90deg, #00aaff, #0066ff);
+  color: white;
+  padding: 12px 40px;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-pagar-ahora:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00aaffaa;
+}
+
+/* ===========================
+   TABLA CHECKOUT
+   =========================== */
+
+.tabla-checkout {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.tabla-checkout th {
+  background: #121215;
+  padding: 12px;
+  color: #00aaff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.tabla-checkout td {
+  padding: 10px;
+  border-bottom: 1px solid #00aaff22;
+}
+
+.tabla-checkout img {
+  width: 75px;
+  border-radius: 8px;
+}
