@@ -284,3 +284,32 @@ p {
 .btn-agregar:hover {
   background: #2ecc10;
 }
+
+/* ============================
+      PRECIOS EN OFERTA
+============================ */
+
+/* Precio normal tachado en rojo */
+.producto-precio-original {
+    color: #ff3b3b !important;
+    text-decoration: line-through;
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Precio OFERTA destacado */
+.producto-precio-oferta {
+    color: #00ffff;
+    font-size: 22px;
+    font-weight: 700;
+    text-shadow: 0 0 8px #00ffff, 0 0 15px #0088ff;
+    margin: 0;
+}
+
+/* Precio normal (sin oferta) */
+.producto-precio-normal {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+}

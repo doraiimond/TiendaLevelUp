@@ -18,50 +18,44 @@
 
 <body>
   <!-- HEADER -->
+    <!-- HEADER -->
   <header class="header">
-
-    <!-- Línea Superior: Buscador + Login -->
+    <!-- Línea Superior -->
     <div class="header-top">
       <div class="search-container">
-        <input type="text" id="buscador" placeholder="Buscar ofertas..." class="search-input" />
+        <input type="text" id="buscador" placeholder="Buscar productos..." class="search-input" />
         <button id="btnBuscar" class="btn-buscar">Buscar</button>
       </div>
-
       <div class="auth-buttons">
         <a href="login.html" class="btn-login">Iniciar Sesión</a>
         <a href="registro.html" class="btn-signup">Crear Cuenta</a>
       </div>
     </div>
 
-    <!-- Línea Inferior: Navegación -->
+    <!-- Línea Inferior - Nav -->
     <nav class="nav-main">
-
-      <!-- Navegación izquierda -->
+        <a class="navbar-brand d-flex align-items-center" href="/index.html">
+        <img src="/assets/image/logo.png" alt="Logo" width="40" height="40" class="me-2">
+        </a>
       <div class="nav-center">
         <a href="../../index.html" class="nav-link">Inicio</a>
-
         <div class="dropdown">
           <a href="#" class="nav-link">Categorías ⌄</a>
           <div class="dropdown-content" id="dropdownCategorias"></div>
         </div>
-
-        <a href="catalogo.html" class="nav-link">Tienda</a>
-        <a href="ofertas.html" class="nav-link active">Ofertas</a>
+        <a href="ofertas.html" class="nav-link">Ofertas</a>
         <a href="nosotros.html" class="nav-link">Nosotros</a>
         <a href="blogs.html" class="nav-link">Blog</a>
         <a href="contacto.html" class="nav-link">Contacto</a>
       </div>
 
-      <!-- Carrito -->
       <div class="nav-right">
         <button class="btn-carrito" onclick="window.location.href='carrito.html'">
           <span class="carrito-icon">🛒</span>
           Total: $<span class="carrito-total">0</span>
         </button>
       </div>
-
     </nav>
-
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
