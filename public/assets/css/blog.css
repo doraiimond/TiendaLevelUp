@@ -1,6 +1,6 @@
 /* === CONFIGURACIÓN GENERAL === */
 body {
-  background: radial-gradient(circle at top, #0a0a0a, #000000 60%);
+  background-color: #000000;
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -10,19 +10,12 @@ body {
 
 /* === HEADER === */
 header {
-  background: linear-gradient(120deg, #0b1c36, #091f14, #0b1c36);
-  background-size: 300% 300%;
+  background: #000000;
+  border-bottom: 2px solid #1E90FF;
   padding: 50px 20px;
   text-align: center;
   color: white;
   box-shadow: 0 0 25px #1E90FF;
-  animation: neonWave 8s ease infinite;
-}
-
-@keyframes neonWave {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 header h1 {
@@ -30,7 +23,9 @@ header h1 {
   font-size: 3rem;
   letter-spacing: 3px;
   margin-bottom: 20px;
-  text-shadow: 0 0 20px #39FF14, 0 0 40px #1E90FF;
+  text-shadow: 
+      0 0 10px #39FF14, 
+      0 0 20px #1E90FF;
 }
 
 /* Botón Volver */
@@ -43,13 +38,15 @@ header .btn-volver {
   font-weight: 600;
   text-decoration: none;
   letter-spacing: 1px;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 header .btn-volver:hover {
   background-color: #39FF14;
   color: #000;
-  box-shadow: 0 0 20px #39FF14, 0 0 30px #1E90FF;
+  box-shadow: 
+      0 0 15px #39FF14, 
+      0 0 25px #1E90FF;
   transform: translateY(-2px);
 }
 
@@ -62,19 +59,20 @@ main.container {
 
 /* === TARJETAS DE BLOG === */
 .blog-card {
-  background: rgba(15, 15, 15, 0.85);
-  backdrop-filter: blur(4px);
+  background: #0e0e0e;
   border-radius: 18px;
   padding: 28px;
   margin-bottom: 45px;
   border: 2px solid #1E90FF;
-  box-shadow: 0 0 18px rgba(30, 144, 255, 0.4);
+  box-shadow: 0 0 15px rgba(30, 144, 255, 0.4);
   transition: 0.35s ease;
 }
 
 .blog-card:hover {
   transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 0 28px #39FF14, 0 0 40px #1E90FF;
+  box-shadow: 
+      0 0 25px #39FF14, 
+      0 0 35px #1E90FF;
 }
 
 .blog-card h3 {
@@ -82,11 +80,11 @@ main.container {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.8rem;
   margin-bottom: 15px;
-  text-shadow: 0 0 15px #39FF14;
+  text-shadow: 0 0 10px #39FF14;
 }
 
 .blog-card p {
-  color: #D6D6D6;
+  color: #D3D3D3;
   line-height: 1.7;
   font-size: 1rem;
 }
@@ -95,7 +93,7 @@ main.container {
   width: 100%;
   border-radius: 14px;
   margin: 18px 0;
-  box-shadow: 0 0 18px #1E90FF99;
+  box-shadow: 0 0 12px #1E90FF99;
 }
 
 /* === SISTEMA DE ESTRELLAS === */
@@ -107,31 +105,32 @@ main.container {
 
 .star {
   font-size: 30px;
-  color: #2a2a2a;
+  color: #444;
   cursor: pointer;
   margin: 0 4px;
-  transition: 0.3s;
-  text-shadow: 0 0 8px #000;
+  transition: 0.3s ease;
 }
 
 .star:hover {
   transform: scale(1.25);
   color: #39FF14;
-  text-shadow: 0 0 20px #39FF14, 0 0 30px #1E90FF;
+  text-shadow: 
+      0 0 15px #39FF14,
+      0 0 20px #1E90FF;
 }
 
 .star.active {
   color: #39FF14;
-  text-shadow: 0 0 25px #39FF14;
+  text-shadow: 0 0 18px #39FF14;
 }
 
 /* === FOOTER === */
 footer {
-  background-color: #0a0a0a;
+  background-color: #000000;
   text-align: center;
   padding: 25px;
   border-top: 2px solid #1E90FF;
-  color: #CFCFCF;
+  color: #D3D3D3;
   font-size: 0.95rem;
   letter-spacing: 1px;
   margin-top: 60px;

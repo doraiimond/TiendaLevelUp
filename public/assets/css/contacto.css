@@ -4,24 +4,27 @@
 
 body {
   background-color: #000;
-  color: #fff;
+  color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* BARRA SUPERIOR */
+/* =====================
+   BARRA SUPERIOR
+   ===================== */
 .Barra-Arriba {
   display: flex;
   justify-content: center;
-  background: linear-gradient(90deg, #141414, #1a1a1a);
+  background: #000;
   padding: 10px;
-  border-bottom: 2px solid #0ff;
-  box-shadow: 0 0 10px #00ffff70;
+  border-bottom: 2px solid #1E90FF;
+  box-shadow: 0 0 12px #1E90FF70;
 }
 
-.Barra-Arriba .control, .Barra-Arriba .marco {
-  color: #0ff;
+.Barra-Arriba .control,
+.Barra-Arriba .marco {
+  color: #1E90FF;
   text-decoration: none;
   margin: 0 15px;
   font-family: 'Orbitron', sans-serif;
@@ -29,11 +32,13 @@ body {
 }
 
 .Barra-Arriba .marco:hover {
-  text-shadow: 0 0 10px #0ff, 0 0 20px #00f;
-  color: #fff;
+  text-shadow: 0 0 12px #1E90FF, 0 0 25px #39FF14;
+  color: #FFFFFF;
 }
 
-/* TITULO */
+/* =====================
+   TITULO
+   ===================== */
 .titulo-contacto {
   text-align: center;
   margin-top: 50px;
@@ -41,19 +46,23 @@ body {
 
 .titulo-contacto h1 {
   font-family: 'Orbitron', sans-serif;
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff, 0 0 20px #0099ff;
+  color: #39FF14;
+  text-shadow: 0 0 12px #39FF14, 0 0 25px #1E90FF;
+  letter-spacing: 1px;
 }
 
-/* FORMULARIO */
+/* =====================
+   FORMULARIO
+   ===================== */
 .form-contacto {
   width: 90%;
   max-width: 500px;
   margin: 40px auto;
-  background: #111;
+  background: #0d0d0d;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 0 20px #00ffff30;
+  border: 1px solid #1E90FF60;
+  box-shadow: 0 0 20px #1E90FF30;
 }
 
 .campo {
@@ -64,24 +73,26 @@ body {
   display: block;
   margin-bottom: 6px;
   font-weight: bold;
-  color: #0ff;
+  color: #39FF14;
+  text-shadow: 0 0 10px #39FF14;
 }
 
-.campo input, 
+.campo input,
 .campo textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #0ff;
+  border: 1px solid #1E90FF;
   background: #000;
-  color: #fff;
+  color: #FFFFFF;
   border-radius: 8px;
   font-family: 'Roboto', sans-serif;
+  transition: 0.3s;
 }
 
-.campo input:focus, 
+.campo input:focus,
 .campo textarea:focus {
   outline: none;
-  box-shadow: 0 0 8px #00ffff;
+  box-shadow: 0 0 12px #1E90FF, 0 0 25px #39FF14;
 }
 
 .campo-check {
@@ -89,41 +100,51 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #D3D3D3;
 }
 
-/* BOTÓN */
+/* =====================
+   BOTÓN ENVIAR
+   ===================== */
 .btn-enviar {
   width: 100%;
-  background: linear-gradient(90deg, #0ff, #0077ff);
+  background: linear-gradient(90deg, #39FF14, #1E90FF);
   color: #000;
   border: none;
-  padding: 10px;
+  padding: 12px;
   border-radius: 10px;
   font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
+  border: 1px solid #1E90FF90;
 }
 
 .btn-enviar:hover {
-  box-shadow: 0 0 15px #00ffff, 0 0 30px #0077ff;
-  color: #fff;
+  box-shadow: 0 0 18px #39FF14, 0 0 35px #1E90FF;
+  color: #FFFFFF;
+  transform: scale(1.03);
 }
 
-/* FOOTER */
+/* =====================
+   FOOTER
+   ===================== */
 .footer {
   text-align: center;
   margin-top: 60px;
   padding: 20px;
-  border-top: 2px solid #0ff;
-  background-color: #111;
+  border-top: 2px solid #1E90FF;
+  background-color: #0d0d0d;
+  color: #D3D3D3;
 }
 
 .footer-redes a {
-  color: #0ff;
+  color: #1E90FF;
   text-decoration: none;
   font-family: 'Orbitron', sans-serif;
+  transition: 0.3s ease;
 }
 
 .footer-redes a:hover {
-  text-shadow: 0 0 10px #0ff, 0 0 20px #0077ff;
+  text-shadow: 0 0 12px #1E90FF, 0 0 25px #39FF14;
 }

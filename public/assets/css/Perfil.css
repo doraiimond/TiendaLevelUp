@@ -2,159 +2,155 @@
    🎮 PERFIL LEVEL UP
    ===================== */
 
-   body {
-    background-color: #000; /* Fondo oscuro estilo gamer */
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* =====================
-     BARRA SUPERIOR
-     ===================== */
-  .Barra-Arriba {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(90deg, #141414, #1a1a1a);
-    padding: 12px 0;
-    border-bottom: 2px solid #0ff;
-    box-shadow: 0 0 15px #00ffff70;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  
-  .Barra-Arriba .marco {
-    color: #0ff;
-    text-decoration: none;
-    margin: 0 20px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.1rem;
-    transition: 0.3s;
-  }
-  
-  .Barra-Arriba .marco:hover {
-    text-shadow: 0 0 10px #0ff, 0 0 20px #00f;
-    color: #fff;
-  }
-  
-  /* =====================
-     TITULO
-     ===================== */
-  .titulo-perfil {
-    text-align: center;
-    margin-top: 40px;
-  }
-  
-  .titulo-perfil h1 {
-    font-family: 'Orbitron', sans-serif;
-    color: #00ffff;
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #0099ff;
-    font-size: 2.3rem;
-  }
-  
-  /* =====================
-     CONTENEDOR PRINCIPAL
-     ===================== */
-  .perfil-box {
-    width: 90%;
-    max-width: 550px;
-    margin: 40px auto;
-    background: #111;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 25px #00ffff50;
-    text-align: center;
-    transition: 0.3s;
-  }
-  
-  .perfil-box:hover {
-    box-shadow: 0 0 35px #00ffff70, 0 0 50px #0077ff50;
-  }
-  
-  /* =====================
-     FOTO DEL USUARIO
-     ===================== */
-  .foto-section {
-    margin-bottom: 20px;
-  }
-  
-  .foto-cliente {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 3px solid #0ff;
-    box-shadow: 0 0 15px #00ffff;
-    transition: 0.3s;
-  }
-  
-  .foto-cliente:hover {
-    box-shadow: 0 0 25px #00ffff, 0 0 40px #0077ff;
-    transform: scale(1.05);
-  }
-  
-  /* =====================
-     INFORMACIÓN DEL PERFIL
-     ===================== */
-  .info-perfil {
-    text-align: left;
-    margin-top: 20px;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  .info-perfil strong {
-    color: #0ff;
-  }
-  
-  /* =====================
-     BOTON LOGOUT
-     ===================== */
-  .btn-logout {
-    width: 100%;
-    background: linear-gradient(90deg, #0ff, #0077ff);
-    color: #000;
-    border: none;
-    padding: 12px;
-    border-radius: 12px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 25px;
-  }
-  
-  .btn-logout:hover {
-    box-shadow: 0 0 20px #00ffff, 0 0 40px #0077ff;
-    color: #fff;
-    transform: scale(1.02);
-  }
-  
-  /* =====================
-     ESTILO ADICIONAL LEVEL UP
-     ===================== */
-  /* Bordes y sombras neón para secciones */
-  .perfil-box, .info-perfil, .btn-logout {
-    border: 1px solid #00ffff30;
-  }
-  
-  /* Scroll personalizado */
-  body::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: #111;
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background: #00ffff80;
-    border-radius: 5px;
-  }
-  
-  body::-webkit-scrollbar-thumb:hover {
-    background: #0ff;
-  }
-  
+body {
+  background-color: #000;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* =====================
+   BARRA SUPERIOR
+   ===================== */
+.Barra-Arriba {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  padding: 12px 0;
+  border-bottom: 2px solid #1E90FF;
+  box-shadow: 0 0 18px #1E90FF70;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.Barra-Arriba .marco {
+  color: #1E90FF;
+  text-decoration: none;
+  margin: 0 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  transition: 0.3s ease;
+}
+
+.Barra-Arriba .marco:hover {
+  text-shadow: 0 0 12px #1E90FF, 0 0 25px #39FF14;
+  color: #FFFFFF;
+}
+
+/* =====================
+   TITULO
+   ===================== */
+.titulo-perfil {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.titulo-perfil h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: #39FF14;
+  text-shadow: 0 0 12px #39FF14, 0 0 28px #1E90FF;
+  font-size: 2.3rem;
+}
+
+/* =====================
+   CONTENEDOR PRINCIPAL
+   ===================== */
+.perfil-box {
+  width: 90%;
+  max-width: 550px;
+  margin: 40px auto;
+  background: #0d0d0d;
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid #1E90FF60;
+  box-shadow: 0 0 25px #1E90FF40;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.perfil-box:hover {
+  box-shadow: 0 0 35px #39FF1480, 0 0 50px #1E90FF80;
+}
+
+/* =====================
+   FOTO DEL USUARIO
+   ===================== */
+.foto-section {
+  margin-bottom: 20px;
+}
+
+.foto-cliente {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid #39FF14;
+  box-shadow: 0 0 18px #39FF14;
+  transition: 0.3s;
+}
+
+.foto-cliente:hover {
+  box-shadow: 0 0 25px #39FF14, 0 0 40px #1E90FF;
+  transform: scale(1.05);
+}
+
+/* =====================
+   INFORMACIÓN DEL PERFIL
+   ===================== */
+.info-perfil {
+  text-align: left;
+  margin-top: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.info-perfil strong {
+  color: #39FF14;
+  text-shadow: 0 0 10px #39FF14;
+}
+
+/* =====================
+   BOTON LOGOUT
+   ===================== */
+.btn-logout {
+  width: 100%;
+  background: linear-gradient(90deg, #39FF14, #1E90FF);
+  color: #000;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 25px;
+  border: 1px solid #1E90FF90;
+}
+
+.btn-logout:hover {
+  box-shadow: 0 0 22px #39FF14, 0 0 40px #1E90FF;
+  color: #FFFFFF;
+  transform: scale(1.03);
+}
+
+/* =====================
+   SCROLL PERSONALIZADO
+   ===================== */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #111;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #1E90FF80;
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #39FF14;
+}
