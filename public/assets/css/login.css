@@ -1,103 +1,135 @@
-/* Fondo general */
+/* =========================
+   GLOBAL
+========================= */
 body {
-  background-color: black;
-  color: white;
-  font-family: 'Poppins', sans-serif;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* Navbar */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   NAVBAR LOGIN
+========================= */
 .Barra-Arriba {
-  background-color: #111;
+  background-color: #000000;
   padding: 15px;
   text-align: center;
+  border-bottom: 2px solid #1E90FF;
 }
 
 .Barra-Arriba ul a {
-  color: #fff;
+  color: #D3D3D3;
   margin: 0 15px;
-  text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .Barra-Arriba ul a:hover {
-  color: #00ffff;
+  color: #1E90FF;
 }
 
-/* CUADRO DE LOGIN */
+/* =========================
+   CUADRO DE LOGIN
+========================= */
 .Cuadro-Reg {
-  background-color: black;
-  padding: 20px 30px;
+  background-color: #111111;
+  padding: 25px 35px;
   border-radius: 15px;
-  color: white;
-  max-width: 400px;
-  margin: 100px auto;
-  animation: luz 3s infinite;
-  box-shadow: 0 0 10px #00ffff;
+  max-width: 450px;
+  margin: 120px auto;
+  border: 2px solid #1E90FF;
+  box-shadow: 0 0 25px rgba(30, 144, 255, 0.4);
+  transition: box-shadow 0.4s, border-color 0.4s;
+}
+
+.Cuadro-Reg:hover {
+  border-color: #39FF14;
+  box-shadow: 0 0 35px rgba(57, 255, 20, 0.6);
+}
+
+/* Títulos */
+.Cuadro-Reg h2 {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  color: #1E90FF;
+  margin-bottom: 20px;
 }
 
 /* Etiquetas */
 .Cuadro-Reg label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-family: 'Orbitron', sans-serif;
+  color: #39FF14;
 }
 
 /* Inputs */
 .Cuadro-Reg input {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 8px;
-  background-color: #222;
-  color: white;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 2px solid #1E90FF;
+  border-radius: 10px;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .Cuadro-Reg input:focus {
-  outline: 1px solid #00ffff;
+  outline: none;
+  border-color: #39FF14;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.7);
 }
 
-/* Botón de login */
+/* =========================
+   BOTÓN LOGIN
+========================= */
 .btnLogin {
   width: 100%;
-  background-color: #00ffff;
-  color: black;
+  background-color: #1E90FF;
+  border: 2px solid #1E90FF;
+  color: #000000;
   font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  padding: 10px;
-  transition: 0.3s;
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 10px;
+  padding: 12px;
+  transition: all 0.3s;
 }
 
 .btnLogin:hover {
-  background-color: #00cccc;
+  background-color: #39FF14;
+  border-color: #39FF14;
+  color: #000000;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
 }
 
-/* Animación de luces */
-@keyframes luz {
-  0%   { box-shadow: 0 0 15px #ff0000; }
-  25%  { box-shadow: 0 0 15px #00ff00; }
-  50%  { box-shadow: 0 0 15px #0000ff; }
-  75%  { box-shadow: 0 0 15px #ff00ff; }
-  100% { box-shadow: 0 0 15px #ff0000; }
-}
-
-/* Footer */
+/* =========================
+   FOOTER
+========================= */
 footer {
-  background-color: #111;
+  background-color: #000000;
   text-align: center;
-  padding: 15px 0;
+  padding: 15px;
+  margin-top: 80px;
+  border-top: 2px solid #1E90FF;
   font-size: 0.9rem;
 }
 
 footer a {
-  color: #00ffff;
-  text-decoration: none;
+  color: #1E90FF;
+  transition: color 0.3s;
 }
 
 footer a:hover {
-  text-decoration: underline;
+  color: #39FF14;
 }

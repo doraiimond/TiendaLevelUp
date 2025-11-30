@@ -1,10 +1,9 @@
-/* ===========================
-   LEVEL UP — ESTILO GLOBAL
-   =========================== */
-
+/* =========================
+   GLOBAL
+========================= */
 body {
-  background-color: #0a0b0d;
-  color: #e6e6e6;
+  background-color: #000000;
+  color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   margin: 0;
 }
@@ -12,19 +11,18 @@ body {
 /* Títulos */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Orbitron', sans-serif;
-  color: #00aaff;
+  color: #1E90FF;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* ===========================
+/* =========================
    HEADER
-   =========================== */
-
+========================= */
 header {
-  background: #141418;
-  border-bottom: 2px solid #00aaff;
-  box-shadow: 0 0 20px #00aaff55;
+  background: #000000;
+  border-bottom: 2px solid #1E90FF;
+  box-shadow: 0 0 25px rgba(30, 144, 255, 0.4);
   padding-bottom: 10px;
 }
 
@@ -36,7 +34,7 @@ header {
 }
 
 .nav-link {
-  color: #f5f5f5;
+  color: #D3D3D3;
   margin: 0 12px;
   text-decoration: none;
   font-weight: 500;
@@ -44,14 +42,13 @@ header {
 }
 
 .nav-link:hover {
-  color: #00aaff;
-  text-shadow: 0 0 8px #00aaff;
+  color: #1E90FF;
+  text-shadow: 0 0 8px #1E90FF;
 }
 
-/* ===========================
+/* =========================
    BUSCADOR
-   =========================== */
-
+========================= */
 .search-container {
   display: flex;
   width: 300px;
@@ -60,173 +57,177 @@ header {
 .search-input {
   flex: 1;
   padding: 8px 12px;
-  background: #0d0e10;
-  border: 1px solid #00aaff55;
-  color: #fff;
-  border-radius: 6px 0 0 6px;
+  background: #111111;
+  border: 2px solid #1E90FF;
+  color: #FFFFFF;
+  border-radius: 10px 0 0 10px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-input:focus {
+  border-color: #39FF14;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.6);
 }
 
 .btn-buscar {
   padding: 8px 14px;
-  background: #00aaff;
-  color: white;
+  background: #1E90FF;
+  color: black;
   border: none;
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 10px 10px 0;
   cursor: pointer;
   transition: 0.3s;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .btn-buscar:hover {
-  background: #0088cc;
-  box-shadow: 0 0 10px #00aaff;
+  background: #39FF14;
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
 }
 
-/* ===========================
+/* =========================
    BOTONES AUTH
-   =========================== */
-
+========================= */
 .auth-buttons button {
-  background: #00aaff;
-  color: white;
+  background: #1E90FF;
+  color: black;
   border: none;
   padding: 8px 16px;
   margin-left: 8px;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
   font-family: 'Orbitron', sans-serif;
 }
 
 .auth-buttons button:hover {
-  background: #0088cc;
-  box-shadow: 0 0 10px #00aaff;
+  background: #39FF14;
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
 }
 
-/* ===========================
-   TARJETAS DE PRODUCTO
-   =========================== */
-
+/* =========================
+   TARJETAS PRODUCTO
+========================= */
 .product-card {
-  background: #151518;
-  border-radius: 10px;
+  background: #111111;
+  border-radius: 12px;
   padding: 15px;
   text-align: center;
-  border: 1px solid #00aaff22;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 2px solid #1E90FF;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .product-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 15px #00aaff88;
+  transform: translateY(-5px);
+  border-color: #39FF14;
+  box-shadow: 0 10px 25px rgba(30, 144, 255, 0.6);
 }
 
 .product-card img {
   width: 100%;
   height: 220px;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-/* Precio normal */
+/* Precios */
 .precio {
   font-size: 1.2rem;
-  color: #ffffff;
-  margin-top: 5px;
+  color: #FFFFFF;
+  margin-top: 6px;
 }
 
-/* Precio original tachado (oferta) */
 .precio-original {
   font-size: 1rem;
-  color: #ff2e2e;
+  color: #FF3A3A;
   text-decoration: line-through;
   opacity: 0.8;
 }
 
-/* NEW precio destacado */
 .precio-oferta {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #00ffea;
-  text-shadow: 0 0 10px #00ffea;
+  color: #39FF14;
+  text-shadow: 0 0 12px #39FF14;
 }
 
 /* Botón agregar */
 .btn-agregar {
-  margin-top: 10px;
-  background: #00aaff;
-  color: white;
-  padding: 8px 14px;
+  margin-top: 12px;
+  background: #1E90FF;
+  color: black;
+  padding: 10px 18px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
   font-family: 'Orbitron', sans-serif;
 }
 
 .btn-agregar:hover {
-  background: #0088cc;
-  box-shadow: 0 0 15px #00aaff;
+  background: #39FF14;
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
 }
 
-/* ===========================
+/* =========================
    CARRITO
-   =========================== */
-
+========================= */
 .btn-carrito {
-  background: #00aaff;
-  color: white;
+  background: #1E90FF;
+  color: black;
   border: none;
   padding: 10px 16px;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   font-family: 'Orbitron', sans-serif;
   transition: 0.3s;
 }
 
 .btn-carrito:hover {
-  background: #0088cc;
-  box-shadow: 0 0 15px #00aaff;
+  background: #39FF14;
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
 }
 
-/* ===========================
-   CHECKOUT / FORMULARIOS
-   =========================== */
-
+/* =========================
+   FORMULARIOS / CHECKOUT
+========================= */
 input, select, textarea {
-  background: #0d0e10;
-  border: 1px solid #00aaff55;
+  background: #000000;
+  border: 2px solid #1E90FF;
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 10px;
   color: white;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input:focus, select:focus, textarea:focus {
-  border-color: #00aaff;
-  box-shadow: 0 0 10px #00aaff;
+  border-color: #39FF14;
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.6);
   outline: none;
 }
 
 /* Botón pagar */
 .btn-pagar-ahora {
-  background: linear-gradient(90deg, #00aaff, #0066ff);
-  color: white;
+  background: #1E90FF;
+  color: black;
   padding: 12px 40px;
   border-radius: 10px;
-  border: none;
+  border: 2px solid #1E90FF;
   font-family: 'Orbitron', sans-serif;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .btn-pagar-ahora:hover {
+  background: #39FF14;
+  border-color: #39FF14;
   transform: scale(1.05);
-  box-shadow: 0 0 20px #00aaffaa;
+  box-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
 }
 
-/* ===========================
+/* =========================
    TABLA CHECKOUT
-   =========================== */
-
+========================= */
 .tabla-checkout {
   width: 100%;
   border-collapse: collapse;
@@ -234,15 +235,16 @@ input:focus, select:focus, textarea:focus {
 }
 
 .tabla-checkout th {
-  background: #121215;
+  background: #111111;
   padding: 12px;
-  color: #00aaff;
+  color: #1E90FF;
   font-family: 'Orbitron', sans-serif;
+  border-bottom: 2px solid #1E90FF;
 }
 
 .tabla-checkout td {
   padding: 10px;
-  border-bottom: 1px solid #00aaff22;
+  border-bottom: 1px solid #1E90FF44;
 }
 
 .tabla-checkout img {
