@@ -11,8 +11,12 @@ import Checkout from "../components/pages/Checkout";
 import CompraExitosa from "../components/pages/CompraExitosa";
 import ErrorPago from "../components/pages/ErrorPago";
 
+// Nuevos componentes
+import Registro from "../components/pages/Registro";
+import Blog from "../components/pages/Blog";
+
 const RouterConfg = () => (
-    <>  
+    <Router>
         <Header />
         <Switch>
             <Route exact path="/" component={Home} />
@@ -23,8 +27,11 @@ const RouterConfg = () => (
             <Route path="/checkout" component={Checkout} />
             <Route path="/exito" component={CompraExitosa} />
             <Route path="/error" component={ErrorPago} />
+            <Route path="/registro" component={Registro} />
+            <Route path="/blog" component={Blog} />
         </Switch>
         <Footer />
-    </>
+    </Router>
 );
+
 export default RouterConfg;
