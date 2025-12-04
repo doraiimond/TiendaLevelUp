@@ -1,6 +1,3 @@
-/* =========================
-   GLOBAL
-========================= */
 body {
   background-color: #000000;
   color: #FFFFFF;
@@ -8,7 +5,6 @@ body {
   margin: 0;
 }
 
-/* Títulos */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Orbitron', sans-serif;
   color: #1E90FF;
@@ -17,9 +13,6 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 0 8px rgba(30,144,255,0.4);
 }
 
-/* =========================
-   HEADER
-========================= */
 header {
   background: #000000;
   border-bottom: 2px solid #1E90FF;
@@ -47,9 +40,6 @@ header {
   text-shadow: 0 0 8px #1E90FF;
 }
 
-/* =========================
-   BUSCADOR
-========================= */
 .search-container {
   display: flex;
   width: 300px;
@@ -86,9 +76,6 @@ header {
   box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
 }
 
-/* =========================
-   BOTONES AUTH
-========================= */
 .auth-buttons button {
   background: #1E90FF;
   color: black;
@@ -106,9 +93,6 @@ header {
   box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
 }
 
-/* =========================
-   TARJETAS PRODUCTO
-========================= */
 .product-card {
   background: #111111;
   border-radius: 12px;
@@ -133,7 +117,6 @@ header {
   background: #000;
 }
 
-/* Precios */
 .precio {
   font-size: 1.2rem;
   color: #FFFFFF;
@@ -172,9 +155,6 @@ header {
   box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
 }
 
-/* =========================
-   CARRITO
-========================= */
 .btn-carrito {
   background: #1E90FF;
   color: black;
@@ -191,9 +171,6 @@ header {
   box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
 }
 
-/* =========================
-   FORMULARIOS / CHECKOUT
-========================= */
 input, select, textarea {
   background: #000000;
   border: 2px solid #1E90FF;
@@ -209,7 +186,6 @@ input:focus, select:focus, textarea:focus {
   outline: none;
 }
 
-/* Botón pagar */
 .btn-pagar-ahora {
   background: #1E90FF;
   color: black;
@@ -228,9 +204,6 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
 }
 
-/* =========================
-   TABLA CHECKOUT
-========================= */
 .tabla-checkout {
   width: 100%;
   border-collapse: collapse;

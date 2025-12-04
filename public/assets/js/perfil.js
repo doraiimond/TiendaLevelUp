@@ -22,7 +22,6 @@ btnCerrar.addEventListener("click", () => {
     window.location.href = "index.html"; // Redirige al inicio
 });
 
-// Opcional: cambiar foto si hay URL en localStorage
 const fotoPerfil = localStorage.getItem("foto") || "../image/user.png";
 document.getElementById("fotoPerfil").src = fotoPerfil;
 

@@ -14,10 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cargarOfertas();
     actualizarTotalCarrito();
-
-    // ==============================
-    //     CARGAR SOLO OFERTAS
-    // ==============================
     async function cargarOfertas() {
         try {
             const snapshot = await db.collection("producto").get();
@@ -37,9 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // ==============================
-    //     MOSTRAR OFERTAS
-    // ==============================
     function mostrarOfertas(lista) {
         if (lista.length === 0) {
             ofertasGrid.innerHTML = `
@@ -70,17 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-
-// ============================================
-//      FUNCIONES DE CARRITO (LOCALSTORAGE)
-// ============================================
 function agregarAlCarrito(id, nombre, imagen, precio) {
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-    // Verificar si el producto ya existe
     const existente = carrito.find(p => p.id === id);
-
     if (existente) {
         existente.cantidad += 1;
     } else {
@@ -94,14 +80,12 @@ function agregarAlCarrito(id, nombre, imagen, precio) {
     }
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
-
     actualizarTotalCarrito();
 }
 
 function actualizarTotalCarrito() {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     const total = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
-
     const totalDOM = document.querySelector(".carrito-total");
     if (totalDOM) totalDOM.textContent = total.toLocaleString("es-CL");
 }

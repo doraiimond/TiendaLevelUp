@@ -1,6 +1,3 @@
-/* =========================
-   GLOBAL
-========================= */
 body {
   background-color: #000000;
   color: #FFFFFF;
@@ -14,9 +11,6 @@ a {
   color: inherit;
 }
 
-/* =========================
-   NAVBAR LOGIN
-========================= */
 .Barra-Arriba {
   background-color: #000000;
   padding: 15px;
@@ -36,9 +30,6 @@ a {
   color: #1E90FF;
 }
 
-/* =========================
-   CUADRO DE LOGIN
-========================= */
 .Cuadro-Reg {
   background-color: #111111;
   padding: 25px 35px;
@@ -55,7 +46,6 @@ a {
   box-shadow: 0 0 35px rgba(57, 255, 20, 0.6);
 }
 
-/* Títulos */
 .Cuadro-Reg h2 {
   text-align: center;
   font-family: 'Orbitron', sans-serif;
@@ -63,7 +53,6 @@ a {
   margin-bottom: 20px;
 }
 
-/* Etiquetas */
 .Cuadro-Reg label {
   display: block;
   margin-bottom: 6px;
@@ -72,7 +61,6 @@ a {
   color: #39FF14;
 }
 
-/* Inputs */
 .Cuadro-Reg input {
   width: 100%;
   padding: 10px;
@@ -91,9 +79,6 @@ a {
   box-shadow: 0 0 10px rgba(57, 255, 20, 0.7);
 }
 
-/* =========================
-   BOTÓN LOGIN
-========================= */
 .btnLogin {
   width: 100%;
   background-color: #1E90FF;
@@ -113,9 +98,6 @@ a {
   box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
 }
 
-/* =========================
-   FOOTER
-========================= */
 footer {
   background-color: #000000;
   text-align: center;

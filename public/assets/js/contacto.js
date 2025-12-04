@@ -1,8 +1,7 @@
-// contacto.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
 import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 
-// --- CONFIGURACIÓN FIREBASE ---
+
 const firebaseConfig = {
     apiKey: "AIzaSyDSUIyg4O-6OGemNJYVgtFiNRWTb4tmsRY",
     authDomain: "levelup-7269f.firebaseapp.com",
@@ -19,7 +18,6 @@ const db = getFirestore(app);
 // Obtener el formulario
 const form = document.getElementById("formContacto");
 
-// Registrar evento
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -28,8 +26,6 @@ form.addEventListener("submit", async (e) => {
     const sujeto = document.getElementById("sujeto").value.trim();
     const mensaje = document.getElementById("mensaje").value.trim();
     const esHumano = document.getElementById("es-humano").checked;
-
-    // Validación básica extra
     if (!esHumano) {
         alert("Debes confirmar que no eres un robot.");
         return;
@@ -46,7 +42,7 @@ form.addEventListener("submit", async (e) => {
 
         alert("¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.");
 
-        form.reset(); // limpiar el formulario
+        form.reset(); 
 
     } catch (error) {
         console.error("Error guardando el mensaje:", error);

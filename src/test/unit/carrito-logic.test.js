@@ -20,14 +20,12 @@ const createLocalStorageMock = () => {
     };
 };
 
-// Función para calcular total del carrito (extraída del componente)
 const calcularTotal = function(carrito) {
     return carrito.reduce(function(total, producto) {
         return total + (producto.precio || 0) * (producto.cantidad || 1);
     }, 0);
 };
 
-// Función para agregar producto al carrito
 const agregarAlCarrito = function(carrito, producto) {
     const productoExistente = carrito.find(function(item) {
         return item.id === producto.id;
@@ -44,7 +42,7 @@ const agregarAlCarrito = function(carrito, producto) {
     }
 };
 
-// Función para actualizar cantidad
+
 const actualizarCantidad = function(carrito, index, nuevaCantidad) {
     if (nuevaCantidad < 1) return carrito;
     
@@ -53,7 +51,6 @@ const actualizarCantidad = function(carrito, index, nuevaCantidad) {
     });
 };
 
-// Función para eliminar producto
 const eliminarDelCarrito = function(carrito, index) {
     return carrito.filter(function(_, i) {
         return i !== index;
@@ -66,15 +63,13 @@ describe('Lógica del Carrito de Compras', function() {
     let localStorageMock;
     
     beforeEach(function() {
-        localStorageMock = createLocalStorageMock();
-        // Mock global de localStorage para las pruebas
+        localStorageMock = createLocalStorageMock();A
         if (typeof window !== 'undefined') {
             window.localStorage = localStorageMock;
         }
     });
     
-    afterEach(function() {
-        // Limpiar después de cada test
+    afterEach(function() {A
         if (typeof window !== 'undefined' && window.localStorage) {
             window.localStorage.clear();
         }
@@ -109,7 +104,7 @@ describe('Lógica del Carrito de Compras', function() {
         
         it('debe usar cantidad 1 por defecto cuando no hay cantidad definida', function() {
             const carrito = [
-                { id: '1', nombre: 'Producto A', precio: 15000 } // sin cantidad
+                { id: '1', nombre: 'Producto A', precio: 15000 } 
             ];
             
             const total = calcularTotal(carrito);
@@ -118,7 +113,7 @@ describe('Lógica del Carrito de Compras', function() {
         
         it('debe manejar productos sin precio', function() {
             const carrito = [
-                { id: '1', nombre: 'Producto Gratis', cantidad: 1 } // sin precio
+                { id: '1', nombre: 'Producto Gratis', cantidad: 1 } 
             ];
             
             const total = calcularTotal(carrito);
@@ -159,8 +154,8 @@ describe('Lógica del Carrito de Compras', function() {
             
             const nuevoCarrito = actualizarCantidad(carrito, 0, 5);
             
-            expect(nuevoCarrito[0].cantidad).toBe(5); // Producto A actualizado
-            expect(nuevoCarrito[1].cantidad).toBe(1); // Producto B sin cambios
+            expect(nuevoCarrito[0].cantidad).toBe(5); 
+            expect(nuevoCarrito[1].cantidad).toBe(1); 
         });
         
         it('debe eliminar producto del carrito', function() {
@@ -182,7 +177,7 @@ describe('Lógica del Carrito de Compras', function() {
             
             const nuevoCarrito = actualizarCantidad(carrito, 0, 0);
             
-            expect(nuevoCarrito[0].cantidad).toBe(1); // No cambia
+            expect(nuevoCarrito[0].cantidad).toBe(1);
         });
     });
     
@@ -202,7 +197,7 @@ describe('Lógica del Carrito de Compras', function() {
             ];
             
             const total = calcularTotal(carrito);
-            expect(total).toBeCloseTo(69.48, 2); // 19.99*2 + 29.50 = 69.48
+            expect(total).toBeCloseTo(69.48, 2); 
         });
     });
     
@@ -240,16 +235,13 @@ describe('Lógica del Carrito de Compras', function() {
     });
 });
 
-// Tests adicionales para validar el formato de moneda
 describe('Formato de Moneda', function() {
     
     it('debe formatear números correctamente para display', function() {
         const numero = 12345.67;
         const formateado = numero.toLocaleString('es-CL');
-        
-        // Dependiendo del entorno, el formato puede variar
         expect(typeof formateado).toBe('string');
-        expect(formateado).toContain('12'); // Al menos parte del número
+        expect(formateado).toContain('12'); 
     });
     
     it('debe manejar números grandes correctamente', function() {
@@ -259,6 +251,90 @@ describe('Formato de Moneda', function() {
         ];
         
         const total = calcularTotal(carritoGrande);
-        expect(total).toBe(2500000); // 1,000,000 * 2 + 500,000 = 2,500,000
+        expect(total).toBe(2500000);
     });
+});
+
+describe("agregarProducto", () => {
+
+    it("debe agregar un producto nuevo si no existe en el carrito", () => {
+        const carrito = [];
+        const producto = { id: "1", nombre: "Mouse", precio: 10000 };
+
+        const resultado = agregarAlCarrito(carrito, producto);
+
+        expect(resultado.length).toBe(1);
+        expect(resultado[0].id).toBe("1");
+        expect(resultado[0].cantidad).toBe(1);
+    });
+
+    it("debe aumentar cantidad si el producto ya existe", () => {
+        const carrito = [
+            { id: "1", nombre: "Mouse", precio: 10000, cantidad: 1 }
+        ];
+        const producto = { id: "1", nombre: "Mouse", precio: 10000 };
+
+        const resultado = agregarAlCarrito(carrito, producto);
+
+        expect(resultado.length).toBe(1);
+        expect(resultado[0].cantidad).toBe(2);
+    });
+
+});
+
+describe("eliminarProducto", () => {
+
+    it("debe eliminar un producto por su índice", () => {
+        const carrito = [
+            { id: "1", nombre: "Mouse" },
+            { id: "2", nombre: "Teclado" }
+        ];
+
+        const resultado = eliminarDelCarrito(carrito, 0);
+
+        expect(resultado.length).toBe(1);
+        expect(resultado[0].id).toBe("2");
+    });
+
+    it("no elimina nada si el índice no existe", () => {
+        const carrito = [{ id: "1", nombre: "Mouse" }];
+
+        const resultado = eliminarDelCarrito(carrito, 5);
+
+        expect(resultado.length).toBe(1);
+        expect(resultado[0].id).toBe("1");
+    });
+
+});
+
+describe("actualizarCantidad", () => {
+
+    it("debe actualizar la cantidad del producto según índice", () => {
+        const carrito = [
+            { id: "1", nombre: "Mouse", cantidad: 1 },
+            { id: "2", nombre: "Teclado", cantidad: 1 }
+        ];
+
+        const resultado = actualizarCantidad(carrito, 0, 4);
+
+        expect(resultado[0].cantidad).toBe(4);
+        expect(resultado[1].cantidad).toBe(1);
+    });
+
+    it("no debe permitir cantidades menores a 1", () => {
+        const carrito = [{ id: "1", nombre: "Mouse", cantidad: 2 }];
+
+        const resultado = actualizarCantidad(carrito, 0, 0);
+
+        expect(resultado[0].cantidad).toBe(2); 
+    });
+
+    it("si el índice no existe no cambia nada", () => {
+        const carrito = [{ id: "1", nombre: "Mouse", cantidad: 2 }];
+
+        const resultado = actualizarCantidad(carrito, 5, 3);
+
+        expect(resultado).toEqual(carrito);
+    });
+
 });

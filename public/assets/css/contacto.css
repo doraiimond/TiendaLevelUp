@@ -1,7 +1,3 @@
-/* =====================
-   🎮 CONTACTO LEVEL UP
-   ===================== */
-
 body {
   background-color: #000;
   color: #FFFFFF;
@@ -10,9 +6,6 @@ body {
   padding: 0;
 }
 
-/* =====================
-   BARRA SUPERIOR
-   ===================== */
 .Barra-Arriba {
   display: flex;
   justify-content: center;
@@ -36,9 +29,6 @@ body {
   color: #FFFFFF;
 }
 
-/* =====================
-   TITULO
-   ===================== */
 .titulo-contacto {
   text-align: center;
   margin-top: 50px;
@@ -51,9 +41,6 @@ body {
   letter-spacing: 1px;
 }
 
-/* =====================
-   FORMULARIO
-   ===================== */
 .form-contacto {
   width: 90%;
   max-width: 500px;
@@ -103,9 +90,6 @@ body {
   color: #D3D3D3;
 }
 
-/* =====================
-   BOTÓN ENVIAR
-   ===================== */
 .btn-enviar {
   width: 100%;
   background: linear-gradient(90deg, #39FF14, #1E90FF);
@@ -126,9 +110,6 @@ body {
   transform: scale(1.03);
 }
 
-/* =====================
-   FOOTER
-   ===================== */
 .footer {
   text-align: center;
   margin-top: 60px;
