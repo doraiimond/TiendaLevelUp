@@ -1,8 +1,10 @@
-const calcularTotal = function (carrito) {
-    return carrito.reduce(function (total, producto) {
-        return total + (producto.precio || 0) * (producto.cantidad || 1);
+function calcularTotal(carrito) {
+    return carrito.reduce((total, producto) => {
+        const precio = Number(producto.precio) || 0;
+        const cantidad = Number(producto.cantidad) || 1;
+        return total + precio * cantidad;
     }, 0);
-};
+}
 
 const agregarProducto = function (carrito, producto) {
     const encontrado = carrito.find((p) => p.id === producto.id);
