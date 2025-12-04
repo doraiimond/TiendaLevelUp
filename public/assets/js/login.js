@@ -6,16 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!form) return console.error("No se encontró #formLogin");
 
-    // Inicializar Firebase
+    // Configurar Firebase
     const firebaseConfig = {
         apiKey: "AIzaSyA-8bvs0ogm0HAqr-ngrC-K21Lxg4WRavI",
         authDomain: "levelup-7269f.firebaseapp.com",
         projectId: "levelup-7269f",
-        storageBucket: "levelup-7269f.appspot.com", //actualizar
+        storageBucket: "levelup-7269f.appspot.com",
         messagingSenderId: "500431750193",
         appId: "1:500431750193:web:b4542d0c40934a02034110",
         measurementId: "G-87KTP9XR6E"
-      };
+    };
 
     if (!firebase.apps?.length) {
         firebase.initializeApp(firebaseConfig);
@@ -25,67 +25,103 @@ document.addEventListener("DOMContentLoaded", () => {
     const db = firebase.firestore();
 
     form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    mensaje.innerText = "";
+        e.preventDefault();
+        mensaje.innerText = "";
 
-    const correo = correoInput.value.trim().toLowerCase();
-    const clave = claveInput.value;
+        const correo = correoInput.value.trim().toLowerCase();
+        const clave = claveInput.value;
 
-    if (!correo || !clave) {
-        mensaje.style.color = "red";
-        mensaje.innerText = "Debes completar correo y clave";
-        return;
-    }
+        if (!correo || !clave) {
+            mensaje.style.color = "red";
+            mensaje.innerText = "Debes completar correo y clave";
+            return;
+        }
 
-    // Admin: autenticar con Firebase Auth
-    if (correo === "admin@duoc.cl") {
+        // --- ADMIN ---
+        // --- ADMIN ---
+        // --- ADMIN ---
+        if (correo === "admin@duoc.cl") {
+            try {
+                const query = await db.collection("usuario")
+                    .where("correo", "==", correo)
+                    .where("clave", "==", clave)
+                    .get();
+
+                if (!query.empty) {
+                    const userData = query.docs[0].data();
+                    const usuario = { nombre: userData.nombre || "Administrador", correo, rol: "admin" };
+                    localStorage.setItem("usuario", JSON.stringify(usuario));
+
+                    mensaje.style.color = "green";
+                    mensaje.innerText = "Bienvenido Administrador, redirigiendo...";
+
+                    setTimeout(() => window.location.href = "perfilAdmin.html", 1000);
+                } else {
+                    mensaje.style.color = "red";
+                    mensaje.innerText = "Correo o clave incorrectos para admin";
+                }
+            } catch (error) {
+                console.error("Error login admin:", error);
+                mensaje.style.color = "red";
+                mensaje.innerText = "Error al verificar admin";
+            }
+            return;
+        }
+
+        // --- VENDEDOR ---
+        if (correo === "vendedor@duoc.cl") {
+            try {
+                const query = await db.collection("usuario")
+                    .where("correo", "==", correo)
+                    .where("clave", "==", clave)
+                    .get();
+
+                if (!query.empty) {
+                    const userData = query.docs[0].data();
+                    const usuario = { nombre: userData.nombre || "Vendedor", correo, rol: "vendedor" };
+                    localStorage.setItem("usuario", JSON.stringify(usuario));
+
+                    mensaje.style.color = "green";
+                    mensaje.innerText = "Bienvenido Vendedor, redirigiendo...";
+
+                    setTimeout(() => window.location.href = "perfilVendedor.html", 1000);
+                } else {
+                    mensaje.style.color = "red";
+                    mensaje.innerText = "Correo o clave incorrectos para vendedor";
+                }
+            } catch (error) {
+                console.error("Error login vendedor:", error);
+                mensaje.style.color = "red";
+                mensaje.innerText = "Error al verificar vendedor";
+            }
+            return;
+        }
+
+        // --- CLIENTE ---
         try {
-            await auth.signInWithEmailAndPassword(correo, clave);
-            // Guardar usuario en localStorage
-            const usuario = { nombre: "Administrador", correo, rol: "admin" };
-            localStorage.setItem("usuario", JSON.stringify(usuario));
+            const query = await db.collection("usuario")
+                .where("correo", "==", correo)
+                .where("clave", "==", clave)
+                .get();
 
-            mensaje.style.color = "green";
-            mensaje.innerText = "Bienvenido Administrador, redirigiendo...";
-            setTimeout(() => {
-                window.location.href = `perfilAdmin.html`;
-            }, 1000);
+            if (!query.empty) {
+                const userData = query.docs[0].data();
+                const nombre = userData.nombre || correo;
+                const usuario = { nombre, correo, rol: "cliente" };
+                localStorage.setItem("usuario", JSON.stringify(usuario));
+
+                mensaje.style.color = "green";
+                mensaje.innerText = "Bienvenido cliente, redirigiendo...";
+
+                setTimeout(() => window.location.href = "perfilCliente.html", 1000);
+            } else {
+                mensaje.style.color = "red";
+                mensaje.innerText = "Correo o clave incorrectos";
+            }
         } catch (error) {
-            console.error("Error login admin:", error);
+            console.error("Error login cliente:", error);
             mensaje.style.color = "red";
-            mensaje.innerText = "Credenciales incorrectas para administrador";
+            mensaje.innerText = "Error al verificar usuario";
         }
-        return;
-    }
-
-    // Cliente: validar desde Firestore
-    try {
-        const query = await db.collection("usuario")
-            .where("correo", "==", correo)
-            .where("clave", "==", clave)
-            .get();
-
-        if (!query.empty) {
-            const userData = query.docs[0].data();
-            const nombre = userData.nombre || correo;
-
-            // Guardar usuario en localStorage con rol real
-            const usuario = { nombre, correo, rol: "cliente" };
-            localStorage.setItem("usuario", JSON.stringify(usuario));
-
-            mensaje.style.color = "green";
-            mensaje.innerText = "Bienvenido cliente, redirigiendo...";
-            setTimeout(() => {
-                window.location.href = `perfilCliente.html`;
-            }, 1000);
-        } else {
-            mensaje.style.color = "red";
-            mensaje.innerText = "Correo o clave incorrectos";
-        }
-    } catch (error) {
-        console.error("Error login cliente:", error);
-        mensaje.style.color = "red";
-        mensaje.innerText = "Error al verificar usuario";
-    }
-});
+    });
 });

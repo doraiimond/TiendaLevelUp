@@ -41,15 +41,35 @@ form.addEventListener("submit", async (e) => {
             fecha,
             createdAt: new Date().toISOString()
         });
-
+    
         mensaje.textContent = "Usuario registrado correctamente 🎉";
         mensaje.style.color = "green";
-
+    
+        // Guardar usuario en localStorage con rol
+        let rolUsuario = "cliente"; // por defecto
+        if (correo.toLowerCase() === "vendedor@duoc.cl") {
+            rolUsuario = "vendedor";
+        }
+    
+        const usuario = { nombre, correo, rol: rolUsuario };
+        localStorage.setItem("usuario", JSON.stringify(usuario));
+    
         form.reset();
-
+    
+        // Redirigir según rol
+        if (rolUsuario === "vendedor") {
+            setTimeout(() => {
+                window.location.href = "perfilVendedor.html";
+            }, 1000);
+        } else {
+            setTimeout(() => {
+                window.location.href = "perfilCliente.html";
+            }, 1000);
+        }
+    
     } catch (error) {
         console.error("Error al guardar:", error);
         mensaje.textContent = "Error al registrar ❌";
         mensaje.style.color = "red";
     }
-});
+});    

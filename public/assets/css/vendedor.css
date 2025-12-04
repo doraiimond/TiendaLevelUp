@@ -1,105 +1,332 @@
-/* ========= ESTILOS GENERALES ========= */
+/* ============================ */
+/*      ESTILO GENERAL          */
+/* ============================ */
 body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #000;
+  color: #FFFFFF;
   margin: 0;
-  background: #0a0f18;
-  color: white;
-  font-family: "Roboto", sans-serif;
+  padding: 0;
 }
 
-h1, h2, h3 {
-  font-family: "Orbitron", sans-serif;
+h1, h2, h3, h4 {
+  font-family: 'Orbitron', sans-serif;
 }
 
-/* ========= SIDEBAR ========= */
-.sidebar {
-  width: 250px;
-  background: #0d1221;
-  height: 100vh;
-  position: fixed;
+/* ============================ */
+/*          HEADER              */
+/* ============================ */
+.header-vendedor {
+  background-color: #000;
   padding: 20px;
-  border-right: 2px solid #14ffe3;
-}
-
-.logo {
-  font-size: 22px;
+  border-bottom: 3px solid #1E90FF;
   text-align: center;
-  font-weight: bold;
-  margin-bottom: 30px;
-  color: #14ffe3;
 }
 
-.menu a {
-  display: block;
-  padding: 12px;
-  color: white;
-  text-decoration: none;
-  margin: 8px 0;
-  border-radius: 8px;
-  transition: 0.3s;
+.header-vendedor h1 {
+  color: #1E90FF;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
-.menu a:hover {
-  background: #14ffe322;
-  border-left: 4px solid #14ffe3;
-  padding-left: 20px;
+.header-vendedor nav button {
+  background-color: #111111;
+  color: #1E90FF;
+  border: 2px solid #1E90FF;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all .3s;
+  cursor: pointer;
 }
 
-/* ========= CONTENIDO ========= */
-.content {
-  margin-left: 270px;
-  padding: 30px;
+.header-vendedor nav button:hover {
+  background-color: #39FF14;
+  color: #000;
+  border-color: #39FF14;
 }
 
-.card {
-  background: #111827;
-  padding: 20px;
+/* ============================ */
+/*      SECCIONES PANEL         */
+/* ============================ */
+.seccion {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 10px;
+}
+
+/* ============================ */
+/*        PRODUCTOS GRID        */
+/* ============================ */
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.producto-card {
+  background-color: #111;
+  border: 2px solid #1E90FF;
   border-radius: 12px;
-  border: 1px solid #1f2937;
-  margin-bottom: 30px;
+  padding: 15px;
+  text-align: center;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
 }
 
-.hidden { display: none; }
-.visible { display: block; }
+.producto-card:hover {
+  transform: translateY(-5px);
+  border-color: #39FF14;
+  box-shadow: 0 10px 25px rgba(30,144,255,.6);
+}
 
-table {
+.producto-img {
   width: 100%;
-  margin-top: 20px;
-  border-collapse: collapse;
-  color: #fff;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
-th, td {
+/* Texto producto */
+.producto-card h3 {
+  color: #1E90FF;
+  margin-bottom: 10px;
+}
+
+.producto-card p {
+  color: #39FF14;
+  margin: 5px 0;
+}
+
+/* Botón eliminar */
+.producto-card button {
+  background-color: transparent;
+  border: 2px solid #FF3B3B;
+  color: #FF3B3B;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.producto-card button:hover {
+  background-color: #FF3B3B;
+  color: black;
+}
+
+/* ============================ */
+/*  FORMULARIO AGREGAR PRODUCTO */
+/* ============================ */
+#formAgregar {
+  background-color: #111;
+  border: 2px solid #1E90FF;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: auto;
+}
+
+#formAgregar label {
+  color: #1E90FF;
+  font-family: 'Orbitron';
+  font-size: 0.9rem;
+}
+
+#formAgregar input {
+  width: 100%;
+  background-color: #000;
+  border: 2px solid #39FF14;
+  color: white;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  outline: none;
+  transition: .3s;
+}
+
+#formAgregar input:focus {
+  border-color: #1E90FF;
+}
+
+#formAgregar button {
+  width: 100%;
+  background-color: #1E90FF;
+  color: #000;
+  border: 2px solid #1E90FF;
   padding: 12px;
-  border-bottom: 1px solid #333;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .3s;
 }
 
-th {
-  background: #1f2937;
-  text-transform: uppercase;
-  font-size: 14px;
+#formAgregar button:hover {
+  background-color: #39FF14;
+  border-color: #39FF14;
 }
 
-.btn {
-  padding: 10px 16px;
-  background: #14ffe3;
-  border: none;
+/* ============================ */
+/*         SECCIÓN COMPRAS      */
+/* ============================ */
+.compra-card {
+  background-color: #111;
+  border: 2px solid #1E90FF;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  transition: all .3s;
+}
+
+.compra-card:hover {
+  transform: translateY(-5px);
+  border-color: #39FF14;
+  box-shadow: 0 10px 25px rgba(30,144,255,.5);
+}
+
+.compra-card h3 {
+  color: #1E90FF;
+  margin-bottom: 10px;
+}
+
+.compra-card p {
+  color: #FFFFFF;
+  margin: 5px 0;
+}
+
+.compra-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.compra-card ul li {
+  background-color: #000;
+  border: 1px solid #39FF14;
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 6px;
+  color: #39FF14;
+}
+
+/* ============================ */
+/*        RESPONSIVE            */
+/* ============================ */
+@media (max-width: 768px) {
+  .producto-img {
+      height: 150px;
+  }
+
+  #formAgregar {
+      width: 90%;
+  }
+
+  .compra-card {
+      padding: 15px;
+  }
+}
+
+/* HEADER CON LOGO */
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+}
+
+/* PERFIL DEL VENDEDOR */
+.titulo-perfil {
+  font-family: 'Orbitron', sans-serif;
+  color: #39FF14;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14;
+}
+
+.form-perfil {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #111111;
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #1E90FF;
+  box-shadow: 0 0 20px rgba(30, 144, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-perfil:hover {
+  border-color: #39FF14;
+  box-shadow: 0 0 25px rgba(57, 255, 20, 0.7);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  color: #1E90FF;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid #1E90FF;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #39FF14;
+  box-shadow: 0 0 10px #39FF14;
+  outline: none;
+}
+
+.btn-perfil {
+  padding: 12px 20px;
+  background-color: #39FF14;
   color: #000;
   font-weight: bold;
-  border-radius: 6px;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
-  margin-top: 10px;
+  transition: all 0.3s;
+  font-family: 'Orbitron', sans-serif;
 }
 
-.btn:hover {
-  background: #0bead1;
+.btn-perfil:hover {
+  background-color: #1E90FF;
+  color: #FFF;
+  box-shadow: 0 0 15px #1E90FF, 0 0 25px #39FF14;
 }
 
-input {
-  width: 60%;
-  padding: 10px;
+.mensaje-perfil {
+  text-align: center;
+  font-weight: 600;
   margin-top: 10px;
-  background: #0d1221;
-  border: 1px solid #14ffe3;
-  color: #fff;
-  border-radius: 6px;
+  font-size: 1rem;
 }
