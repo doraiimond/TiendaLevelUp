@@ -55,17 +55,17 @@ document.addEventListener("DOMContentLoaded", () => {
             grid.innerHTML = `<p class="no-productos">No se encontraron productos.</p>`;
             return;
         }
-
+    
         grid.innerHTML = lista.map(p => {
             const esOferta = p.newprecio !== undefined && p.newprecio !== null;
-
+    
             return `
             <div class="producto-card">
                 <img src="${p.imagen}" alt="${p.nombre}" class="producto-imagen">
-
+    
                 <div class="producto-info">
                     <h3 class="producto-nombre">${p.nombre}</h3>
-
+    
                     ${
                         esOferta 
                         ? `
@@ -76,7 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p class="producto-precio-normal">$${p.precio.toLocaleString("es-CL")}</p>
                         `
                     }
-
+    
+                    <p class="producto-stock">Stock: ${p.stock}</p>  <!-- <-- Agregado -->
+    
                     <button class="btn-agregar"
                         onclick='agregarAlCarrito("${p.id}", "${p.nombre}", "${p.imagen}", ${esOferta ? p.newprecio : p.precio})'>
                         🛒 Agregar al carrito
@@ -85,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>`;
         }).join("");
     }
+    
 
 
     // =============================
@@ -129,10 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("tituloProductos").textContent = `Resultados para: "${texto}"`;
         mostrarProductos(filtrados);
     });
-
-    // =============================
-    //   BOTÓN VER TODOS
-    // =============================
     btnVerTodos.addEventListener("click", () => {
         document.getElementById("tituloProductos").textContent = "🕹️ Todos los Productos";
         mostrarProductos(productosGlobal);
@@ -140,10 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-
-// ============================================
-//      CARRITO COMPATIBLE (MISMO DE OFERTAS)
-// ============================================
 function agregarAlCarrito(id, nombre, imagen, precio) {
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
