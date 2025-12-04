@@ -15,7 +15,6 @@
     <nav>
         <button onclick="mostrarSeccion('perfilVendedor')">Perfil</button>
         <button onclick="mostrarSeccion('listaProductos')">Mis Productos</button>
-        <button onclick="mostrarSeccion('agregarProducto')">Agregar Producto</button>
         <button onclick="mostrarSeccion('listaCompras')">Compras</button>
     </nav>
 </header>
@@ -49,30 +48,6 @@
         <h2>Mis Productos</h2>
         <div id="productosContainer" class="grid-productos"></div>
     </section>
-    <section id="agregarProducto" class="seccion" style="display:none;">
-        <h2>Agregar / Modificar Producto</h2>
-
-        <form id="formAgregar">
-            <input type="hidden" id="productoId">
-            <label>Nombre:</label>
-            <input type="text" id="nombre" required>
-
-            <label>Precio:</label>
-            <input type="number" id="precio" required>
-
-            <label>Precio Anterior (oferta):</label>
-            <input type="number" id="precioAnterior" placeholder="Opcional">
-
-            <label>Stock:</label>
-            <input type="number" id="stock" required>
-
-            <label>URL de Imagen:</label>
-            <input type="text" id="imagen" required>
-
-            <button type="submit">Guardar Producto</button>
-        </form>
-    </section>
-
     <section id="listaCompras" class="seccion" style="display:none;">
         <h2>Compras realizadas</h2>
         <div id="comprasContainer"></div>
