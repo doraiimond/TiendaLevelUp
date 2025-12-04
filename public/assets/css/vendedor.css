@@ -1,0 +1,105 @@
+/* ========= ESTILOS GENERALES ========= */
+body {
+  margin: 0;
+  background: #0a0f18;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* ========= SIDEBAR ========= */
+.sidebar {
+  width: 250px;
+  background: #0d1221;
+  height: 100vh;
+  position: fixed;
+  padding: 20px;
+  border-right: 2px solid #14ffe3;
+}
+
+.logo {
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #14ffe3;
+}
+
+.menu a {
+  display: block;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  margin: 8px 0;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background: #14ffe322;
+  border-left: 4px solid #14ffe3;
+  padding-left: 20px;
+}
+
+/* ========= CONTENIDO ========= */
+.content {
+  margin-left: 270px;
+  padding: 30px;
+}
+
+.card {
+  background: #111827;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+  margin-bottom: 30px;
+}
+
+.hidden { display: none; }
+.visible { display: block; }
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #333;
+}
+
+th {
+  background: #1f2937;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.btn {
+  padding: 10px 16px;
+  background: #14ffe3;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #0bead1;
+}
+
+input {
+  width: 60%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #0d1221;
+  border: 1px solid #14ffe3;
+  color: #fff;
+  border-radius: 6px;
+}
