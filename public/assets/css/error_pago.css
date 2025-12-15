@@ -1,0 +1,229 @@
+/* =========================
+   VARIABLES LEVEL UP
+========================= */
+:root {
+  --bg-main: #020617;
+  --bg-card: #020617cc;
+
+  --danger: #ef4444;
+  --danger-dark: #b91c1c;
+
+  --accent: #f97316;
+
+  --text-main: #e5e7eb;
+  --text-soft: #9ca3af;
+
+  --border-soft: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   BASE
+========================= */
+.main {
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle at top, #020617, #000);
+  min-height: 100vh;
+  color: var(--text-main);
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+.error-container {
+  width: 100%;
+  max-width: 1200px;
+  background: linear-gradient(180deg, #020617, #020617cc);
+  border-radius: 16px;
+  padding: 40px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.2);
+}
+
+/* =========================
+   HEADER ERROR
+========================= */
+.error-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.error-titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.icono-error {
+  font-size: 2.5rem;
+}
+
+.error-header h1 {
+  color: var(--danger);
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.error-subtitulo {
+  margin-top: 10px;
+  color: var(--text-soft);
+}
+
+/* =========================
+   BOTÓN REINTENTAR
+========================= */
+.btn-reintentar-pago {
+  margin-top: 20px;
+  padding: 14px 26px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--danger), var(--accent));
+  color: #020617;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+}
+
+.btn-reintentar-pago:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* =========================
+   SECCIONES
+========================= */
+.section-title {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: var(--accent);
+  border-left: 4px solid var(--accent);
+  padding-left: 12px;
+}
+
+/* =========================
+   FORMULARIOS READONLY
+========================= */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  background: #020617;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.form-group textarea {
+  resize: none;
+  height: 80px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+/* =========================
+   TABLA PRODUCTOS
+========================= */
+.tabla-checkout-container {
+  overflow-x: auto;
+  margin-top: 30px;
+}
+
+.tabla-checkout {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-checkout thead {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.tabla-checkout th {
+  padding: 14px;
+  font-size: 0.85rem;
+  color: var(--danger);
+  text-transform: uppercase;
+}
+
+.tabla-checkout td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 0.9rem;
+}
+
+.tabla-checkout tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tabla-checkout img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* =========================
+   TOTAL
+========================= */
+.total-pagado-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.total-pagado {
+  background: linear-gradient(90deg, var(--danger-dark), var(--danger));
+  color: #020617;
+  padding: 16px 28px;
+  border-radius: 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+}
+
+.total-precio {
+  font-size: 1.4rem;
+  margin-left: 8px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .error-container {
+    padding: 25px;
+  }
+
+  .error-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .total-pagado {
+    width: 100%;
+    text-align: center;
+  }
+}

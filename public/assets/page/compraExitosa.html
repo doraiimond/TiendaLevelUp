@@ -3,149 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compra Exitosa - Mi Tienda</title>
+  <title>Compra Exitosa | LEVEL UP</title>
+
+  <!-- Estilos base -->
   <link rel="stylesheet" href="../css/catalogo.css">
   <link rel="stylesheet" href="../css/carrito.css">
+  <link rel="stylesheet" href="../css/compra_exitosa.css">
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-<body>
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-top">
-      <div class="search-container">
-        <input type="text" id="buscador" placeholder="Buscar productos..." class="search-input">
-        <button id="btnBuscar" class="btn-buscar">Buscar</button>
-      </div>
-      <div class="auth-buttons">
-        <button class="btn-login">Iniciar Sesión</button>
-        <button class="btn-signup">Crear Cuenta</button>
-      </div>
+
+<body class="bg-levelup">
+
+<!-- ================= HEADER ================= -->
+<header class="header levelup-header">
+  <div class="header-top">
+    <div class="logo-levelup">LEVEL<span>UP</span></div>
+
+    <div class="search-container">
+      <input type="text" id="buscador" placeholder="Buscar productos gamer..." class="search-input">
+      <button id="btnBuscar" class="btn-buscar">🔍</button>
     </div>
 
-    <nav class="nav-main">
-      <div class="nav-center">
-        <a href="catalogo.html" class="nav-link">Home</a>
-        <div class="dropdown">
-          <a href="#" class="nav-link">Categoría ⌄</a>
-          <div class="dropdown-content" id="dropdownCategorias"></div>
+    <div class="d-flex">
+          <a href="login.html" class="btn btn-outline-light me-2">Login</a>
+          <a href="registro.html" class="btn btn-warning">Registro</a>
         </div>
-        <a href="#" class="nav-link">Ofertas</a>
-        <a href="#" class="nav-link">Nosotros</a>
-        <a href="#" class="nav-link">Blog</a>
-        <a href="#" class="nav-link">Contacto</a>
-      </div>
-      
-      <div class="nav-right">
-        <button class="btn-carrito" onclick="window.location.href='carrito.html'">
-          <span class="carrito-icon">🛒</span>
-          Total: $<span class="carrito-total">0</span>
-        </button>
-      </div>
-    </nav>
-  </header>
+  </div>
 
-  <!-- MAIN CONTENT -->
-  <main class="main">
-    <div class="exito-container">
-      <!-- Encabezado -->
-      <div class="exito-header">
-        <span class="codigo-orden" id="codigoOrden">ORDEN20240705</span>
-        <div class="exito-titulo">
-          <span class="icono-exito">✅</span>
-          <h1>Se ha realizado la compra nro <span id="numeroCompra">#000001</span></h1>
+  <nav class="nav-main">
+    <div class="nav-center">
+      <a href="catalogo.html" class="nav-link">Home</a>
+
+      <div class="dropdown">
+        <a href="#" class="nav-link">Categorías ⌄</a>
+        <div class="dropdown-content" id="dropdownCategorias"></div>
+      </div>
+
+      <a href="#" class="nav-link">🔥 Ofertas</a>
+      <a href="#" class="nav-link">Nosotros</a>
+      <a href="#" class="nav-link">Contacto</a>
+    </div>
+
+    <div class="nav-right">
+      <button class="btn-carrito" onclick="window.location.href='carrito.html'">
+        🛒 $<span class="carrito-total">0</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main class="main levelup-main">
+
+  <div class="exito-container levelup-card">
+
+    <!-- ===== MENSAJE DE ÉXITO ===== -->
+    <section class="exito-header">
+      <span class="codigo-orden" id="codigoOrden">ORDEN20240705</span>
+
+      <div class="exito-titulo">
+        <span class="icono-exito">🎮✅</span>
+        <h1>¡Compra realizada con éxito!</h1>
+      </div>
+
+      <p class="exito-subtitulo">
+        Tu compra <strong>#<span id="numeroCompra">000001</span></strong> fue procesada correctamente.
+      </p>
+    </section>
+
+    <!-- ===== INFORMACIÓN CLIENTE ===== -->
+    <section class="info-cliente levelup-section">
+      <h2 class="section-title">👤 Información del Cliente</h2>
+
+      <form class="form-cliente readonly">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" id="exitoNombre" readonly>
+          </div>
+
+          <div class="form-group">
+            <label>Apellidos</label>
+            <input type="text" id="exitoApellidos" readonly>
+          </div>
+
+          <div class="form-group">
+            <label>Correo</label>
+            <input type="email" id="exitoCorreo" readonly>
+          </div>
         </div>
-        <p class="exito-subtitulo">Completa la siguiente información</p>
-      </div>
+      </form>
+    </section>
 
-      <!-- Información del Cliente -->
-      <section class="info-cliente">
-        <h2 class="section-title">Información del Cliente</h2>
-        
-        <form class="form-cliente readonly">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Nombre</label>
-              <input type="text" id="exitoNombre" readonly>
-            </div>
-            <div class="form-group">
-              <label>Apellidos</label>
-              <input type="text" id="exitoApellidos" readonly>
-            </div>
-            <div class="form-group">
-              <label>Correo</label>
-              <input type="email" id="exitoCorreo" readonly>
-            </div>
-          </div>
-        </form>
-      </section>
+    <!-- ===== DIRECCIÓN ===== -->
+    <section class="direccion-entrega levelup-section">
+      <h2 class="section-title">📦 Dirección de Entrega</h2>
 
-      <!-- Dirección de Entrega -->
-      <section class="direccion-entrega">
-        <h2 class="section-title">Dirección de entrega de los productos</h2>
-        
-        <form class="form-direccion readonly">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Calle</label>
-              <input type="text" id="exitoCalle" readonly>
-            </div>
-            <div class="form-group">
-              <label>Departamento</label>
-              <input type="text" id="exitoDepartamento" readonly>
-            </div>
+      <form class="form-direccion readonly">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Calle</label>
+            <input type="text" id="exitoCalle" readonly>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Región</label>
-              <input type="text" id="exitoRegion" readonly>
-            </div>
-            <div class="form-group">
-              <label>Comuna</label>
-              <input type="text" id="exitoComuna" readonly>
-            </div>
-          </div>
-          <div class="form-group full-width">
-            <label>Indicaciones</label>
-            <textarea id="exitoIndicaciones" readonly></textarea>
-          </div>
-        </form>
-      </section>
 
-      <!-- Tabla de Productos -->
+          <div class="form-group">
+            <label>Departamento</label>
+            <input type="text" id="exitoDepartamento" readonly>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Región</label>
+            <input type="text" id="exitoRegion" readonly>
+          </div>
+
+          <div class="form-group">
+            <label>Comuna</label>
+            <input type="text" id="exitoComuna" readonly>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Indicaciones</label>
+          <textarea id="exitoIndicaciones" readonly></textarea>
+        </div>
+      </form>
+    </section>
+
+    <!-- ===== PRODUCTOS ===== -->
+    <section class="productos-compra levelup-section">
+      <h2 class="section-title">🛍️ Productos Comprados</h2>
+
       <div class="tabla-checkout-container">
         <table class="tabla-checkout">
           <thead>
             <tr>
               <th>Imagen</th>
-              <th>Nombre</th>
-              <th>Precio $</th>
+              <th>Producto</th>
+              <th>Precio</th>
               <th>Cantidad</th>
-              <th>Subtotal $</th>
+              <th>Subtotal</th>
             </tr>
           </thead>
+
           <tbody id="tablaExitoBody">
-            <!-- Productos de la compra exitosa -->
+            <!-- JS -->
           </tbody>
         </table>
       </div>
+    </section>
 
-      <!-- Total Pagado -->
-      <div class="total-pagado-container">
-        <div class="total-pagado">
-          <span class="total-text">Total Pagado: $</span>
-          <span id="totalPagado" class="total-precio">0</span>
-        </div>
+    <!-- ===== TOTAL ===== -->
+    <section class="total-pagado-container">
+      <div class="total-pagado levelup-total">
+        <span>Total Pagado</span>
+        <strong>$<span id="totalPagado">0</span></strong>
       </div>
+    </section>
 
-      <!-- Botones Finales -->
-      <div class="exito-footer">
-        <button id="btnImprimirPDF" class="btn-imprimir-pdf">Imprimir Boleta en PDF</button>
-        <button id="btnEnviarEmail" class="btn-enviar-email">Enviar Boleta por Email</button>
-      </div>
-    </div>
-  </main>
+    <!-- ===== ACCIONES ===== -->
+    <section class="exito-footer">
+      <button id="btnImprimirPDF" class="btn-levelup btn-outline">
+        📄 Descargar Boleta PDF
+      </button>
 
-  <!-- Incluir SweetAlert2 antes de tu script -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="../js/compraExitosa.js"></script>
+      <button id="btnEnviarEmail" class="btn-levelup btn-primary">
+        📧 Enviar por Email
+      </button>
+    </section>
+
+  </div>
+</main>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/compraExitosa.js"></script>
+
 </body>
 </html>
