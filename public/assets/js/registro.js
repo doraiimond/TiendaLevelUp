@@ -45,31 +45,40 @@ form.addEventListener("submit", async (e) => {
         mensaje.textContent = "Usuario registrado correctamente 🎉";
         mensaje.style.color = "green";
     
-        // Guardar usuario en localStorage con rol
-        let rolUsuario = "cliente"; // por defecto
-        if (correo.toLowerCase() === "vendedor@duoc.cl") {
+        // -------- DETECCIÓN DE ROL --------
+        const correoLower = correo.toLowerCase();
+
+        let rolUsuario = "cliente";
+        let destino = "perfilCliente.html";
+
+        if (correoLower.endsWith("@duoc.cl")) {
+            rolUsuario = "admin";
+            destino = "perfilAdmin.html";
+        } 
+        else if (correoLower.endsWith("@vduoc.cl")) {
             rolUsuario = "vendedor";
+            destino = "perfilVendedor.html";
         }
-    
-        const usuario = { nombre, correo, rol: rolUsuario };
+
+        // -------- GUARDAR EN LOCALSTORAGE --------
+        const usuario = {
+            nombre,
+            correo,
+            rol: rolUsuario
+        };
+
         localStorage.setItem("usuario", JSON.stringify(usuario));
-    
+
+        // opcional: limpiar formulario
         form.reset();
-    
-        // Redirigir según rol
-        if (rolUsuario === "vendedor") {
-            setTimeout(() => {
-                window.location.href = "perfilVendedor.html";
-            }, 1000);
-        } else {
-            setTimeout(() => {
-                window.location.href = "perfilCliente.html";
-            }, 1000);
-        }
-    
+
+        // -------- REDIRECCIÓN DIRECTA --------
+        console.log("Registrado como:", rolUsuario);
+        window.location.href = destino;
+
     } catch (error) {
         console.error("Error al guardar:", error);
         mensaje.textContent = "Error al registrar ❌";
         mensaje.style.color = "red";
     }
-});    
+});

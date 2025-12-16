@@ -11,7 +11,7 @@ function playSounds() {
 
 // Correos permitidos
 function validarCorreo(correo) {
-    const regex = /^[\w.+-]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/i;
+    const regex = /^[\w.+-]+@(duoc\.cl|vduoc\.cl|profesor\.duoc\.cl|gmail\.com)$/i;
     return regex.test(correo);
 }
 

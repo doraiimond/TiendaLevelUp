@@ -315,7 +315,7 @@ function navegarA(seccion) {
 }
 
 function irATienda() {
-    window.location.href = '../../index.html';
+    window.location.href = '../page/catalogo.html';
 }
 
 // Inicialización

@@ -38,88 +38,50 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // --- ADMIN ---
-        // --- ADMIN ---
-        // --- ADMIN ---
-        if (correo === "admin@duoc.cl") {
-            try {
-                const query = await db.collection("usuario")
-                    .where("correo", "==", correo)
-                    .where("clave", "==", clave)
-                    .get();
+        const correoLower = correo.toLowerCase();
+        let rol = "cliente";
+        let redirect = "perfilCliente.html";
 
-                if (!query.empty) {
-                    const userData = query.docs[0].data();
-                    const usuario = { nombre: userData.nombre || "Administrador", correo, rol: "admin" };
-                    localStorage.setItem("usuario", JSON.stringify(usuario));
-
-                    mensaje.style.color = "green";
-                    mensaje.innerText = "Bienvenido Administrador, redirigiendo...";
-
-                    setTimeout(() => window.location.href = "perfilAdmin.html", 1000);
-                } else {
-                    mensaje.style.color = "red";
-                    mensaje.innerText = "Correo o clave incorrectos para admin";
-                }
-            } catch (error) {
-                console.error("Error login admin:", error);
-                mensaje.style.color = "red";
-                mensaje.innerText = "Error al verificar admin";
-            }
-            return;
+        // detectar rol por correo
+        if (correoLower.endsWith("@duoc.cl")) {
+            rol = "admin";
+            redirect = "perfilAdmin.html";
+        } 
+        else if (correoLower.endsWith("@vduoc.cl")) {
+            rol = "vendedor";
+            redirect = "perfilVendedor.html";
         }
 
-        // --- VENDEDOR ---
-        if (correo === "vendedor@duoc.cl") {
-            try {
-                const query = await db.collection("usuario")
-                    .where("correo", "==", correo)
-                    .where("clave", "==", clave)
-                    .get();
-
-                if (!query.empty) {
-                    const userData = query.docs[0].data();
-                    const usuario = { nombre: userData.nombre || "Vendedor", correo, rol: "vendedor" };
-                    localStorage.setItem("usuario", JSON.stringify(usuario));
-
-                    mensaje.style.color = "green";
-                    mensaje.innerText = "Bienvenido Vendedor, redirigiendo...";
-
-                    setTimeout(() => window.location.href = "perfilVendedor.html", 1000);
-                } else {
-                    mensaje.style.color = "red";
-                    mensaje.innerText = "Correo o clave incorrectos para vendedor";
-                }
-            } catch (error) {
-                console.error("Error login vendedor:", error);
-                mensaje.style.color = "red";
-                mensaje.innerText = "Error al verificar vendedor";
-            }
-            return;
-        }
-
-        // --- CLIENTE ---
         try {
             const query = await db.collection("usuario")
                 .where("correo", "==", correo)
                 .where("clave", "==", clave)
                 .get();
 
-            if (!query.empty) {
-                const userData = query.docs[0].data();
-                const nombre = userData.nombre || correo;
-                const usuario = { nombre, correo, rol: "cliente" };
-                localStorage.setItem("usuario", JSON.stringify(usuario));
-
-                mensaje.style.color = "green";
-                mensaje.innerText = "Bienvenido cliente, redirigiendo...";
-
-                setTimeout(() => window.location.href = "perfilCliente.html", 1000);
-            } else {
+            if (query.empty) {
                 mensaje.style.color = "red";
                 mensaje.innerText = "Correo o clave incorrectos";
+                return;
             }
+
+            const userData = query.docs[0].data();
+
+            const usuario = {
+                nombre: userData.nombre || rol,
+                correo,
+                rol
+            };
+
+            localStorage.setItem("usuario", JSON.stringify(usuario));
+
+            mensaje.style.color = "green";
+            mensaje.innerText = `Bienvenido ${rol}, redirigiendo...`;
+
+            // REDIRECCIÓN LIMPIA
+            window.location.href = redirect;
+
         } catch (error) {
-            console.error("Error login cliente:", error);
+            console.error("Error login:", error);
             mensaje.style.color = "red";
             mensaje.innerText = "Error al verificar usuario";
         }
