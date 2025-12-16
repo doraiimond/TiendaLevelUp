@@ -1,4 +1,3 @@
-// ../js/registro.js
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
@@ -25,26 +24,30 @@ const mensaje = document.getElementById("mensaje");
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Datos del formulario
     const run = document.getElementById("run").value.trim();
     const nombre = document.getElementById("nombre").value.trim();
     const correo = document.getElementById("correo").value.trim();
     const clave = document.getElementById("clave").value.trim();
     const fecha = document.getElementById("fecha").value;
 
+    console.log("Valores capturados:", run, nombre, correo, clave, fecha);
+
     try {
+        const createdAt = new Date().toISOString();
+
+        
         await addDoc(collection(db, "usuario"), {
             run,
             nombre,
             correo,
             clave,
             fecha,
-            createdAt: new Date().toISOString()
+            createdAt
         });
-    
+
         mensaje.textContent = "Usuario registrado correctamente 🎉";
         mensaje.style.color = "green";
-    
+
         // -------- DETECCIÓN DE ROL --------
         const correoLower = correo.toLowerCase();
 
@@ -54,28 +57,26 @@ form.addEventListener("submit", async (e) => {
         if (correoLower.endsWith("@duoc.cl")) {
             rolUsuario = "admin";
             destino = "perfilAdmin.html";
-        } 
-        else if (correoLower.endsWith("@vduoc.cl")) {
+        } else if (correoLower.endsWith("@vduoc.cl")) {
             rolUsuario = "vendedor";
             destino = "perfilVendedor.html";
         }
 
-        // -------- GUARDAR EN LOCALSTORAGE --------
+        // -------- GUARDAR SESIÓN --------
         const usuario = {
             nombre,
             correo,
+            run,
+            fecha,
+            createdAt,
             rol: rolUsuario
         };
 
         localStorage.setItem("usuario", JSON.stringify(usuario));
 
-        // opcional: limpiar formulario
         form.reset();
-
-        // -------- REDIRECCIÓN DIRECTA --------
-        console.log("Registrado como:", rolUsuario);
         window.location.href = destino;
-
+        
     } catch (error) {
         console.error("Error al guardar:", error);
         mensaje.textContent = "Error al registrar ❌";
